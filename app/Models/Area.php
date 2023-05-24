@@ -11,6 +11,11 @@ class Area extends Model
     protected $fillable = [
         'name',
     ];
-
-
+    protected $guarded = [
+        'id'
+    ];
+    public function shops()
+    {
+        return $this->hasmany('App\Models\Shop');
+    }
 }

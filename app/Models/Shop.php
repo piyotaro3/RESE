@@ -18,4 +18,13 @@ class Shop extends Model
     protected $guarded = [
         'id'
     ];
+
+    public function area()
+    {
+        return $this->belongsTo('App\Models\Area');
+    }
+    public function genre()
+    {
+        return $this->belongsTo('App\Models\Genre');
+    }
 }

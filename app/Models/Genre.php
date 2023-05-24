@@ -14,5 +14,8 @@ class Genre extends Model
     protected $guarded = [
         'id'
     ];
+    public function shops(){
+        return $this->hasMany('App\Models\Shop');
+    }
 
 }
