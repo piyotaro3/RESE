@@ -6061,6 +6061,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
+__webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module './menu'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 /***/ }),
 
