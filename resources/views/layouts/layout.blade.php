@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('/assets/css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/form.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/box.css') }}">
     <title>@yield('title')</title>
 </head>
 
@@ -16,6 +17,8 @@
     @yield('header')
 
     @yield('form')
+
+    @yield('box')
 
 </body>
 

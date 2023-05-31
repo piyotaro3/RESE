@@ -63,7 +63,7 @@ img {
 
 .button_area {
     width: 25%;
-    margin-left: 75%;
+    margin-left: 78%;
 }
 
 .button {
@@ -78,4 +78,5 @@ img {
     line-height: 1em;
     transition: .3s;
     border: 2px solid #6666ff;
+    width: 60%;
 }

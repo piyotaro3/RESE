@@ -11,4 +11,9 @@ class RegisteredUserController extends Controller
     {
        return view('register');
     }
+
+    public function thanks()
+    {
+        return view('thanks');
+    }
 }

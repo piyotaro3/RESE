@@ -25,3 +25,4 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('/test', [RegisteredUserController::class, 'index']);
+Route::get('/thanks', [RegisteredUserController::class, 'thanks']);

@@ -1,0 +1,32 @@
+.message_area {
+    height: 70vh;
+    width: 100%;
+}
+
+.message_box {
+    width: 30%;
+    background-color: white;
+    height: 60%;
+    margin: 0 auto;
+    margin-top: 10%;
+    border-radius: 5px;
+    box-shadow: #C0C0C0 3px 3px 1px;
+    text-align: center;
+}
+
+.thanks {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    padding: 20% 0;
+}
+
+.login {
+    background-color: #6666ff;
+    color: white;
+    text-align: center;
+    border-radius: 5%;
+    font-size: 15px;
+    padding: 6px 12px;
+}
