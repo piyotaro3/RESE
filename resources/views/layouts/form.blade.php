@@ -10,27 +10,18 @@
                     <div class="icon_user">
                         <img src="{{ asset('img/人物アイコン.png') }}">
                         <input type="text" name="name" placeholder="Username" value="{{ old('name') }}">
-                        @if ($errors->has('name'))
-                            <p>{{ $errors->first('name') }}</p>
-                        @endif
                     </div>
                     <div class="icon_email">
                         <img src="{{ asset('img/ifn0636.png') }}">
                         <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
-                        @if ($errors->has('email'))
-                            <p>{{ $errors->first('email') }}</p>
-                        @endif
                     </div>
                     <div class="icon_password">
                         <img src="{{ asset('img/カギアイコン.png') }}">
                         <input type="password" name="password" placeholder="Password" value="{{ old('password') }}">
-                        @if ($errors->has('password'))
-                            <p>{{ $errors->first('password') }}</p>
-                        @endif
                     </div>
                 </div>
                 <div class="button_area">
-                    <input type="submit" value="登録" class="button">
+                <input type="submit" value="登録" class="button">
                 </div>
             </div>
         </div>
