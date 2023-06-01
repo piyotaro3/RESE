@@ -1,5 +1,5 @@
 @section('form')
-    <form action="/tanks" method="post">
+    <form action="/register" method="post">
         @csrf
         <div class="content_area">
             <div class="content">
@@ -13,11 +13,11 @@
                     </div>
                     <div class="icon_email">
                         <img src="{{ asset('img/ifn0636.png') }}">
-                        <input type="email" name="email" placeholder="Email" value="{{ old('name') }}">
+                        <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
                     </div>
                     <div class="icon_password">
                         <img src="{{ asset('img/カギアイコン.png') }}">
-                        <input type="password" name="email" placeholder="Password" value="{{ old('password') }}">
+                        <input type="password" name="password" placeholder="Password" value="{{ old('password') }}">
                     </div>
                 </div>
                 <div class="button_area">
