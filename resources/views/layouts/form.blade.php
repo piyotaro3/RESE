@@ -7,13 +7,7 @@
                     <p class="content_title">@yield('form_title')</p>
                 </div>
                 <div class="form_area">
-                    <div class="icon_user">
-                        <img src="{{ asset('img/人物アイコン.png') }}">
-                        <input type="text" name="name" placeholder="Username" value="{{ old('name') }}">
-                        @if ($errors->has('name'))
-                            <p>{{ $errors->first('name') }}</p>
-                        @endif
-                    </div>
+                    @yield('user')
                     <div class="icon_email">
                         <img src="{{ asset('img/ifn0636.png') }}">
                         <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
