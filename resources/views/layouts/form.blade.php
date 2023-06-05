@@ -1,5 +1,5 @@
 @section('form')
-    <form action="/register" method="post">
+    <form action="@yield('route')" method="POST">
         @csrf
         <div class="content_area">
             <div class="content">

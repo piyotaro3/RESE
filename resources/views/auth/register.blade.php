@@ -6,6 +6,9 @@
 @section('form_title')
     Registration
 @endsection
+@section('route')
+/register
+@endsection
 @section('user')
     <div class="icon_user">
         <img src="{{ asset('img/人物アイコン.png') }}">
