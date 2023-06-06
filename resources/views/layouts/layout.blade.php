@@ -7,19 +7,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('/assets/css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/header.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/form.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/box.css') }}">
     <title>@yield('title')</title>
 </head>
 
 <body>
-
     @yield('header')
+    <div class="box">
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/register">Registration</a></li>
+                <li><a href="login">Login</a></li>
+            </ul>
+        </nav>
+        <div class="menu" id="menu">
+            <span class="menu__line--top"></span>
+            <span class="menu__line--middle"></span>
+            <span class="menu__line--bottom"></span>
+        </div>
+        <div class="title">
+            <h1>RESE</h1>
+        </div>
+    </div>
 
-    @yield('form')
+    <script>
+        const target = document.getElementById("menu");
+        target.addEventListener('click', () => {
+            target.classList.toggle('open');
+            const nav = document.getElementById("nav");
+            nav.classList.toggle('in');
+        });
+    </script>
 
-    @yield('box')
-
+    @yield('content')
 </body>
 
 </html>
