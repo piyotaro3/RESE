@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\RegisterRequest;
 
 class RegisteredUserController extends Controller
 {
@@ -17,7 +18,7 @@ class RegisteredUserController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(RegisterRequest $request)
     {
         $user = User::create([
             'name' => $request->name,

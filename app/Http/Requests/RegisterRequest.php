@@ -40,7 +40,7 @@ class RegisterRequest extends FormRequest
             'email.string' => '文字型で入力してください',
             'email.max:255' => '255以内で入力してください',
             'password.required' => 'パスワードを入力してください',
-            'password.min:8' => 'パスワードは８文字以上入力てください',
+            'password.min:8' => 'パスワードは８文字以上入力してください',
             'password.max:255' => 'パスワードは２５５文字以内で入力してください',
         ];
     }

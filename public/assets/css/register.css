@@ -32,7 +32,6 @@ body {
     padding-top: 15px;
 }
 
-
 .form_area {
     height: 60%;
     display: flex;
@@ -53,12 +52,12 @@ input {
     border-bottom: solid 1px;
     vertical-align: middle;
     font-size: 20px;
+    margin-bottom: 2px;
 }
 
 img {
     width: 10%;
 }
-
 
 .button_area {
     width: 25%;
@@ -80,7 +79,8 @@ img {
     width: 60%;
     height: 35px;
 }
-p{
-    color: red;
 
+p {
+    color: red;
+    text-align: center;
 }
