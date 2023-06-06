@@ -1,5 +1,5 @@
 @extends('layouts\layout')
-<link rel="stylesheet" href="{{ asset('assets/css/form.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/register.css') }}">
 
 @section('title')
     会員登録
@@ -15,21 +15,21 @@
                 </div>
                 <div class="form_area">
                     <div class="icon_user">
-                        <img src="{{ asset('img/人物アイコン.png') }}">
+                        <img src="{{ asset('img/人物アイコン.png') }}" style="margin-bottom:-3%">
                         <input type="text" name="name" placeholder="Username" value="{{ old('name') }}">
                         @error('name')
                             <p>{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="icon_email">
-                        <img src="{{ asset('img/ifn0636.png') }}">
+                        <img src="{{ asset('img/ifn0636.png') }}" style="margin-bottom:-3%">
                         <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
                         @error('email')
                             <p>{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="icon_password">
-                        <img src="{{ asset('img/カギアイコン.png') }}">
+                        <img src="{{ asset('img/カギアイコン.png') }}" style="margin-bottom:-3%">
                         <input type="password" name="password" placeholder="Password" value="{{ old('password') }}">
                         @error('password')
                             <p>{{ $message }}</p>

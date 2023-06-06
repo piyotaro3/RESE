@@ -1,5 +1,5 @@
  @extends('layouts\layout')
-<link rel="stylesheet" href="{{ asset('assets/css/form.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
 <x-auth-session-status class="mb-4" :status="session('status')" />
 
  @section('title')
@@ -16,14 +16,14 @@
                 </div>
                 <div class="form_area">
                     <div class="icon_email">
-                        <img src="{{ asset('img/ifn0636.png') }}">
+                        <img src="{{ asset('img/ifn0636.png') }}" style="margin-bottom:-3%">
                         <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
                         @error('email')
                             <p>{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="icon_password">
-                        <img src="{{ asset('img/カギアイコン.png') }}">
+                        <img src="{{ asset('img/カギアイコン.png') }}" style="margin-bottom:-3%">
                         <input type="password" name="password" placeholder="Password" value="{{ old('password') }}">
                         @error('password')
                             <p>{{ $message }}</p>
