@@ -15,7 +15,7 @@ class AreasTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'id' =>'1',
+            'id' => '1',
             'name' => '東京'
         ];
         Area::create($param);
