@@ -28,4 +28,4 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
-Route::get('/test', [ShopController::class, 'view']);
+Route::get('/test', [ShopController::class, 'view']); //view確認のルート*/

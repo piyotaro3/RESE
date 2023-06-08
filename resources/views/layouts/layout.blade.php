@@ -17,7 +17,14 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/register">Registration</a></li>
-                <li><a href="login">Login</a></li>
+                @if (Auth::check())
+                    <form action="/logout" method="POST">
+                        @csrf
+                        <li><button class='logout'>Logout</button></li>
+                    </form>
+                @else
+                    <li><a href="login">Login</a></li>
+                @endif
             </ul>
         </nav>
         <div class="menu" id="menu">
