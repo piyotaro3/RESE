@@ -185,8 +185,5 @@ class ShopsTableSeeder extends Seeder
             'image' => 'storage\app\public\img\sushi.jpg'
         ];
         Shop::create($param);
-
-
-
     }
 }
