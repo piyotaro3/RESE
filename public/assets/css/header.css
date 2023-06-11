@@ -2,6 +2,7 @@
     display: flex;
     height: 10%;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 h1 {
@@ -112,3 +113,5 @@ a {
     border: none;
     background: none;
 }
+
+

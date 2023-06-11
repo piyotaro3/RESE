@@ -33,7 +33,7 @@
             <span class="menu__line--bottom"></span>
         </div>
         <div class="title">
-            <h1>RESE</h1>
+            <h1>Rese</h1>
         </div>
     </div>
 
