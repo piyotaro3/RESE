@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/thanks', function () {
     return view('thanks');
-})->middleware(['auth'])->name('dashboard');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
