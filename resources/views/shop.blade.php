@@ -7,20 +7,22 @@
 
 @section('content')
     <div class="shop_all">
-        <div class="shop_card">
-            <div class="shop_img">
-                <img src="{{ asset('img/italian.jpg') }}">
-            </div>
-            <div class="shop_text">
-                <div class="shop_name">
-                    <h2 class="shop_title">テスト</h2>
+        @foreach ($shops as $shop)
+            <div class="shop_card">
+                <div class="shop_img">
+                    <img src="{{ asset($shop->image) }}">
                 </div>
-                <div class="shop_tag">
-                    <p class="shop_tag">#テスト#テスト</p>
+                <div class="shop_text">
+                    <div class="shop_name">
+                        <h2 class="shop_title">{{ $shop->name }}</h2>
+                    </div>
+                    <div class="shop_tag">
+                        <p class="shop_tag">{{ $shop->getarea() }}{{ $shop->getGenre() }}</p>
+                    </div>
+                    <div class="shop_detalil"></div>
+                    <div class="shop_favorite"></div>
                 </div>
-                <div class="shop_detalil"></div>
-                <div class="shop_favorite"></div>
             </div>
-        </div>
+        @endforeach
     </div>
 @endsection
