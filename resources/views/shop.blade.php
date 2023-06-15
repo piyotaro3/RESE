@@ -17,9 +17,15 @@
                         <h2 class="shop_title">{{ $shop->name }}</h2>
                     </div>
                     <div class="shop_tag">
-                        <p class="shop_tag">{{ $shop->getarea() }}{{ $shop->getGenre() }}</p>
+                        <p>{{ $shop->getarea() }}{{ $shop->getGenre() }}</p>
                     </div>
-                    <div class="shop_detalil"></div>
+                    <div class="shop_detail">
+                        <form action="/detail/"method="GET">
+                            @csrf
+                            <input type="hidden" value="{{ $shop->id }}" name="shop_id">
+                            <input type="submit" class="detail_button" value="詳細ページ">
+                        </form>
+                    </div>
                     <div class="shop_favorite"></div>
                 </div>
             </div>
