@@ -20,14 +20,32 @@
                         <p>{{ $shop->getarea() }}{{ $shop->getGenre() }}</p>
                     </div>
                     <div class="shop_detail">
-                        <form action="/detail/"method="GET">
+                        <form action="/detail/{{ $shop->id }}"method="GET">
                             @csrf
                             <input type="hidden" value="{{ $shop->id }}" name="shop_id">
                             <input type="submit" class="detail_button" value="詳細ページ">
                         </form>
                     </div>
+
                     <div class="shop_favorite">
-                        <img src="{{ asset('img/heart.png') }}" class="img_favorite">
+                        @if (!Auth::user()->is_favorite($shop->id))
+                            <form action="{{ route('favorite.create', $shop) }}" method="post">
+                                @csrf
+                                <button type="submit" class="favorite_button">
+                                    <img src="{{ asset('img/heart.png') }}" class="img_favorite">
+                                </button>
+                            </form>
+                        @else
+                            <form action="{{ route('favorite.delete', $shop) }}" method="post">
+                                @csrf
+                                <button type="submit" class="favorite_button">
+                                <img src="{{ asset('img/heart.png') }}" class="img_favorite_on">
+                                </button>
+                            </form>
+                        @endif
+                        @guest
+                            <span class="likes">
+                            @endguest
                     </div>
                 </div>
             </div>
