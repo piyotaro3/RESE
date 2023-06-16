@@ -74,6 +74,14 @@ img {
     margin-left: 220px;
 }
 
+.favorite_button{
+    border: none;
+}
+
 .img_favorite {
- filter: opacity(50%);
+    filter: opacity(50%);
+}
+
+.img_favorite_on {
+    filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(112%);
 }

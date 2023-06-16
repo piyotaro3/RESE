@@ -46,8 +46,18 @@ class User extends Authenticatable
         'id'
     ];
 
-    public function favorite()
+public function favorite(){
+        return $this->hasMany(Favorite::class);
+}
+
+    public function favorite_shop()
     {
-        return $this->hasMany('App\Models\Favorite');
+        return $this->belongsToMany(Shop::class, 'favorites', 'user_id', 'shop_id');
+    }
+
+    public function is_favorite($shop_id)
+    {
+        $favorite = Favorite::where('user_id', $this->id)->where('shop_id', $shop_id)->get();
+        return count($favorite) > 0;
     }
 }

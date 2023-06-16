@@ -19,6 +19,7 @@ class CreateFavoritesTable extends Migration
             $table->foreignId('shop_id')->constrained('shops');
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
+            $table->unique(['user_id', 'shop_id']);
         });
     }
 
