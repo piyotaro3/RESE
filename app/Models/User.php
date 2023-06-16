@@ -45,4 +45,9 @@ class User extends Authenticatable
     protected $guarded = [
         'id'
     ];
+
+    public function favorite()
+    {
+        return $this->hasMany('App\Models\Favorite');
+    }
 }

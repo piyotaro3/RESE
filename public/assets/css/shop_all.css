@@ -37,10 +37,15 @@ img {
 
 .shop_text {
     margin-left: 15px;
+    height: 40%;
 }
 
 .shop_tag {
     margin-bottom: 5px;
+}
+
+.shop_detail {
+    display: inline-block;
 }
 
 .detail_button {
@@ -60,4 +65,15 @@ img {
 .detail_button:hover {
     color: #6666ff;
     background: #ffffff;
+}
+
+.shop_favorite {
+    width: 50px;
+    height: 50px;
+    margin-top: -40px;
+    margin-left: 220px;
+}
+
+.img_favorite {
+ filter: opacity(50%);
 }

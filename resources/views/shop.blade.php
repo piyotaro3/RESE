@@ -26,7 +26,9 @@
                             <input type="submit" class="detail_button" value="詳細ページ">
                         </form>
                     </div>
-                    <div class="shop_favorite"></div>
+                    <div class="shop_favorite">
+                        <img src="{{ asset('img/heart.png') }}" class="img_favorite">
+                    </div>
                 </div>
             </div>
         @endforeach

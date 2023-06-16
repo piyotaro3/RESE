@@ -39,4 +39,8 @@ class Shop extends Model
         return '#' . optional($this->genre)->name;
     }
 
+    public function favorite()
+    {
+        return $this->hasMany('App\Models\Favorite');
+    }
 }
