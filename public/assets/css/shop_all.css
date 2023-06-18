@@ -74,7 +74,11 @@ img {
     margin-left: 220px;
 }
 
+<<<<<<< HEAD
 .favorite_button {
+=======
+.favorite_button{
+>>>>>>> 09291019431c5adfbc46a15576a06ae2f585951d
     border: none;
 }
 
@@ -84,6 +88,7 @@ img {
 
 .img_favorite_on {
     filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(112%);
+<<<<<<< HEAD
 }
 
 .search_box {
@@ -102,4 +107,6 @@ select {
 .search_btn
 {
     display: none;
+=======
+>>>>>>> 09291019431c5adfbc46a15576a06ae2f585951d
 }

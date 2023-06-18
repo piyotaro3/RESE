@@ -30,8 +30,14 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 Route::get('/test', [ShopController::class, 'view']); //view確認のルート*/
+<<<<<<< HEAD
 Route::get('/search', [ShopController::class, 'search']);
 
 Route::post('/shop/{shop}favorite', [FavoriteController::class, 'create'])->name('favorite.create');
 Route::post('/shop/{shop}/unfavorite', [FavoriteController::class, 'delete'])->name('favorite.delete');
 
+=======
+
+Route::post('/shop/{shop}favorite', [FavoriteController::class, 'create'])->name('favorite.create');
+Route::post('/shop/{shop}/unfavorite', [FavoriteController::class, 'delete'])->name('favorite.delete');
+>>>>>>> 09291019431c5adfbc46a15576a06ae2f585951d

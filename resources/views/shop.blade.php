@@ -62,6 +62,7 @@
                     </div>
 
                     <div class="shop_favorite">
+<<<<<<< HEAD
                         @auth
                             @if (!Auth::user()->is_favorite($shop->id))
                                 <form action="{{ route('favorite.create', $shop) }}" method="post">
@@ -79,6 +80,23 @@
                                 </form>
                             @endif
                         @endauth
+=======
+                        @if (!Auth::user()->is_favorite($shop->id))
+                            <form action="{{ route('favorite.create', $shop) }}" method="post">
+                                @csrf
+                                <button type="submit" class="favorite_button">
+                                    <img src="{{ asset('img/heart.png') }}" class="img_favorite">
+                                </button>
+                            </form>
+                        @else
+                            <form action="{{ route('favorite.delete', $shop) }}" method="post">
+                                @csrf
+                                <button type="submit" class="favorite_button">
+                                <img src="{{ asset('img/heart.png') }}" class="img_favorite_on">
+                                </button>
+                            </form>
+                        @endif
+>>>>>>> 09291019431c5adfbc46a15576a06ae2f585951d
                         @guest
                             <span class="likes">
                             @endguest
