@@ -35,6 +35,7 @@
         <div class="title">
             <h1>Rese</h1>
         </div>
+        @yield('search')
     </div>
 
     <script>

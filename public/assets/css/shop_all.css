@@ -74,7 +74,7 @@ img {
     margin-left: 220px;
 }
 
-.favorite_button{
+.favorite_button {
     border: none;
 }
 
@@ -84,4 +84,22 @@ img {
 
 .img_favorite_on {
     filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(112%);
+}
+
+.search_box {
+    display: flex;
+}
+
+select {
+    height: 50px;
+}
+
+.search_word {
+    height: 50px;
+    width: 350px;
+}
+
+.search_btn
+{
+    display: none;
 }
