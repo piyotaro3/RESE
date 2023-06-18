@@ -13,10 +13,12 @@
             @csrf
             <div class="search_box">
                 <div class="search_area">
-                    <select name="area_id" >
+                    <select name="area_id" onchange="submit(this.form)">
                         <option value="">All area</option>
                         @foreach ($areas as $area)
-                            <option value="{{ $area->id }}">{{ $area->name }}</option>
+                            <option value="{{ $area->id }}"
+                                @if (isset($area_id)) @if ($area->id == $area_id) selected @endif
+                                @endif>{{ $area->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -24,7 +26,7 @@
                     <select name="genre_id">
                         <option value="">All&nbsp;genre</option>
                         @foreach ($genres as $genre)
-                            <option value="{{ $genre->id }}" >{{ $genre->name }}</option>
+                            <option value="{{ $genre->id }}">{{ $genre->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -62,7 +64,6 @@
                     </div>
 
                     <div class="shop_favorite">
-<<<<<<< HEAD
                         @auth
                             @if (!Auth::user()->is_favorite($shop->id))
                                 <form action="{{ route('favorite.create', $shop) }}" method="post">
@@ -80,23 +81,6 @@
                                 </form>
                             @endif
                         @endauth
-=======
-                        @if (!Auth::user()->is_favorite($shop->id))
-                            <form action="{{ route('favorite.create', $shop) }}" method="post">
-                                @csrf
-                                <button type="submit" class="favorite_button">
-                                    <img src="{{ asset('img/heart.png') }}" class="img_favorite">
-                                </button>
-                            </form>
-                        @else
-                            <form action="{{ route('favorite.delete', $shop) }}" method="post">
-                                @csrf
-                                <button type="submit" class="favorite_button">
-                                <img src="{{ asset('img/heart.png') }}" class="img_favorite_on">
-                                </button>
-                            </form>
-                        @endif
->>>>>>> 09291019431c5adfbc46a15576a06ae2f585951d
                         @guest
                             <span class="likes">
                             @endguest

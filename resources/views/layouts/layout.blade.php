@@ -16,7 +16,11 @@
         <nav class="nav" id="nav">
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/register">Registration</a></li>
+                @if (Auth::check())
+                    <li><a href="/mypage">Mypage</a></li>
+                @else
+                    <li><a href="/register">Registration</a></li>
+                @endif
                 @if (Auth::check())
                     <form action="/logout" method="POST">
                         @csrf

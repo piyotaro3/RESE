@@ -15,29 +15,21 @@ use App\Http\Controllers\FavoriteController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/thanks', function () {
-    return view('thanks');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
 
-Route::get('/test', [ShopController::class, 'view']); //view確認のルート*/
-<<<<<<< HEAD
-Route::get('/search', [ShopController::class, 'search']);
+/**店舗一覧ページ */
+Route::get('/', [ShopController::class, 'index'])->name('shop.index');
+Route::get('/search', [ShopController::class, 'search'])->name('shop.search');
 
+/**お気に入り機能 */
 Route::post('/shop/{shop}favorite', [FavoriteController::class, 'create'])->name('favorite.create');
 Route::post('/shop/{shop}/unfavorite', [FavoriteController::class, 'delete'])->name('favorite.delete');
 
-=======
-
-Route::post('/shop/{shop}favorite', [FavoriteController::class, 'create'])->name('favorite.create');
-Route::post('/shop/{shop}/unfavorite', [FavoriteController::class, 'delete'])->name('favorite.delete');
->>>>>>> 09291019431c5adfbc46a15576a06ae2f585951d
+/**会員登録完了 */
+Route::get('/thanks', function () {
+    return view('thanks');
+});

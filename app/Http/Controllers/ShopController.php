@@ -13,7 +13,7 @@ use App\Models\Favorite;
 
 class ShopController extends Controller
 {
-    public function view()
+    public function index()
     {
         $user = Auth::user();
         $shops = Shop::all();
