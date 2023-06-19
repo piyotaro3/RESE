@@ -13,6 +13,7 @@ use App\Models\Favorite;
 
 class ShopController extends Controller
 {
+    /**店舗一覧表示 */
     public function index()
     {
         $user = Auth::user();
@@ -30,6 +31,7 @@ class ShopController extends Controller
         return view('shop', $param);
     }
 
+    /**店舗検索 */
     public function search(Request $request)
     {
         $user = Auth::user();
@@ -49,13 +51,13 @@ class ShopController extends Controller
             $query->where('name', 'LIKE BINARY', "%$word%");
 
         $shops = $query->get();
-
         $param = [
-
             'shops' => $shops,
             'user' => $user,
             'areas' => $areas,
             'genres' => $genres,
+            'area_id'=> $area_id,
+            'genre_id' => $genre_id,
         ];
         return view('shop', $param);
     }

@@ -88,6 +88,8 @@ img {
 
 .search_box {
     display: flex;
+    margin-right: 50px;
+
 }
 
 select {
@@ -99,7 +101,27 @@ select {
     width: 350px;
 }
 
-.search_btn
-{
+.search_icon {
+    position: relative;
+}
+
+.search_icon::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: url(../../img/検索アイコン.png)no-repeat center center / auto 100%;
+    ;
+    position: absolute;
+    top: 18px;
+    left: 7px;
+    background-color: #ffffff;
+}
+
+.search_word  {
+    padding: 10px 0 10px 2em;
+}
+
+.search_btn {
     display: none;
 }

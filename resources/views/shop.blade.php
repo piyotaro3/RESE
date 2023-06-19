@@ -1,12 +1,11 @@
 @extends('layouts.layout')
 <link rel="stylesheet" href="{{ asset('assets/css/shop_all.css') }}">
-
 @section('title')
     店舗一覧
 @endsection
 
 
-
+{{-- 検索機能 --}}
 @section('search')
     <div class="search">
         <form action="/search">
@@ -23,16 +22,17 @@
                     </select>
                 </div>
                 <div class="search_genre">
-                    <select name="genre_id">
+                    <select name="genre_id" onchange="submit(this.form)">
                         <option value="">All&nbsp;genre</option>
                         @foreach ($genres as $genre)
-                            <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                            <option value="{{ $genre->id }}"
+                                @if (isset($genre_id)) @if ($genre->id == $genre_id) selected @endif
+                                @endif>{{ $genre->name }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="search_word-area">
                     <div class="search_icon">
-                        {{--  <img src="{{ asset('img/検索アイコン.png') }}"> --}}
                     </div>
                     <input class="search_word" type="text" name="word" placeholder="search...">
                 </div>
@@ -41,6 +41,8 @@
         </form>
     </div>
 @endsection
+
+{{-- 店舗一覧 --}}
 @section('content')
     <div class="shop_all">
         @foreach ($shops as $shop)
@@ -62,7 +64,7 @@
                             <input type="submit" class="detail_button" value="詳細ページ">
                         </form>
                     </div>
-
+                    {{-- お気に入り機能 --}}
                     <div class="shop_favorite">
                         @auth
                             @if (!Auth::user()->is_favorite($shop->id))
