@@ -1,21 +1,22 @@
 .shop_all {
-    width: 90%;
-    height: 85%;
-    margin: 0 auto 0;
+    align-content: stretch;
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-content: stretch;
+    height: 85%;
     justify-content: space-around;
-    align-items: center;
+    margin: 0 auto 0;
+    width: 90%;
 }
 
 .shop_card {
-    width: 315px;
-    height: 255px;
     border: 1px solid black;
     border-radius: 5px 5px 0 0;
+    box-shadow: #C0C0C0 5px 5px 5px;
+    height: 255px;
     margin-bottom: 10px;
+    width: 315px;
 }
 
 .shop_img {
@@ -23,10 +24,10 @@
 }
 
 img {
-    width: 100%;
-    height: 100%;
     border-radius: 3px;
+    height: 100%;
     object-fit: cover;
+    width: 100%;
 }
 
 .shop_title {
@@ -36,8 +37,8 @@ img {
 }
 
 .shop_text {
-    margin-left: 15px;
     height: 40%;
+    margin-left: 15px;
 }
 
 .shop_tag {
@@ -49,29 +50,29 @@ img {
 }
 
 .detail_button {
-    display: inline-block;
-    border-radius: 10%;
-    font-size: 10pt;
-    text-align: center;
-    cursor: pointer;
-    padding: 8px 17px;
     background: #6666ff;
-    color: #ffffff;
-    line-height: 1em;
-    transition: .3s;
     border: 2px solid #6666ff;
+    border-radius: 10%;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 10pt;
+    line-height: 1em;
+    padding: 8px 17px;
+    text-align: center;
+    transition: .3s;
 }
 
 .detail_button:hover {
-    color: #6666ff;
     background: #ffffff;
+    color: #6666ff;
 }
 
 .shop_favorite {
-    width: 50px;
     height: 50px;
     margin-top: -40px;
     margin-left: 220px;
+    width: 50px;
 }
 
 .favorite_button {
@@ -89,16 +90,35 @@ img {
 .search_box {
     display: flex;
     margin-right: 50px;
-
 }
 
 select {
     height: 50px;
+    appearance: none;
+    outline: none;
+    width: 85px;
+    border: none;
+    border-right: 0.5px solid rgba(218, 218, 218, 1);
+    padding: 5px;
+    background-image: url(../../img/三角矢印のアイコン素材\ 下.png);
+    background-color: rgba(255, 255, 255, 0.8);
+    background-blend-mode: lighten;
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 13px 13px;
+}
+
+.search_word-area {
+    box-shadow: #C0C0C0 3px 3px 1px;
 }
 
 .search_word {
-    height: 50px;
+    height: 27px;
     width: 350px;
+    padding: 13px 0 10px 2em;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    outline: none;
 }
 
 .search_icon {
@@ -106,22 +126,26 @@ select {
 }
 
 .search_icon::before {
+    background-color: #ffffff;
     content: "";
     width: 16px;
     height: 16px;
     display: inline-block;
     background: url(../../img/検索アイコン.png)no-repeat center center / auto 100%;
-    ;
     position: absolute;
     top: 18px;
     left: 7px;
-    background-color: #ffffff;
-}
-
-.search_word  {
-    padding: 10px 0 10px 2em;
 }
 
 .search_btn {
     display: none;
+}
+
+.search_genre {
+    box-shadow: #C0C0C0 3px 3px 1px;
+}
+
+.search_area {
+    box-shadow: #C0C0C0 3px 3px 1px;
+    border-radius: 5px 0 0 5px;
 }

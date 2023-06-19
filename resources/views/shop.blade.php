@@ -1,5 +1,10 @@
 @extends('layouts.layout')
-<link rel="stylesheet" href="{{ asset('assets/css/shop_all.css') }}">
+
+@section('styles')
+@parent
+    <link rel="stylesheet" href="{{ asset('assets/css/shop_all.css') }}">
+@endsection
+
 @section('title')
     店舗一覧
 @endsection
@@ -13,7 +18,7 @@
             <div class="search_box">
                 <div class="search_area">
                     <select name="area_id" onchange="submit(this.form)">
-                        <option value="">All area</option>
+                        <option value="">All&nbsp;area</option>
                         @foreach ($areas as $area)
                             <option value="{{ $area->id }}"
                                 @if (isset($area_id)) @if ($area->id == $area_id) selected @endif

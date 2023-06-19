@@ -7,7 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('/assets/css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/header.css') }}">
+    @yield('styles')
+
     <title>@yield('title')</title>
+
 </head>
 
 <body>
