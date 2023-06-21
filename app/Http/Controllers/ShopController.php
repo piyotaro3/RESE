@@ -26,7 +26,6 @@ class ShopController extends Controller
             'areas' => $areas,
             'genres' => $genres,
             'user' => $user,
-
         ];
         return view('shop', $param);
     }
