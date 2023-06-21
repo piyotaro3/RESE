@@ -15,15 +15,12 @@ use App\Http\Controllers\FavoriteController;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 require __DIR__ . '/auth.php';
 
 /**店舗一覧ページ */
 Route::get('/', [ShopController::class, 'index'])->name('shop.index');
 Route::get('/search', [ShopController::class, 'search'])->name('shop.search');
+Route::get('/detail/{name}', [ShopController::class, 'detail'])->name('shop.detail');
 
 /**お気に入り機能 */
 Route::post('/shop/{shop}favorite', [FavoriteController::class, 'create'])->name('favorite.create');

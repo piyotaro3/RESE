@@ -30,7 +30,7 @@
                         <li><button class='logout'>Logout</button></li>
                     </form>
                 @else
-                    <li><a href="login">Login</a></li>
+                    <li><a href="/login">Login</a></li>
                 @endif
             </ul>
         </nav>
@@ -57,6 +57,7 @@
     </script>
 
     @yield('content')
+
 </body>
 
 </html>

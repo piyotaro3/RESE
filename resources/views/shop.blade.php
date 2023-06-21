@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('styles')
-@parent
+    @parent
     <link rel="stylesheet" href="{{ asset('assets/css/shop_all.css') }}">
 @endsection
 
@@ -63,10 +63,10 @@
                         <p>{{ $shop->getarea() }}{{ $shop->getGenre() }}</p>
                     </div>
                     <div class="shop_detail">
-                        <form action="/detail/{{ $shop->id }}"method="GET">
+                        <form action="/detail/{{ $shop->name }}"method="GET">
                             @csrf
                             <input type="hidden" value="{{ $shop->id }}" name="shop_id">
-                            <input type="submit" class="detail_button" value="詳細ページ">
+                            <input type="submit" class="detail_button" value="詳しくみる">
                         </form>
                     </div>
                     {{-- お気に入り機能 --}}
