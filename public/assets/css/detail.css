@@ -1,0 +1,49 @@
+.content {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.shop_detail {
+    width: 50%;
+    margin-left: 4%;
+}
+
+.shop_title {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.shop_img {
+    width: 75%;
+    margin-top: 5%;
+}
+
+img {
+    width: 100%;
+}
+
+.tags {
+    margin-top: 3%;
+}
+
+.detail {
+    margin-top: 3%;
+    width: 75%;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.back_btn {
+    width: 30px;
+}
+
+.title_area {
+    display: flex;
+    align-items: center;
+    margin-top: 8%;
+}
+
+.test{
+    background-color: white; box-shadow: 3px 3px 2px#777777; border-radius:3px 3px 3px 3px
+}
