@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Shop extends Model
 {
     use HasFactory;
@@ -23,8 +24,24 @@ class Shop extends Model
     {
         return $this->belongsTo('App\Models\Area');
     }
+
+    public function getarea()
+    {
+        return '#' . optional($this->area)->name;
+    }
     public function genre()
     {
         return $this->belongsTo('App\Models\Genre');
     }
+
+    public function getgenre()
+    {
+        return '#' . optional($this->genre)->name;
+    }
+
+    public function favorite()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+
 }

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +15,23 @@ use App\Http\Controllers\RegisteredUserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/thanks', function () {
-    return view('thanks');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
 
+/**店舗一覧ページ */
+Route::get('/', [ShopController::class, 'index'])->name('shop.index');
+Route::get('/search', [ShopController::class, 'search'])->name('shop.search');
+
+/**お気に入り機能 */
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('/shop/{shop}favorite', [FavoriteController::class, 'create'])->name('favorite.create');
+    Route::post('/shop/{shop}/unfavorite', [FavoriteController::class, 'delete'])->name('favorite.delete');
+});
+
+/**会員登録完了 */
+Route::get('/thanks', function () {
+    return view('thanks');
+});
