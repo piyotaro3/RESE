@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReserveController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\FavoriteController;
@@ -31,4 +32,12 @@ Route::group(['middleware' => 'auth'], function () {
 /**会員登録完了 */
 Route::get('/thanks', function () {
     return view('thanks');
+});
+
+/**予約機能 */
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('reserve', [ReserveController::class, 'reserve'])->name('reserve.create');
+    Route::get('reserve/OK', function () {
+        return view('reserve');
+    });
 });

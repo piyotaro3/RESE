@@ -27,8 +27,8 @@
                 </div>
             </div>
         @endforeach
-        <div class="test">
 
+        <div class="test">
             <div>
                 <h2 class="title_reserve">予約</h2>
             </div>
@@ -36,11 +36,8 @@
             <div>
                 <form action="/reserve" method="POST">
                     @csrf
-
                     <div class="reserve_day">
-
-                        <input type="date" id="tomorrow" name="date"> {{-- デフォルトは次の日に設定 --}}
-
+                        <input type="date" id="tomorrow" name="day"> 
                     </div>
 
                     <div class="reserve_time">
@@ -70,9 +67,13 @@
                     <div class="check">
 
                     </div>
-
-                    <button class="reserve__btn" type="submit" name="shop_id" value="{{ $shop->id }}">予約する</button>
-
+                    @auth
+                        <input type="hidden" name="user_id" value="{{ $user->id }}">
+                        <button class="reserve__btn" type="submit" name="shop_id" value="{{ $shop->id }}">予約する</button>
+                    @endauth
+                    @guest
+                        <button class="reserve__btn" type="submit" name="shop_id" value="{{ $shop->id }}">予約する</button>
+                    @endguest
                 </form>
             </div>
         </div>
