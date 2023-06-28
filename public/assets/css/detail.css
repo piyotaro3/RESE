@@ -6,6 +6,7 @@
 .shop_detail {
     width: 50%;
     margin-left: 4%;
+    float: left;
 }
 
 .shop_title {
@@ -44,6 +45,28 @@ img {
     margin-top: 8%;
 }
 
-.test{
-    background-color: white; box-shadow: 3px 3px 2px#777777; border-radius:3px 3px 3px 3px
+.back_img {
+    background-color: white;
+    box-shadow: 3px 3px 2px#777777;
+    border-radius: 3px 3px 3px 3px
 }
+
+.test {
+    background-color: blue;
+    width: 40%;
+    height: 609px;
+    margin: 0 auto;
+    float: right;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+}
+
+.title_reserve{
+    color: white;
+    font-size: 25px;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+
