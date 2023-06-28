@@ -1,12 +1,6 @@
-.content {
-    width: 95%;
-    margin: 0 auto;
-}
-
 .shop_detail {
-    width: 50%;
-    margin-left: 4%;
-    float: left;
+    width: 45%;
+    margin-left: 6%;
 }
 
 .shop_title {
@@ -42,7 +36,7 @@ img {
 .title_area {
     display: flex;
     align-items: center;
-    margin-top: 8%;
+    margin-top: 5%;
 }
 
 .back_img {
@@ -52,21 +46,88 @@ img {
 }
 
 .test {
-    background-color: blue;
+    background-color: #075aea;
     width: 40%;
     height: 609px;
     margin: 0 auto;
     float: right;
+    border-radius: 5px 5px 5px 5px;
     position: absolute;
     left: 50%;
     top: 5%;
+
 }
 
-.title_reserve{
+.title_reserve {
     color: white;
     font-size: 25px;
     margin-top: 5%;
     margin-left: 5%;
+    margin-bottom: 5%;
 }
 
+.reserve_day {
+    margin-left: 5%;
+    margin-bottom: 2%;
+    width: 30%;
+}
 
+.reserve_time {
+    margin-left: 5%;
+    margin-bottom: 2%;
+    width: 80%;
+}
+
+.reserve_number {
+    margin-left: 5%;
+    margin-bottom: 2%;
+    width: 80%;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px 5px 5px 5px;
+    border: none;
+    font: -webkit-small-control;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px 5px 5px 5px;
+    border: none
+}
+
+.check {
+    width: 75%;
+    height: 25%;
+    background-color: #4e88ed;
+    margin-left: 5%;
+}
+
+.reserve__btn {
+    display: inline-block;
+    font-size: 12pt;
+    text-align: center;
+    cursor: pointer;
+    padding: 16px;
+    background: #2018ff;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    border: 2px solid #2018ff;
+    margin-top: auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.reserve__btn:hover {
+    box-shadow: none;
+    /* カーソル時の影消去 */
+    color: #000066;
+    /* 背景色     */
+    background: #ffffff;
+    /* 文字色     */
+}
