@@ -106,9 +106,10 @@ select {
     margin-left: 5%;
 }
 
-.detail__reserve-box{
+.detail__reserve-box {
     padding: 15px;
 }
+
 .reserve__btn {
     display: inline-block;
     font-size: 12pt;
@@ -133,7 +134,7 @@ select {
 }
 
 table {
-    border-spacing: 25px 5px ;
+    border-spacing: 25px 5px;
     border-collapse: separate;
     color: white;
 }
@@ -141,4 +142,10 @@ table {
 th {
     text-align: left;
     font-weight: normal;
+}
+
+.error_p {
+    color: red;
+    width: 250px;
+    margin-top: 5px;
 }

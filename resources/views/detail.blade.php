@@ -38,30 +38,40 @@
                     @csrf
                     <div class="reserve_day">
                         <input type="date" id="tomorrow" name="day">
+                        @error('day')
+                            <p class="error_p">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="reserve_time">
                         <select name="time">
-                            <option value="17:00">17:00</option>{{-- "選択してください"のほうが適切かも --}}
-                            @for ($i = 0; $i <= 24; $i++)
-                                @for ($j = 0; $j <= 5; $j++)
+                            <option value="">選択してください</option>
+                            @for ($i = 0; $i <= 23; $i++)
+                                @for ($j = 0; $j <= 3; $j += 3)
+                                    {{-- 10分毎にする場合 　3を5に変更　$j+=3を$j++に変更 --}}
                                     <option label="{{ $i }}:{{ $j }}0"
                                         value="{{ $i }}:{{ $j }}0">
                                         {{ $i }}:{{ $j }}0</option>
                                 @endfor
                             @endfor
                         </select>
+                        @error('time')
+                            <p class="error_p">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="reserve_number">
                         <select name="number">
-                            <option value="1">1人</option>{{-- "選択してください"のほうが適切かも --}}
-                            @for ($i = 2; $i <= 99; $i++)
+                            <option value="">選択してください</option>
+                            @for ($i = 1; $i <= 99; $i++)
                                 <option label="{{ $i }}" value="{{ $i }}">
                                     {{ $i }}人
                                 </option>
                             @endfor
                         </select>
+                        @error('number')
+                            <p class="error_p">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="check">
