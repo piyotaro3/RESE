@@ -106,6 +106,9 @@ select {
     margin-left: 5%;
 }
 
+.detail__reserve-box{
+    padding: 15px;
+}
 .reserve__btn {
     display: inline-block;
     font-size: 12pt;
@@ -125,9 +128,17 @@ select {
 
 .reserve__btn:hover {
     box-shadow: none;
-    /* カーソル時の影消去 */
     color: #000066;
-    /* 背景色     */
     background: #ffffff;
-    /* 文字色     */
+}
+
+table {
+    border-spacing: 25px 5px ;
+    border-collapse: separate;
+    color: white;
+}
+
+th {
+    text-align: left;
+    font-weight: normal;
 }

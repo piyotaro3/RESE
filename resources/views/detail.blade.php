@@ -37,7 +37,7 @@
                 <form action="/reserve" method="POST">
                     @csrf
                     <div class="reserve_day">
-                        <input type="date" id="tomorrow" name="day"> 
+                        <input type="date" id="tomorrow" name="day">
                     </div>
 
                     <div class="reserve_time">
@@ -66,6 +66,28 @@
 
                     <div class="check">
 
+
+                        <div class="detail__reserve-box">
+                            <table>
+                                <tr>
+                                    <th>Shop</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>Date</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>Time</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>Number</th>
+                                    <td>人</td>
+                                </tr>
+                            </table>
+                        </div>
+
                     </div>
                     @auth
                         <input type="hidden" name="user_id" value="{{ $user->id }}">
@@ -84,9 +106,10 @@
 <script type="text/javascript">
     window.onload = function() {
         var date = new Date()
+        date.setDate(date.getDate() + 1);
         var year = date.getFullYear()
         var month = date.getMonth() + 1
-        var day = date.getDate() + 1
+        var day = date.getDate()
 
         var toTwoDigits = function(num, digit) {
             num += ''
