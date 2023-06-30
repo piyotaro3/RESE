@@ -51,4 +51,10 @@ class Shop extends Model
     {
         return $this->hasMany(Reserve::class);
     }
+
+    public function reserve_user()
+    {
+        return $this->belongsToMany(User::class,)->withPivot('number', 'day', 'time');
+    }
+
 }

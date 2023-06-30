@@ -10,6 +10,7 @@ use App\Models\Area;
 use App\Models\Genre;
 use App\Models\User;
 use App\Models\Favorite;
+use App\Models\Reserve;
 
 class ShopController extends Controller
 {
@@ -64,6 +65,7 @@ class ShopController extends Controller
     public function detail(Request $request)
     {
         $user = Auth::user();
+        $user_id = auth()->id();
         $shops = Shop::all();
         $shop_id = $request->query('shop_id');
 
@@ -72,10 +74,17 @@ class ShopController extends Controller
             $query->where('id', $shop_id);
 
         $shops = $query->get();
+
+        /** 最新の予約情報取得 */
+        /**  $reserves = $user->reserve_shop()->latest('id')->first();  予約一覧取得に使用するかも*/
+        $reserves = Reserve::where('user_id', '=', $user_id)->where('shop_id', '=', $shop_id)->orderBy('id', 'desc')->take(1)->get();
+
         $param = [
             'shops' => $shops,
             'user' => $user,
+            'reserves' => $reserves,
         ];
+       
         return view('detail', $param);
     }
 }

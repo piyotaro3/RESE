@@ -16,5 +16,6 @@ class ReserveController extends Controller
         $form = $request->all();
         Reserve::create($form);
         return redirect('/reserve/OK');
+
     }
 }

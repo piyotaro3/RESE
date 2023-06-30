@@ -76,25 +76,41 @@
 
                     <div class="check">
 
-
                         <div class="detail__reserve-box">
                             <table>
                                 <tr>
                                     <th>Shop</th>
-                                    <td></td>
+                                    <td>{{ $shop->name }}</td>
                                 </tr>
-                                <tr>
-                                    <th>Date</th>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>Time</th>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>Number</th>
-                                    <td>人</td>
-                                </tr>
+                                @if (Auth::user()-> is_reserve($shops) ==true){{-- 続きは明日 --}}
+                                    @foreach ($reserves as $reserve)
+                                        <tr>
+                                            <th>Date</th>
+                                            <td>{{ \Carbon\Carbon::parse($reserve->day)->format('y/m/d') }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Time</th>
+                                            <td>{{ \Carbon\Carbon::parse($reserve->time)->format('H:i') }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Number</th>
+                                            <td> {{ $reserve->number }} 人</td>
+                                        </tr>
+                                    @endforeach
+                                @else
+                                    <tr>
+                                        <th>Date</th>
+                                        <td>予約した日付</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Time</th>
+                                        <td>予約した時間</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Number</th>
+                                        <td>予約した人数</td>
+                                    </tr>
+                                @endif
                             </table>
                         </div>
 
