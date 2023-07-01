@@ -76,15 +76,16 @@ class ShopController extends Controller
         $shops = $query->get();
 
         /** 最新の予約情報取得 */
-        /**  $reserves = $user->reserve_shop()->latest('id')->first();  予約一覧取得に使用するかも*/
-        $reserves = Reserve::where('user_id', '=', $user_id)->where('shop_id', '=', $shop_id)->orderBy('id', 'desc')->take(1)->get();
+        $check = Reserve::where('user_id', $user_id)->where('shop_id', $shop_id)->exists(); /**カラムが存在するか確認 */
+        $reserves = Reserve::where('user_id', '=', $user_id)->where('shop_id', '=', $shop_id)->orderBy('id', 'desc')->take(1)->get(); /**最新のカラムを1件取得 */
 
         $param = [
             'shops' => $shops,
             'user' => $user,
             'reserves' => $reserves,
+            'check' => $check,
         ];
-       
+
         return view('detail', $param);
     }
 }

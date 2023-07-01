@@ -88,9 +88,10 @@
                                 </form>
                             @endif
                         @endauth
+
                         @guest
                             <span class="likes">
-                            @endguest
+                        @endguest
                     </div>
                 </div>
             </div>

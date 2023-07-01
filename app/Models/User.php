@@ -72,9 +72,4 @@ class User extends Authenticatable
         return $this->belongsToMany(Shop::class, 'reserves', 'user_id', 'shop_id')->withPivot('number', 'day', 'time');
     }
 
-    public function is_reserve($shop_id)
-    {
-        Reserve::where('user_id', '=', $this->id)->where('shop_id', '=', $shop_id)->exists(); /**続きは明日 */
-    }
-
 }

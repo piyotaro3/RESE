@@ -75,60 +75,89 @@
                     </div>
 
                     <div class="check">
-
                         <div class="detail__reserve-box">
+                            {{-- ログイン中のユーザー用 --}}
+                            @auth
+                                @if ($check != null)
+                                    @foreach ($reserves as $reserve)
+                                        <table>
+                                            <tr>
+                                                <th>Shop</th>
+                                                <td>{{ $shop->name }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Date</th>
+                                                <td>{{ \Carbon\Carbon::parse($reserve->day)->format('y/m/d') }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Time</th>
+                                                <td>{{ \Carbon\Carbon::parse($reserve->time)->format('H:i') }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Number</th>
+                                                <td> {{ $reserve->number }} 人</td>
+                                            </tr>
+                                    @endforeach
+                                    </table>
+                                @else
+                                    <table>
+                                        <tr>
+                                            <th>Shop</th>
+                                            <td>{{ $shop->name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Date</th>
+                                            <td>予約した日付</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Time</th>
+                                            <td>予約した時間</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Number</th>
+                                            <td>予約した人数</td>
+                                        </tr>
+                                    </table>
+                                @endif
+                            @endauth
+
+                            @guest{{-- 非ログインユーザー用 --}}
                             <table>
                                 <tr>
                                     <th>Shop</th>
                                     <td>{{ $shop->name }}</td>
                                 </tr>
-                                @if (Auth::user()-> is_reserve($shops) ==true){{-- 続きは明日 --}}
-                                    @foreach ($reserves as $reserve)
-                                        <tr>
-                                            <th>Date</th>
-                                            <td>{{ \Carbon\Carbon::parse($reserve->day)->format('y/m/d') }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Time</th>
-                                            <td>{{ \Carbon\Carbon::parse($reserve->time)->format('H:i') }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Number</th>
-                                            <td> {{ $reserve->number }} 人</td>
-                                        </tr>
-                                    @endforeach
-                                @else
-                                    <tr>
-                                        <th>Date</th>
-                                        <td>予約した日付</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Time</th>
-                                        <td>予約した時間</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Number</th>
-                                        <td>予約した人数</td>
-                                    </tr>
-                                @endif
+                                <tr>
+                                    <th>Date</th>
+                                    <td>予約した日付</td>
+                                </tr>
+                                <tr>
+                                    <th>Time</th>
+                                    <td>予約した時間</td>
+                                </tr>
+                                <tr>
+                                    <th>Number</th>
+                                    <td>予約した人数</td>
+                                </tr>
                             </table>
-                        </div>
-
+                        @endguest
                     </div>
-                    @auth
-                        <input type="hidden" name="user_id" value="{{ $user->id }}">
-                        <button class="reserve__btn" type="submit" name="shop_id" value="{{ $shop->id }}">予約する</button>
-                    @endauth
-                    @guest
-                        <button class="reserve__btn" type="submit" name="shop_id" value="{{ $shop->id }}">予約する</button>
-                    @endguest
-                </form>
-            </div>
+
+                </div>
+                @auth
+                    <input type="hidden" name="user_id" value="{{ $user->id }}">
+                    <button class="reserve__btn" type="submit" name="shop_id" value="{{ $shop->id }}">予約する</button>
+                @endauth
+                @guest
+                    <button class="reserve__btn" type="submit" name="shop_id" value="{{ $shop->id }}">予約する</button>
+                @endguest
+            </form>
         </div>
     </div>
+</div>
 @endsection
 
-{{-- 次の日 --}}
+{{-- 次の日を表示するため --}}
 <script type="text/javascript">
     window.onload = function() {
         var date = new Date()
