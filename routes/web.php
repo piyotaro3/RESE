@@ -4,6 +4,7 @@ use App\Http\Controllers\ReserveController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\MypageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('reserve/OK', function () {
         return view('reserve');
     });
+    Route::post('/cansel', [ReserveController::class, 'cansel'])->name('reserve.cansel');
+});
+
+/**マイページ */
+Route::group(['middleare' => 'auth'], function () {
+    Route::get('/mypage', [MypageController::class, 'show'])->name('mypage.show');
 });

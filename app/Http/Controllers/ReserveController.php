@@ -18,4 +18,10 @@ class ReserveController extends Controller
         return redirect('/reserve/OK');
 
     }
+
+    public function cansel(Request $request)
+    {
+        Reserve::find($request->id)->delete();
+        return redirect('mypage');
+    }
 }
