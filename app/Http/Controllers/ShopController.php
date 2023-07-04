@@ -85,7 +85,7 @@ class ShopController extends Controller
             'reserves' => $reserves,
             'check' => $check,
         ];
-
+       
         return view('detail', $param);
     }
 }

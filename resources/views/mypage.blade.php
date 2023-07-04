@@ -11,6 +11,7 @@
 
 {{-- マイページの表示 --}}
 @section('content')
+
     <h2>{{ $user->name }}さん</h2>
 
     <main>
@@ -33,15 +34,15 @@
                             </tr>
                             <tr>
                                 <th>Date</th>
-                                <td>{{ \Carbon\Carbon::parse($reserve->day)->format('y/m/d') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($reserve->pivot->day)->format('y/m/d') }}</td>
                             </tr>
                             <tr>
                                 <th>Time</th>
-                                <td>{{ \Carbon\Carbon::parse($reserve->time)->format('H:i') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($reserve->pivot->time)->format('H:i') }}</td>
                             </tr>
                             <tr>
                                 <th>Number</th>
-                                <td> {{ $reserve->number }} 人</td>
+                                <td> {{ $reserve->pivot->number }} 人</td>
                             </tr>
                         </table>
                     </div>
@@ -53,9 +54,51 @@
         </div>
         <div class="RightContent">
             <h3>お気に入り店舗</h3>
-            <div class="favorite_box">
+            <div class="favorit_area">
+                @foreach ($favorites as $favorite)
+                    <div class="favorite_box">
 
+                        <div class="shop_img">
+                            <img src="{{ asset($favorite->image) }}">
+                        </div>
 
+                        <div class="shop_text">
+                            <div class="shop_name">
+                                <h4 class="shop_title">{{ $favorite->name }}</h4>
+                            </div>
+                            <div class="shop_tag">
+                                <p><span>{{ $favorite->getarea() }}</span><span>{{ $favorite->getGenre() }}</span></p>
+                            </div>
+                            <div class="shop_detail">
+                                <form action="/detail/{{ $favorite->name }}"method="GET">
+                                    @csrf
+                                    <input type="hidden" value="{{ $favorite->id }}" name="shop_id">
+                                    <input type="submit" class="detail_button" value="詳しくみる">
+                                </form>
+                            </div>
+                        </div>
+                        {{-- お気に入り機能 --}}
+                        <div class="shop_favorite">
+                            @auth
+                                @if (!Auth::user()->is_favorite($favorite->id))
+                                    <form action="{{ route('favorite.create', $favorite->id) }}" method="post">
+                                        @csrf
+                                        <button type="submit" class="favorite_button">
+                                            <img src="{{ asset('img/heart.png') }}" class="img_favorite">
+                                        </button>
+                                    </form>
+                                @else
+                                    <form action="{{ route('favorite.delete', $favorite->id) }}" method="post">
+                                        @csrf
+                                        <button type="submit" class="favorite_button">
+                                            <img src="{{ asset('img/heart.png') }}" class="img_favorite_on">
+                                        </button>
+                                    </form>
+                                @endif
+                            @endauth
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </main>
