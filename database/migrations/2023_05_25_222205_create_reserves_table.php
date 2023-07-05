@@ -15,8 +15,8 @@ class CreateReservesTable extends Migration
     {
         Schema::create('reserves', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned()->nullable(false);
-            $table->integer('shop_id')->unsigned()->nullable(false);
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('shop_id')->constrained('shops');
             $table->integer('number')->unsigned()->nullable(false);
             $table->date('day')->nullable(false);
             $table->time('time')->nullable(false);

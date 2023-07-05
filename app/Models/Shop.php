@@ -38,10 +38,23 @@ class Shop extends Model
     {
         return '#' . optional($this->genre)->name;
     }
-
+    public function getshopname()
+    {
+        return optional($this->shop)->name;
+    }
     public function favorite()
     {
         return $this->hasMany(Favorite::class);
+    }
+
+    public function reserve()
+    {
+        return $this->hasMany(Reserve::class);
+    }
+
+    public function reserve_user()
+    {
+        return $this->belongsToMany(User::class, )->withPivot('number', 'day', 'time');
     }
 
 }

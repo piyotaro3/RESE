@@ -46,9 +46,10 @@ class User extends Authenticatable
         'id'
     ];
 
-public function favorite(){
+    public function favorite()
+    {
         return $this->hasMany(Favorite::class);
-}
+    }
 
     public function favorite_shop()
     {
@@ -60,4 +61,15 @@ public function favorite(){
         $favorite = Favorite::where('user_id', $this->id)->where('shop_id', $shop_id)->get();
         return count($favorite) > 0;
     }
+
+    public function reserve()
+    {
+        return $this->hasMany(Reserve::class);
+    }
+
+    public function reserve_shop()
+    {
+        return $this->belongsToMany(Shop::class, 'reserves', 'user_id', 'shop_id')->withPivot('number', 'day', 'time');
+    }
+
 }

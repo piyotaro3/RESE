@@ -1,0 +1,151 @@
+.shop_detail {
+    width: 45%;
+    margin-left: 6%;
+}
+
+.shop_title {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.shop_img {
+    width: 75%;
+    margin-top: 5%;
+}
+
+img {
+    width: 100%;
+}
+
+.tags {
+    margin-top: 3%;
+}
+
+.detail {
+    margin-top: 3%;
+    width: 75%;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.back_btn {
+    width: 30px;
+}
+
+.title_area {
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.back_img {
+    background-color: white;
+    box-shadow: 3px 3px 2px#777777;
+    border-radius: 3px 3px 3px 3px
+}
+
+.test {
+    background-color: #075aea;
+    width: 40%;
+    height: 609px;
+    margin: 0 auto;
+    float: right;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+
+}
+
+.title_reserve {
+    color: white;
+    font-size: 25px;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.reserve_day {
+    margin-left: 5%;
+    margin-bottom: 2%;
+    width: 30%;
+}
+
+.reserve_time {
+    margin-left: 5%;
+    margin-bottom: 2%;
+    width: 80%;
+}
+
+.reserve_number {
+    margin-left: 5%;
+    margin-bottom: 2%;
+    width: 80%;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px 5px 5px 5px;
+    border: none;
+    font: -webkit-small-control;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px 5px 5px 5px;
+    border: none
+}
+
+.check {
+    width: 75%;
+    height: 25%;
+    background-color: #4e88ed;
+    margin-left: 5%;
+}
+
+.detail__reserve-box {
+    padding: 15px;
+}
+
+.reserve__btn {
+    display: inline-block;
+    font-size: 12pt;
+    text-align: center;
+    cursor: pointer;
+    padding: 16px;
+    background: #2018ff;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    border: 2px solid #2018ff;
+    margin-top: auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.reserve__btn:hover {
+    box-shadow: none;
+    color: #000066;
+    background: #ffffff;
+}
+
+table {
+    border-spacing: 25px 5px;
+    border-collapse: separate;
+    color: white;
+}
+
+th {
+    text-align: left;
+    font-weight: normal;
+}
+
+.error_p {
+    color: red;
+    width: 250px;
+    margin-top: 5px;
+}

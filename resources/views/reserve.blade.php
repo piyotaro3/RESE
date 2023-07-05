@@ -5,14 +5,15 @@
 @endsection
 
 @section('title')
-    会員登録ありがとうございます
+    ご予約ありがとうございます
 @endsection
 
 @section('content')
     <div class="message_area">
         <div class="message_box">
-            <p class="thanks">会員登録ありがとうございます</p>
-            <a href="/login" class="login">ログインする</a>
+            <p class="thanks">ご予約ありがとうございます</p>
+            <a href="#" class="login">マイページへ</a>
+            {{--<a href="#" class="login"  onClick="history.back();">戻る</a> --}}
         </div>
     </div>
 @endsection

@@ -160,14 +160,13 @@ select {
     position: absolute;
 }
 
-.search_area::after{
+.search_area::after {
     content: "";
-        width: 170px;
-        height: 13px;
-        background: #fff;
-        display: inline-block;
-        position: absolute;
-        top: 74%;
-        left: 3px;
-    }
-
+    width: 170px;
+    height: 13px;
+    background: #fff;
+    display: inline-block;
+    position: absolute;
+    top: 74%;
+    left: 3px;
+}
