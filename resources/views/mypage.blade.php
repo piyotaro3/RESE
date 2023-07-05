@@ -11,7 +11,6 @@
 
 {{-- マイページの表示 --}}
 @section('content')
-
     <h2>{{ $user->name }}さん</h2>
 
     <main>
@@ -21,12 +20,18 @@
             @foreach ($reserves as $count => $reserve)
                 <div class="reserve_box">
                     <div class="resevre_title">
-                        <h4>予約{{ $count + 1 }}</h4>
+
+                        <h4 class="test">予約{{ $count + 1 }}</h4>
+
                         <form action="/cansel" method="post">
                             @csrf
-                            <input type="hidden" value="{{ $reserve->id }}" name='id'>
-                            <input type="submit" class="detail_button" value="詳しくみる">
+                            <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
+                            <input type="image" class="cansel_icon" src="{{ asset('img\細いバツのアイコン2 .png') }}"
+                                onclick='return confirm("予約を取り消しますか？")'>
                         </form>
+
+                        </form>
+
                         <table>
                             <tr>
                                 <th>Shop</th>
@@ -34,7 +39,7 @@
                             </tr>
                             <tr>
                                 <th>Date</th>
-                                <td>{{ \Carbon\Carbon::parse($reserve->pivot->day)->format('y/m/d') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($reserve->pivot->day)->format('Y/m/d') }}</td>
                             </tr>
                             <tr>
                                 <th>Time</th>
@@ -45,13 +50,13 @@
                                 <td> {{ $reserve->pivot->number }} 人</td>
                             </tr>
                         </table>
+
                     </div>
-                    {{-- <div class="time">
-                    <img class="time_icon" src="{{ asset('img/時計の無料アイコン.png') }}">
-                </div> --}}
+
                 </div>
             @endforeach
         </div>
+        {{--  --}}
         <div class="RightContent">
             <h3>お気に入り店舗</h3>
             <div class="favorit_area">

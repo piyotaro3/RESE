@@ -69,7 +69,7 @@ class User extends Authenticatable
 
     public function reserve_shop()
     {
-        return $this->belongsToMany(Shop::class, 'reserves', 'user_id', 'shop_id')->withPivot('number', 'day', 'time');
+        return $this->belongsToMany(Shop::class, 'reserves', 'user_id', 'shop_id')->withPivot('id','number', 'day', 'time');
     }
 
 }
