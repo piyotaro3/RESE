@@ -11,12 +11,12 @@
 
 {{-- マイページの表示 --}}
 @section('content')
-    <h2>{{ $user->name }}さん</h2>
+
 
     <main>
 
         <div class="LeftContent">
-            <h3>予約状況</h3>
+            <h3 class="h3_left">予約状況</h3>
             @foreach ($reserves as $count => $reserve)
                 <div class="reserve_box">
                     <div class="resevre_title">
@@ -58,7 +58,8 @@
         </div>
         {{--  --}}
         <div class="RightContent">
-            <h3>お気に入り店舗</h3>
+            <h2>{{ $user->name }}さん</h2>
+            <h3 class="h3_right">お気に入り店舗</h3>
             <div class="favorit_area">
                 @foreach ($favorites as $favorite)
                     <div class="favorite_box">
