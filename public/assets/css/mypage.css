@@ -12,7 +12,6 @@ main {
 
 .LeftContent {
     flex: 0.9;
-    background-color: #90ee90;
     margin-right: 15px;
     margin-left: 5%;
 }
@@ -33,17 +32,18 @@ h2 {
 }
 
 h3 {
-    font-size: 23px;
-    margin-top: 5%;
+    font-size: 22px;
+    margin-top: 8%;
     margin-bottom: 25px;
-    margin-left: 50px;
+    margin-left: 145px;
 }
 
 .reserve_box {
     width: 410px;
     height: 250px;
     background-color: #0066FF;
-    margin-left: 110px;
+    margin-left: 145px;
+    margin-bottom: 15px;
     border: none;
     border-radius: 5px 5px 5px 5px;
     box-shadow: #C0C0C0 5px 5px 5px;
@@ -149,33 +149,42 @@ img {
 }
 
 .test {
-    padding-top: 15px;
-    margin-left: 45px;
-    color: #ffffff;
+    font-weight: lighter;
+    font-size: 14px;
+    padding-top: 20px;
+    margin-left: 57px;
+    color: rgb(255, 255, 255);
 }
 
 .test::before {
     content: "";
-    width: 32px;
-    height: 31px;
-    background: url(../../img/時計の無料アイコン.png) no-repeat 100%;
+    width: 25px;
+    height: 25px;
     background-color: #ffffff;
+    background-image: url(../../img/時計の無料アイコン.png);
     border-radius: 65%;
     display: inline-block;
     position: relative;
-    top: 8px;
-    left: -15px;
+    top: 6px;
+    left: -29px;
+    background-size: contain;
 }
 
 .cansel_icon {
+    width: 23px;
     filter: brightness(1) invert(0);
     position: relative;
-    top: -27px;
-    left: 345px;
+    top: -20px;
+    left: 355px;
+}
+
+.form_cansel {
+    height: 15px;
 }
 
 table {
-    border-spacing: 40px 15px;
+    font-size: 14px;
+    border-spacing: 30px 23px;
     border-collapse: separate;
     color: white;
 }

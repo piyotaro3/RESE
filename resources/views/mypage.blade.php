@@ -23,10 +23,10 @@
 
                         <h4 class="test">予約{{ $count + 1 }}</h4>
 
-                        <form action="/cansel" method="post">
+                        <form action="/cansel" method="post" class="form_cansel">
                             @csrf
                             <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
-                            <input type="image" class="cansel_icon" src="{{ asset('img\細いバツのアイコン2 .png') }}"
+                            <input type="image" class="cansel_icon" src="{{ asset('img\太いバツのアイコン2.png') }}"
                                 onclick='return confirm("予約を取り消しますか？")'>
                         </form>
 
