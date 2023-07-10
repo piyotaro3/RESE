@@ -15,7 +15,7 @@
 
 <body>
     @yield('header')
-    <div class="box">
+    <div class="header">
         <nav class="nav" id="nav">
             <ul>
                 <li><a href="/">Home</a></li>
@@ -34,7 +34,7 @@
                 @endif
             </ul>
         </nav>
-        <div class="header">
+        <div class="box">
         <div class="menu" id="menu">
             <span class="menu__line--top"></span>
             <span class="menu__line--middle"></span>
