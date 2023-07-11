@@ -1,5 +1,7 @@
 body {
     background-color: #eee;
+    font-family:"MSゴシック,MS明朝,Osaka-Mono",
+        monospace;
 }
 
 .header {
@@ -16,7 +18,7 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-.box {
+    .box {
         display: flex;
         margin-left: 5%;
     }
@@ -24,6 +26,7 @@ body {
 
 h1 {
     font-size: 28px;
+    font-family: "メイリオ";
     margin-top: 20px;
     margin-left: 60px;
 }
