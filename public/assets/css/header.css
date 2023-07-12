@@ -8,28 +8,22 @@ body {
     display: flex;
     margin: 0 auto;
     margin-bottom: 15px;
-    margin-top: 20px;
+    margin-top: 26px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
 }
 
-@media screen and (max-width: 768px) {
-    .header {
-        width: 90%;
-    }
-}
 .box {
     display: flex;
     align-items: center;
 }
 
-
 h1 {
     font-size: 28px;
     font-family: "メイリオ";
-    margin-left: 10%;
+    margin-left: 20%;
+    margin-top: 5px;
 }
 
 a {

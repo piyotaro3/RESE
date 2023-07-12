@@ -69,13 +69,12 @@ img {
     cursor: pointer;
     text-align: center;
     padding: 7px 0px;
-    background: #6666ff;
-    color: #ffffff;
+    background: #0066FF;
+    color: white;
     line-height: 1em;
     transition: .3s;
-    border: 2px solid #6666ff;
+    border: 2px solid#0066FF;
 }
-
 
 p {
     color: red;

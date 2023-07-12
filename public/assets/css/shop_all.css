@@ -12,9 +12,10 @@
 }
 
 .shop_card {
+    background: white;
     border: 1px solid #bbb;
     border-radius: 5px 5px 5px 5px;
-    box-shadow: #C0C0C0 5px 5px 5px;
+    box-shadow: 5px 5px 5px #C0C0C0;
     height: 259px;
     margin-bottom: 15px;
     width: 272px;
@@ -25,7 +26,7 @@
 }
 
 img {
-    border-radius: 3px;
+    border-radius: 5px 5px 0 0;
     height: 100%;
     object-fit: cover;
     width: 100%;
@@ -34,7 +35,7 @@ img {
 .shop_title {
     font-size: 20px;
     margin-top: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
 }
 
 .shop_text {
@@ -43,7 +44,7 @@ img {
 }
 
 .shop_tag {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .shop_detail {
@@ -51,33 +52,34 @@ img {
 }
 
 .detail_button {
-    background: #6666ff;
-    border: 2px solid #6666ff;
-    border-radius: 10%;
+    background: #0066FF;
+    border: 2px solid #0066FF;
+    border-radius: 5px 5px 5px 5px;
     color: #ffffff;
     cursor: pointer;
     display: inline-block;
-    font-size: 10pt;
+    font-size: 9pt;
     line-height: 1em;
-    padding: 8px 17px;
+    padding: 8px 14px;
     text-align: center;
     transition: .3s;
 }
 
 .detail_button:hover {
     background: #ffffff;
-    color: #6666ff;
+    color: #0066FF;
 }
 
 .shop_favorite {
     height: 50px;
-    margin-top: -40px;
+    margin-top: -35px;
     margin-left: 200px;
     width: 50px;
 }
 
 .favorite_button {
     border: none;
+    background: transparent;
 }
 
 .img_favorite {
@@ -92,14 +94,13 @@ img {
     display: flex;
 }
 
-
-
 select {
     height: 50px;
     appearance: none;
     outline: none;
     width: 85px;
     border: none;
+    border-radius: 5px 0 0 5px;
     border-right: 0.5px solid rgba(218, 218, 218, 1);
     padding: 5px;
     background-image: url(../../img/三角矢印のアイコン素材\ 下.png);
@@ -182,4 +183,8 @@ select {
     position: absolute;
     top: 74%;
     left: 3px;
+}
+
+span {
+    font-size: 10px;
 }

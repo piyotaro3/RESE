@@ -18,7 +18,7 @@
             <div class="search_box">
                 <div class="search_area">
                     <select name="area_id" onchange="submit(this.form)">
-                        <option value="">All&nbsp;area</option>
+                        <option value="">All&thinsp; area</option>
                         @foreach ($areas as $area)
                             <option value="{{ $area->id }}"
                                 @if (isset($area_id)) @if ($area->id == $area_id) selected @endif
@@ -28,7 +28,7 @@
                 </div>
                 <div class="search_genre">
                     <select name="genre_id" onchange="submit(this.form)">
-                        <option value="">All&nbsp;genre</option>
+                        <option value="">All&thinsp;genre</option>
                         @foreach ($genres as $genre)
                             <option value="{{ $genre->id }}"
                                 @if (isset($genre_id)) @if ($genre->id == $genre_id) selected @endif
@@ -60,7 +60,7 @@
                         <h2 class="shop_title">{{ $shop->name }}</h2>
                     </div>
                     <div class="shop_tag">
-                        <p>{{ $shop->getarea() }}{{ $shop->getGenre() }}</p>
+                        <p><span>{{ $shop->getarea() }}</span><span>{{ $shop->getGenre() }}<span></p>
                     </div>
                     <div class="shop_detail">
                         <form action="/detail/{{ $shop->name }}"method="GET">
@@ -91,7 +91,7 @@
 
                         @guest
                             <span class="likes">
-                        @endguest
+                            @endguest
                     </div>
                 </div>
             </div>
