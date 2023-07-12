@@ -3,30 +3,33 @@ body {
 }
 
 .header {
-    width: 100%;
+    width: 75%;
     height: 10%;
     display: flex;
+    margin: 0 auto;
     margin-bottom: 15px;
     margin-top: 20px;
-}
-
-.box {
     display: flex;
-    margin-left: 10%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 @media screen and (max-width: 768px) {
-    .box {
-        display: flex;
-        margin-left: 5%;
+    .header {
+        width: 90%;
     }
 }
+.box {
+    display: flex;
+    align-items: center;
+}
+
 
 h1 {
     font-size: 28px;
     font-family: "メイリオ";
-    margin-top: 20px;
-    margin-left: 60px;
+    margin-left: 10%;
 }
 
 a {
@@ -57,13 +60,10 @@ a {
 
 .menu {
     display: inline-block;
-    width: 50px;
+    width: 35px;
     height: 35px;
     cursor: pointer;
     position: relative;
-    left: 50px;
-    margin-left: 3%;
-    margin-top: 15px;
     border-radius: 5px;
     background-color: #0066FF;
     box-shadow: 3px 3px 3px #C0C0C0;
@@ -123,7 +123,6 @@ a {
 .title {
     font-size: 15px;
     color: #0066FF;
-    margin-left: 5%;
 }
 
 .logout {

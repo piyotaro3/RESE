@@ -7,16 +7,17 @@
     height: 85%;
     justify-content: space-around;
     margin: 0 auto 0;
-    width: 90%;
+    margin-top: 38px;
+    width: 75%;
 }
 
 .shop_card {
-    border: 1px solid black;
-    border-radius: 5px 5px 0 0;
+    border: 1px solid #bbb;
+    border-radius: 5px 5px 5px 5px;
     box-shadow: #C0C0C0 5px 5px 5px;
-    height: 255px;
-    margin-bottom: 10px;
-    width: 315px;
+    height: 259px;
+    margin-bottom: 15px;
+    width: 272px;
 }
 
 .shop_img {
@@ -71,7 +72,7 @@ img {
 .shop_favorite {
     height: 50px;
     margin-top: -40px;
-    margin-left: 220px;
+    margin-left: 200px;
     width: 50px;
 }
 
@@ -89,8 +90,9 @@ img {
 
 .search_box {
     display: flex;
-    margin-right: 50px;
 }
+
+
 
 select {
     height: 50px;
@@ -119,6 +121,17 @@ select {
     border: none;
     border-radius: 0 5px 5px 0;
     outline: none;
+}
+
+@media screen and (max-width: 768px) {
+    .search_word {
+        height: 27px;
+        width: 85px;
+        padding: 13px 0 10px 2em;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        outline: none;
+    }
 }
 
 .search_icon {
