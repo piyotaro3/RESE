@@ -16,6 +16,7 @@
     <main>
 
         <div class="LeftContent">
+             <h2 class="left_name">{{ $user->name }}さん</h2>
             <h3 class="h3_left">予約状況</h3>
             @foreach ($reserves as $count => $reserve)
                 <div class="reserve_box">
@@ -58,7 +59,7 @@
         </div>
         {{--  --}}
         <div class="RightContent">
-            <h2>{{ $user->name }}さん</h2>
+            <h2 class="right_name">{{ $user->name }}さん</h2>
             <h3 class="h3_right">お気に入り店舗</h3>
             <div class="favorit_area">
                 @foreach ($favorites as $favorite)

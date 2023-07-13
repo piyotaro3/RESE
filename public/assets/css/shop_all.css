@@ -105,6 +105,7 @@ img {
 .favorite_button {
     border: none;
     background: transparent;
+    cursor: pointer;
 }
 
 .img_favorite {
