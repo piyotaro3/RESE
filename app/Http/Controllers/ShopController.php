@@ -25,7 +25,6 @@ class ShopController extends Controller
             'genres' => $genres,
             'user' => $user,
         ];
-
         return view('shop', $param);
     }
 
@@ -56,7 +55,6 @@ class ShopController extends Controller
             'area_id' => $area_id,
             'genre_id' => $genre_id,
         ];
-
         return view('shop', $param);
     }
 
@@ -81,7 +79,6 @@ class ShopController extends Controller
             'reserves' => $reserves,
             'check' => $check,
         ];
-
         return view('detail', $param);
     }
 }

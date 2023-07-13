@@ -22,7 +22,7 @@ class CreateReservesTable extends Migration
             $table->time('time')->nullable(false);
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
-            $table->softDeletes();//*論理削除用*/
+            $table->softDeletes();
         });
     }
 
