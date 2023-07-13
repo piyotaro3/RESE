@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Shop;
 use App\Models\Area;
 use App\Models\Genre;
-use App\Models\User;
-use App\Models\Favorite;
 use App\Models\Reserve;
 
 class ShopController extends Controller
@@ -27,6 +25,7 @@ class ShopController extends Controller
             'genres' => $genres,
             'user' => $user,
         ];
+
         return view('shop', $param);
     }
 
@@ -48,6 +47,7 @@ class ShopController extends Controller
             $query->where('name', 'LIKE BINARY', "%$word%");
 
         $shops = $query->get();
+
         $param = [
             'shops' => $shops,
             'user' => $user,
@@ -56,6 +56,7 @@ class ShopController extends Controller
             'area_id' => $area_id,
             'genre_id' => $genre_id,
         ];
+
         return view('shop', $param);
     }
 
