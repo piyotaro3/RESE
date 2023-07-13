@@ -5,10 +5,9 @@ body {
 .header {
     width: 75%;
     height: 10%;
-    display: flex;
     margin: 0 auto;
     margin-bottom: 15px;
-    margin-top: 26px;
+    margin-top: 35px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -19,10 +18,15 @@ body {
     align-items: center;
 }
 
+.title {
+    width: 100px;
+}
+
 h1 {
+    color: #0066FF;
     font-size: 28px;
     font-family: "メイリオ";
-    margin-left: 20%;
+    margin-left: 15%;
     margin-top: 5px;
 }
 
@@ -112,11 +116,6 @@ a {
 .in {
     transform: translateX(100%);
     z-index: 999;
-}
-
-.title {
-    font-size: 15px;
-    color: #0066FF;
 }
 
 .logout {

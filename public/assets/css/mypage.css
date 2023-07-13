@@ -1,13 +1,6 @@
-body {
-    display: flex;
-    flex-direction: column;
-}
-
 main {
     display: flex;
-    /**後で高さを修正する*/
-    min-height: 100vh;
-    margin: 5px 0 30px 0;
+    flex-direction: row;
 }
 
 .LeftContent {
