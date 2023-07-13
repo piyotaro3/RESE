@@ -171,7 +171,7 @@ img {
     background-size: contain;
 }
 
-.cansel_icon {
+.cancel_icon {
     width: 23px;
     filter: brightness(1) invert(0);
     position: relative;
