@@ -9,29 +9,21 @@
     マイページ
 @endsection
 
-{{-- マイページの表示 --}}
 @section('content')
-
-
     <main>
-
         <div class="LeftContent">
             <h3 class="h3_left">予約状況</h3>
             @foreach ($reserves as $count => $reserve)
                 <div class="reserve_box">
                     <div class="resevre_title">
-
                         <h4 class="test">予約{{ $count + 1 }}</h4>
-
-                        <form action="/cansel" method="post" class="form_cansel">
+                        <form action="/cancel" method="post" class="form_cansel">
                             @csrf
                             <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
                             <input type="image" class="cansel_icon" src="{{ asset('img\太いバツのアイコン2.png') }}"
                                 onclick='return confirm("予約を取り消しますか？")'>
                         </form>
-
                         </form>
-
                         <table>
                             <tr>
                                 <th>Shop</th>
@@ -50,24 +42,20 @@
                                 <td> {{ $reserve->pivot->number }} 人</td>
                             </tr>
                         </table>
-
                     </div>
-
                 </div>
             @endforeach
         </div>
-        {{--  --}}
+
         <div class="RightContent">
             <h2>{{ $user->name }}さん</h2>
             <h3 class="h3_right">お気に入り店舗</h3>
             <div class="favorit_area">
                 @foreach ($favorites as $favorite)
                     <div class="favorite_box">
-
                         <div class="shop_img">
                             <img src="{{ asset($favorite->image) }}">
                         </div>
-
                         <div class="shop_text">
                             <div class="shop_name">
                                 <h4 class="shop_title">{{ $favorite->name }}</h4>
@@ -83,7 +71,6 @@
                                 </form>
                             </div>
                         </div>
-                        {{-- お気に入り機能 --}}
                         <div class="shop_favorite">
                             @auth
                                 @if (!Auth::user()->is_favorite($favorite->id))
