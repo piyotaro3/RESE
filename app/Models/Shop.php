@@ -47,6 +47,10 @@ class Shop extends Model
         return $this->hasMany(Favorite::class);
     }
 
+    public function favorite_user()
+    {
+        return $this->belongsToMany(User::class, 'favorites', 'shop_id', 'user_id');
+    }
     public function reserve()
     {
         return $this->hasMany(Reserve::class);
@@ -54,7 +58,7 @@ class Shop extends Model
 
     public function reserve_user()
     {
-        return $this->belongsToMany(User::class, )->withPivot('number', 'day', 'time');
+        return $this->belongsToMany(User::class, 'reserves', 'shop_id', 'user_id')->withPivot('number', 'day', 'time');
     }
 
 }
