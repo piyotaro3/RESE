@@ -6,7 +6,6 @@
 
 @section('content')
     <main>
-
         <div class="LeftContent">
             @foreach ($shops as $shop)
                 <div class="shop_detail">
@@ -22,7 +21,7 @@
                         <img src="{{ asset($shop->image) }}">
                     </div>
                     <div class="tags">
-                        <p>{{ $shop->getarea() }}{{ $shop->getGenre() }}</p>
+                        <p><span>{{ $shop->getarea() }}</span><span>{{ $shop->getGenre() }}</span></p>
                     </div>
                     <div class="detail">
                         <p>{{ $shop->detail }}</p>
@@ -36,7 +35,6 @@
                 <div>
                     <h2 class="title_reserve">予約</h2>
                 </div>
-
                 <div>
                     <form action="/reserve" method="POST">
                         @csrf
@@ -46,7 +44,6 @@
                                 <p class="error_p">{{ $message }}</p>
                             @enderror
                         </div>
-
                         <div class="reserve_time">
                             <select name="time">
                                 <option value="">選択してください</option>
@@ -62,7 +59,6 @@
                                 <p class="error_p">{{ $message }}</p>
                             @enderror
                         </div>
-
                         <div class="reserve_number">
                             <select name="number">
                                 <option value="">選択してください</option>
@@ -76,10 +72,8 @@
                                 <p class="error_p">{{ $message }}</p>
                             @enderror
                         </div>
-
                         <div class="check">
                             <div class="detail__reserve-box">
-
                                 @auth
                                     @if ($check != null)
                                         @foreach ($reserves as $reserve)
@@ -123,7 +117,6 @@
                                         </table>
                                     @endif
                                 @endauth
-
                                 @guest
                                     <table>
                                         <tr>
@@ -145,7 +138,6 @@
                                     </table>
                                 @endguest
                             </div>
-
                         </div>
                         @auth
                             <input type="hidden" name="user_id" value="{{ $user->id }}">

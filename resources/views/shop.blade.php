@@ -9,8 +9,6 @@
     店舗一覧
 @endsection
 
-
-{{-- 検索機能 --}}
 @section('search')
     <div class="search">
         <form action="/search">
@@ -47,7 +45,6 @@
     </div>
 @endsection
 
-{{-- 店舗一覧 --}}
 @section('content')
     <div class="shop_all">
         @foreach ($shops as $shop)
@@ -69,7 +66,7 @@
                             <input type="submit" class="detail_button" value="詳しくみる">
                         </form>
                     </div>
-                    {{-- お気に入り機能 --}}
+
                     <div class="shop_favorite">
                         @auth
                             @if (!Auth::user()->is_favorite($shop->id))
@@ -88,7 +85,6 @@
                                 </form>
                             @endif
                         @endauth
-
                         @guest
                             <span class="likes">
                             @endguest

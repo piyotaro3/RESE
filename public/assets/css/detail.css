@@ -6,19 +6,43 @@ main {
     margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+    main {
+        display: block;
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
 .LeftContent {
+    width: 520px;
     margin-left: 15px;
     margin-right: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .LeftContent {
+        margin: 0 auto;
+    }
 }
 
 .RightContent {
     background-color: #075aea;
     height: 620px;
+    width: 520px;
     border-radius: 5px 5px 5px 5px;
     margin-left: 40px;
     margin-right: 15px;
     position: relative;
     top: -50px;
+}
+
+@media screen and (max-width: 768px) {
+    .RightContent {
+        position: relative;
+        top: 0;
+        margin: 0 auto;
+    }
 }
 
 .shop_detail {
@@ -36,6 +60,7 @@ main {
 
 .shop_img {
     margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 img {
@@ -47,9 +72,7 @@ img {
 }
 
 .detail {
-    margin-top: 3%;
-    width: 75%;
-    letter-spacing: 0.05em;
+    margin-top: 6%;
     line-height: 1.5;
     font-size: 15px;
 }
@@ -76,6 +99,12 @@ img {
     margin-top: 5%;
     margin-left: 5%;
     margin-bottom: 5%;
+}
+
+@media screen and (max-width: 768px) {
+    .title_reserve {
+        padding-top: 15px;
+    }
 }
 
 .reserve_day {
@@ -173,4 +202,8 @@ select {
     background-position: right 10px center;
     background-repeat: no-repeat;
     background-size: 13px 13px;
+}
+
+span {
+    font-size: 15px;
 }
