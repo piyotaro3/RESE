@@ -4,7 +4,7 @@ body {
 
 .header {
     width: 75%;
-    height: 10%;
+    height: 5%;
     margin: 0 auto;
     margin-bottom: 15px;
     margin-top: 35px;
@@ -16,6 +16,7 @@ body {
 .box {
     display: flex;
     align-items: center;
+    margin-left: 13px;
 }
 
 .title {

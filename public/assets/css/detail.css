@@ -1,6 +1,32 @@
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.LeftContent {
+    margin-left: 15px;
+    margin-right: 40px;
+}
+
+.RightContent {
+    background-color: #075aea;
+    height: 620px;
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 40px;
+    margin-right: 15px;
+    position: relative;
+    top: -50px;
+}
+
 .shop_detail {
-    width: 45%;
-    margin-left: 6%;
+    width: 520px;
+}
+
+.reserve_area {
+    width: 520px;
 }
 
 .shop_title {
@@ -9,7 +35,6 @@
 }
 
 .shop_img {
-    width: 75%;
     margin-top: 5%;
 }
 
@@ -43,19 +68,6 @@ img {
     background-color: white;
     box-shadow: 3px 3px 2px#777777;
     border-radius: 3px 3px 3px 3px
-}
-
-.test {
-    background-color: #075aea;
-    width: 40%;
-    height: 609px;
-    margin: 0 auto;
-    float: right;
-    border-radius: 5px 5px 5px 5px;
-    position: absolute;
-    left: 50%;
-    top: 5%;
-
 }
 
 .title_reserve {
@@ -115,16 +127,16 @@ select {
     font-size: 12pt;
     text-align: center;
     cursor: pointer;
-    padding: 16px;
+    padding: 20px;
     background: #2018ff;
     color: #ffffff;
     line-height: 1em;
     transition: .3s;
     border: 2px solid #2018ff;
     margin-top: auto;
-    width: 100%;
     position: absolute;
     bottom: 0;
+    width: 520px;
 }
 
 .reserve__btn:hover {
@@ -148,4 +160,17 @@ th {
     color: red;
     width: 250px;
     margin-top: 5px;
+}
+
+select {
+    appearance: none;
+    outline: none;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    border-right: 0.5px solid rgba(218, 218, 218, 1);
+    padding: 5px;
+    background-image: url(../../img/三角矢印のアイコン素材\ 下\ \(1\).png);
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 13px 13px;
 }
