@@ -1,7 +1,7 @@
  @extends('layouts\layout')
 
  @section('styles')
- <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
+     <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
  @endsection
 
  <x-auth-session-status class="mb-4" :status="session('status')" />
