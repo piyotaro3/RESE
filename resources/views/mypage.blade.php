@@ -24,9 +24,6 @@
                             <input type="image" class="cansel_icon" src="{{ asset('img\太いバツのアイコン2.png') }}"
                                 onclick='return confirm("予約を取り消しますか？")'>
                         </form>
-
-                        </form>
-
                         <table>
                             <tr>
                                 <th>Shop</th>
@@ -45,9 +42,7 @@
                                 <td> {{ $reserve->pivot->number }} 人</td>
                             </tr>
                         </table>
-
                     </div>
-
                 </div>
             @endforeach
         </div>
