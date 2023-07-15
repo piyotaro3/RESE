@@ -23,16 +23,6 @@ main {
     }
 }
 
-.right_name {
-    margin-left: 20px;
-}
-
-@media screen and (max-width: 768px) {
-    .right_name {
-        display: none;
-    }
-}
-
 h2 {
     font-size: 25px;
     margin-top: 25px;
@@ -57,18 +47,6 @@ h2 {
     }
 }
 
-.h3_right {
-    font-size: 22px;
-    margin-bottom: 25px;
-    margin-left: 20px;
-}
-
-@media screen and (max-width: 768px) {
-    .h3_right {
-        margin-top: 25px;
-    }
-}
-
 .reserve_box {
     background-color: #0066FF;
     border: none;
@@ -87,12 +65,72 @@ h2 {
     }
 }
 
-.time_icon {
-    filter: invert(88%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(135%) contrast(101%);
-    height: 30px;
-    margin-left: 15px;
-    margin-top: 15px;
-    width: 30px;
+.reserve_title {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: lighter;
+    margin-left: 57px;
+    padding-top: 20px;
+}
+
+.reserve_title::before {
+    background-size: contain;
+    background-color: #ffffff;
+    background-image: url(../../img/時計の無料アイコン.png);
+    border-radius: 65%;
+    content: "";
+    display: inline-block;
+    height: 25px;
+    left: -29px;
+    position: relative;
+    top: 6px;
+    width: 25px;
+}
+
+.form_cansel {
+    height: 15px;
+}
+
+.cansel_icon {
+    width: 23px;
+    filter: brightness(1) invert(0);
+    position: relative;
+    top: -20px;
+    left: 355px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 30px 23px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+th {
+    font-weight: normal;
+    text-align: left;
+}
+
+.right_name {
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .right_name {
+        display: none;
+    }
+}
+
+.h3_right {
+    font-size: 22px;
+    margin-bottom: 25px;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .h3_right {
+        margin-top: 25px;
+    }
 }
 
 .favorit_area {
@@ -131,14 +169,14 @@ img {
     width: 100%;
 }
 
+.shop_text {
+    margin-left: 15px;
+}
+
 .shop_title {
     font-size: 18px;
     margin-top: 15px;
     margin-bottom: 10px;
-}
-
-.shop_text {
-    margin-left: 15px;
 }
 
 .shop_tag {
@@ -188,59 +226,4 @@ img {
 
 .img_favorite_on {
     filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(112%);
-}
-
-.test {
-    color: rgb(255, 255, 255);
-    font-size: 14px;
-    font-weight: lighter;
-    margin-left: 57px;
-    padding-top: 20px;
-}
-
-.test::before {
-    background-size: contain;
-    background-color: #ffffff;
-    background-image: url(../../img/時計の無料アイコン.png);
-    border-radius: 65%;
-    content: "";
-    display: inline-block;
-    height: 25px;
-    left: -29px;
-    position: relative;
-    top: 6px;
-    width: 25px;
-}
-
-.cansel_icon {
-    width: 23px;
-    filter: brightness(1) invert(0);
-    position: relative;
-    top: -20px;
-    left: 355px;
-}
-
-.form_cansel {
-    height: 15px;
-}
-
-table {
-    border-collapse: separate;
-    border-spacing: 30px 23px;
-    color: #ffffff;
-    font-size: 14px;
-}
-
-th {
-    font-weight: normal;
-    text-align: left;
-
-}
-
-.left {
-    content: '';
-}
-
-.right {
-    margin-left: 47%
 }

@@ -16,33 +16,31 @@
             <h3 class="h3_left">予約状況</h3>
             @foreach ($reserves as $count => $reserve)
                 <div class="reserve_box">
-                    <div class="resevre_title">
-                        <h4 class="test">予約{{ $count + 1 }}</h4>
-                        <form action="/cansel" method="post" class="form_cansel">
-                            @csrf
-                            <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
-                            <input type="image" class="cansel_icon" src="{{ asset('img\太いバツのアイコン2.png') }}"
-                                onclick='return confirm("予約を取り消しますか？")'>
-                        </form>
-                        <table>
-                            <tr>
-                                <th>Shop</th>
-                                <td>{{ $reserve->name }}</td>
-                            </tr>
-                            <tr>
-                                <th>Date</th>
-                                <td>{{ \Carbon\Carbon::parse($reserve->pivot->day)->format('Y/m/d') }}</td>
-                            </tr>
-                            <tr>
-                                <th>Time</th>
-                                <td>{{ \Carbon\Carbon::parse($reserve->pivot->time)->format('H:i') }}</td>
-                            </tr>
-                            <tr>
-                                <th>Number</th>
-                                <td> {{ $reserve->pivot->number }} 人</td>
-                            </tr>
-                        </table>
-                    </div>
+                    <h4 class="reserve_title">予約{{ $count + 1 }}</h4>
+                    <form action="/cansel" method="post" class="form_cansel">
+                        @csrf
+                        <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
+                        <input type="image" class="cansel_icon" src="{{ asset('img\太いバツのアイコン2.png') }}"
+                            onclick='return confirm("予約を取り消しますか？")'>
+                    </form>
+                    <table>
+                        <tr>
+                            <th>Shop</th>
+                            <td>{{ $reserve->name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Date</th>
+                            <td>{{ \Carbon\Carbon::parse($reserve->pivot->day)->format('Y/m/d') }}</td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <td>{{ \Carbon\Carbon::parse($reserve->pivot->time)->format('H:i') }}</td>
+                        </tr>
+                        <tr>
+                            <th>Number</th>
+                            <td> {{ $reserve->pivot->number }} 人</td>
+                        </tr>
+                    </table>
                 </div>
             @endforeach
         </div>
