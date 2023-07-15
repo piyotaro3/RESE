@@ -1,26 +1,121 @@
 .header {
-    width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     height: 10%;
     margin: 0 auto;
     margin-bottom: 15px;
     margin-top: 27px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     justify-content: space-between;
+    width: 75%;
 }
 
 @media screen and (max-width: 768px) {
     .header {
-        width: 90%;
         flex-wrap: wrap;
+        width: 90%;
     }
 }
 
 .box {
-    display: flex;
     align-items: center;
+    display: flex;
     margin-left: 3px;
+}
+
+.search_box {
+    display: flex;
+}
+
+.search_area {
+    box-shadow: #C0C0C0 0px 3px 1px;
+    border-radius: 5px 0 0 5px;
+    position: relative;
+}
+
+.search_area::before {
+    background: #ffffff;
+    content: "";
+    display: inline-block;
+    height: 10px;
+    position: absolute;
+    width: 170px;
+}
+
+.search_area::after {
+    background: #ffffff;
+    content: "";
+    display: inline-block;
+    height: 13px;
+    left: 3px;
+    position: absolute;
+    top: 74%;
+    width: 170px;
+}
+
+.search_genre {
+    box-shadow: #C0C0C0 0px 3px 1px;
+}
+
+select {
+    appearance: none;
+    background-blend-mode: lighten;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: url(../../img/三角矢印のアイコン素材\ 下.png);
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 13px 13px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    border-right: 0.5px solid rgba(218, 218, 218, 1);
+    height: 50px;
+    outline: none;
+    padding: 5px;
+    width: 85px;
+}
+
+.search_word-area {
+    box-shadow: #C0C0C0 0px 3px 1px;
+}
+
+.search_icon {
+    position: relative;
+}
+
+.search_icon::before {
+    background: url(../../img/検索アイコン.png)no-repeat center center / auto 100%;
+    background-color: #ffffff;
+    content: "";
+    display: inline-block;
+    height: 16px;
+    left: 7px;
+    position: absolute;
+    top: 18px;
+    width: 16px;
+}
+
+.search_word {
+    border: none;
+    border-radius: 0 5px 5px 0;
+    height: 27px;
+    outline: none;
+    padding: 13px 0 10px 2em;
+    width: 350px;
+}
+
+@media screen and (max-width: 768px) {
+    .search_word {
+        border: none;
+        border-radius: 0 5px 5px 0;
+        height: 27px;
+        padding: 13px 0 10px 2em;
+        outline: none;
+        width: 85px;
+    }
+}
+
+.search_btn {
+    display: none;
 }
 
 .shop_all {
@@ -37,7 +132,7 @@
 }
 
 .shop_card {
-    background: white;
+    background: #ffffff;
     border: 1px solid #bbb;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 5px 5px 5px #C0C0C0;
@@ -57,19 +152,23 @@ img {
     width: 100%;
 }
 
-.shop_title {
-    font-size: 20px;
-    margin-top: 15px;
-    margin-bottom: 3px;
-}
-
 .shop_text {
     height: 40%;
     margin-left: 15px;
 }
 
+.shop_title {
+    font-size: 20px;
+    margin-bottom: 3px;
+    margin-top: 15px;
+}
+
 .shop_tag {
     margin-bottom: 10px;
+}
+
+span {
+    font-size: 10px;
 }
 
 .shop_detail {
@@ -97,15 +196,9 @@ img {
 
 .shop_favorite {
     height: 50px;
-    margin-top: -35px;
     margin-left: 200px;
+    margin-top: -35px;
     width: 50px;
-}
-
-.favorite_button {
-    border: none;
-    background: transparent;
-    cursor: pointer;
 }
 
 .img_favorite {
@@ -116,101 +209,8 @@ img {
     filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(112%);
 }
 
-.search_box {
-    display: flex;
-}
-
-select {
-    height: 50px;
-    appearance: none;
-    outline: none;
-    width: 85px;
+.favorite_button {
+    background: transparent;
     border: none;
-    border-radius: 5px 0 0 5px;
-    border-right: 0.5px solid rgba(218, 218, 218, 1);
-    padding: 5px;
-    background-image: url(../../img/三角矢印のアイコン素材\ 下.png);
-    background-color: rgba(255, 255, 255, 0.8);
-    background-blend-mode: lighten;
-    background-position: right 10px center;
-    background-repeat: no-repeat;
-    background-size: 13px 13px;
-}
-
-.search_word-area {
-    box-shadow: #C0C0C0 0px 3px 1px;
-}
-
-.search_word {
-    height: 27px;
-    width: 350px;
-    padding: 13px 0 10px 2em;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    outline: none;
-}
-
-@media screen and (max-width: 768px) {
-    .search_word {
-        height: 27px;
-        width: 85px;
-        padding: 13px 0 10px 2em;
-        border: none;
-        border-radius: 0 5px 5px 0;
-        outline: none;
-    }
-}
-
-.search_icon {
-    position: relative;
-}
-
-.search_icon::before {
-    background-color: #ffffff;
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background: url(../../img/検索アイコン.png)no-repeat center center / auto 100%;
-    position: absolute;
-    top: 18px;
-    left: 7px;
-}
-
-.search_btn {
-    display: none;
-}
-
-.search_genre {
-    box-shadow: #C0C0C0 0px 3px 1px;
-}
-
-.search_area {
-    box-shadow: #C0C0C0 0px 3px 1px;
-    border-radius: 5px 0 0 5px;
-    position: relative;
-}
-
-.search_area::before {
-    content: "";
-    width: 170px;
-    height: 10px;
-    background: #fff;
-    display: inline-block;
-    position: absolute;
-}
-
-.search_area::after {
-    content: "";
-    width: 170px;
-    height: 13px;
-    background: #fff;
-    display: inline-block;
-    position: absolute;
-    top: 74%;
-    left: 3px;
-}
-
-span {
-    font-size: 10px;
+    cursor: pointer;
 }

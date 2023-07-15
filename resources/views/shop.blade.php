@@ -16,7 +16,7 @@
             <div class="search_box">
                 <div class="search_area">
                     <select name="area_id" onchange="submit(this.form)">
-                        <option value="">All&thinsp; area</option>
+                        <option value="">All&thinsp;area</option>
                         @foreach ($areas as $area)
                             <option value="{{ $area->id }}"
                                 @if (isset($area_id)) @if ($area->id == $area_id) selected @endif
@@ -86,8 +86,8 @@
                             @endif
                         @endauth
                         @guest
-                            <span class="likes">
-                            @endguest
+                            <p><span class="likes"></span></P>
+                        @endguest
                     </div>
                 </div>
             </div>
