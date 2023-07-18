@@ -23,23 +23,20 @@ Route::get('/', [ShopController::class, 'index'])->name('shop.index');
 Route::get('/search', [ShopController::class, 'search'])->name('shop.search');
 Route::get('/detail/{name}', [ShopController::class, 'detail'])->name('shop.detail');
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::post('/shop/{shop}favorite', [FavoriteController::class, 'create'])->name('favorite.create');
-    Route::post('/shop/{shop}/unfavorite', [FavoriteController::class, 'delete'])->name('favorite.delete');
-});
-
 Route::get('/thanks', function () {
     return view('thanks');
 });
 
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::post('/shop/{shop}favorite', [FavoriteController::class, 'create'])->name('favorite.create');
+    Route::post('/shop/{shop}/unfavorite', [FavoriteController::class, 'delete'])->name('favorite.delete');
+
     Route::post('reserve', [ReserveController::class, 'reserve'])->name('reserve.create');
     Route::get('reserve/OK', function () {
         return view('reserve');
     });
     Route::post('/cansel', [ReserveController::class, 'cansel'])->name('reserve.cansel');
-});
 
-Route::group(['middleare' => 'auth'], function () {
     Route::get('/mypage', [MypageController::class, 'show'])->name('mypage.show');
 });
