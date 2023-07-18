@@ -29,14 +29,4 @@ class ReserveRequest extends FormRequest
             'time' => 'required',
         ];
     }
-
-    public function messages()
-    {
-        return [
-            'number.required' => '人数を選択してください',
-            'day.required' => '日にちを選択してください',
-            'day.after:today' => '予約は明日以降にしてください',
-            'time.required' => '時間を選択してください',
-        ];
-    }
 }
