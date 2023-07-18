@@ -39,6 +39,7 @@ h2 {
     font-size: 22px;
     margin-bottom: 25px;
     margin-top: 85px;
+    width: 405px;
 }
 
 @media screen and (max-width: 768px) {
