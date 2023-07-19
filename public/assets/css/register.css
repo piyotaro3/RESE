@@ -1,79 +1,79 @@
 .content_area {
-    height: 90%;
+    position: relative;
 }
 
 .content {
-    width: 25%;
-    height: 260px;
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 5px;
-    box-shadow: #C0C0C0 3px 3px 1px;
-    position: absolute;
-    top: 50%;
+    box-shadow: #C0C0C0 5px 5px 2px;
+    height: 250px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute;
+    transform: translate(-50%, 46%);
+    width: 362px;
 }
 
 .content_blue {
-    height: 20%;
     background-color: #0066FF;
     border-radius: 5px 5px 0 0;
+    height: 54px;
+    margin-bottom: 5px;
 }
 
 .content_title {
-    color: white;
-    font-size: 20px;
-    margin-left: 5%;
-    margin-top: 0;
-    padding-top: 15px;
+    color: #ffffff;
+    font-weight: 500;
+    margin-left: 17px;
+    padding-top: 20px;
 }
 
 .form_area {
-    height: 60%;
     display: flex;
     flex-direction: column;
+    height: 56%;
     justify-content: space-evenly;
 }
 
 .icon_user,
 .icon_email,
 .icon_password {
-    margin-left: 5%;
-
+    margin-left: 28px;
 }
 
 input {
-    width: 80%;
     border: none;
     border-bottom: solid 1px;
-    vertical-align: middle;
-    font-size: 20px;
+    font-size: 14px;
     margin-bottom: 2px;
+    vertical-align: middle;
+    width: 82%;
 }
 
 img {
-    width: 10%;
+    margin-bottom: -2%;
+    margin-right: 3px;
+    width: 23px;
 }
 
 .button_area {
-    width: 25%;
-    margin-left: 78%;
+    margin-left: 79%;
+    margin-top: 3px;
+    height: 25px;
+    width: 65px;
 }
 
 .button {
-    display: inline-block;
-    border-radius: 5%;
-    font-size: 75%;
-    cursor: pointer;
-    text-align: center;
-    padding: 8px 0px;
-    background: #6666ff;
+    background: #0066FF;
+    border: 2px solid#0066FF;
+    border-radius: 5px 5px 5px 5px;
     color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 75%;
     line-height: 1em;
+    padding: 7px 0px;
+    text-align: center;
     transition: .3s;
-    border: 2px solid #6666ff;
-    width: 60%;
-    height: 35px;
 }
 
 p {

@@ -12,43 +12,41 @@
 @section('content')
     <main>
         <div class="LeftContent">
+            <h2 class="left_name">{{ $user->name }}さん</h2>
             <h3 class="h3_left">予約状況</h3>
             @foreach ($reserves as $count => $reserve)
                 <div class="reserve_box">
-                    <div class="resevre_title">
-                        <h4 class="test">予約{{ $count + 1 }}</h4>
-                        <form action="/cancel" method="post" class="form_cancel">
-                            @csrf
-                            <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
-                            <input type="image" class="cansel_icon" src="{{ asset('img\太いバツのアイコン2.png') }}"
-                                onclick='return confirm("予約を取り消しますか？")'>
-                        </form>
-                        </form>
-                        <table>
-                            <tr>
-                                <th>Shop</th>
-                                <td>{{ $reserve->name }}</td>
-                            </tr>
-                            <tr>
-                                <th>Date</th>
-                                <td>{{ \Carbon\Carbon::parse($reserve->pivot->day)->format('Y/m/d') }}</td>
-                            </tr>
-                            <tr>
-                                <th>Time</th>
-                                <td>{{ \Carbon\Carbon::parse($reserve->pivot->time)->format('H:i') }}</td>
-                            </tr>
-                            <tr>
-                                <th>Number</th>
-                                <td> {{ $reserve->pivot->number }} 人</td>
-                            </tr>
-                        </table>
-                    </div>
+                    <h4 class="reserve_title">予約{{ $count + 1 }}</h4>
+                    <form action="/cansel" method="post" class="form_cansel">
+                        @csrf
+                        <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
+                        <input type="image" class="cansel_icon" src="{{ asset('img\太いバツのアイコン2.png') }}"
+                            onclick='return confirm("予約を取り消しますか？")'>
+                    </form>
+                    <table>
+                        <tr>
+                            <th>Shop</th>
+                            <td>{{ $reserve->name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Date</th>
+                            <td>{{ \Carbon\Carbon::parse($reserve->pivot->day)->format('Y/m/d') }}</td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <td>{{ \Carbon\Carbon::parse($reserve->pivot->time)->format('H:i') }}</td>
+                        </tr>
+                        <tr>
+                            <th>Number</th>
+                            <td> {{ $reserve->pivot->number }} 人</td>
+                        </tr>
+                    </table>
                 </div>
             @endforeach
         </div>
 
         <div class="RightContent">
-            <h2>{{ $user->name }}さん</h2>
+            <h2 class="right_name">{{ $user->name }}さん</h2>
             <h3 class="h3_right">お気に入り店舗</h3>
             <div class="favorit_area">
                 @foreach ($favorites as $favorite)

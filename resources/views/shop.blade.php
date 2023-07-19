@@ -9,8 +9,6 @@
     店舗一覧
 @endsection
 
-
-{{-- 検索機能 --}}
 @section('search')
     <div class="search">
         <form action="/search">
@@ -18,7 +16,7 @@
             <div class="search_box">
                 <div class="search_area">
                     <select name="area_id" onchange="submit(this.form)">
-                        <option value="">All&nbsp;area</option>
+                        <option value="">All&thinsp;area</option>
                         @foreach ($areas as $area)
                             <option value="{{ $area->id }}"
                                 @if (isset($area_id)) @if ($area->id == $area_id) selected @endif
@@ -28,7 +26,7 @@
                 </div>
                 <div class="search_genre">
                     <select name="genre_id" onchange="submit(this.form)">
-                        <option value="">All&nbsp;genre</option>
+                        <option value="">All&thinsp;genre</option>
                         @foreach ($genres as $genre)
                             <option value="{{ $genre->id }}"
                                 @if (isset($genre_id)) @if ($genre->id == $genre_id) selected @endif
@@ -47,7 +45,6 @@
     </div>
 @endsection
 
-{{-- 店舗一覧 --}}
 @section('content')
     <div class="shop_all">
         @foreach ($shops as $shop)
@@ -60,7 +57,7 @@
                         <h2 class="shop_title">{{ $shop->name }}</h2>
                     </div>
                     <div class="shop_tag">
-                        <p>{{ $shop->getarea() }}{{ $shop->getGenre() }}</p>
+                        <p><span>{{ $shop->getarea() }}</span><span>{{ $shop->getGenre() }}<span></p>
                     </div>
                     <div class="shop_detail">
                         <form action="/detail/{{ $shop->name }}"method="GET">
@@ -69,7 +66,7 @@
                             <input type="submit" class="detail_button" value="詳しくみる">
                         </form>
                     </div>
-                    {{-- お気に入り機能 --}}
+
                     <div class="shop_favorite">
                         @auth
                             @if (!Auth::user()->is_favorite($shop->id))
@@ -88,9 +85,8 @@
                                 </form>
                             @endif
                         @endauth
-
                         @guest
-                            <span class="likes">
+                            <p><span class="likes"></span></P>
                         @endguest
                     </div>
                 </div>
