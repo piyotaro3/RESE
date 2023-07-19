@@ -87,7 +87,7 @@
                                             </tr>
                                             <tr>
                                                 <th>Date</th>
-                                                <td>{{ \Carbon\Carbon::parse($reserve->day)->format('y/m/d') }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($reserve->day)->format('Y/m/d') }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Time</th>

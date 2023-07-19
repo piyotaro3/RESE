@@ -46,7 +46,7 @@ img {
 }
 
 .test {
-    background-color: #075aea;
+    background-color: #0066FF;
     width: 40%;
     height: 609px;
     margin: 0 auto;
@@ -102,7 +102,7 @@ select {
 .check {
     width: 75%;
     height: 25%;
-    background-color: #4e88ed;
+    background-color: #0066FF;
     margin-left: 5%;
 }
 
