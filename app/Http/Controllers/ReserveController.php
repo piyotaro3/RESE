@@ -15,8 +15,7 @@ class ReserveController extends Controller
         Reserve::create($form);
         return redirect('/reserve/OK');
     }
-
-    public function cansel(Request $request)
+    public function cancel(Request $request)
     {
         Reserve::find($request->id)->delete();
         return redirect('mypage');
