@@ -34,14 +34,11 @@ class RegisteredUserController extends Controller
      */
     public function store(RegisterRequest $request)
     {
-        $user = $request->validated();
-
-        $user = User::create([
+        User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
         return redirect('/thanks');
     }
 }
