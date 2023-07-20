@@ -4,9 +4,9 @@
 
 ![トップページ](https://github.com/piyotaro3/RESE/assets/121168107/248a8060-3443-4433-a7a5-be7ee396cc6d)
 
-##　作成した目的
+## 作成した目的
 
-プログラミングスクールの卒業課題として作成しました。
+外部の飲食店予約サービスは手数料を取られるので自社で予約サービスを持ちたい。
 
 ## アプリケーションURL
 
@@ -21,13 +21,26 @@
 
 - 会員登録機能
 - ログイン機能
-- 予約機能（日時、時間、人数）
-- 予約キャンセル機能
-- お気に入り登録機能・削除機能
+- ログアウト機能
+- ユーザー情報取得
+- ユーザー飲食店お気に入り一覧取得
+- ユーザー飲食店予約情報取得
+- 飲食店一覧取得
+- 飲食店詳細取得
+- 飲食店お気に入り追加
+- 飲食店お気に入り削除
+- 飲食店予約情報追加
+- 飲食店予約情報削除
+- エリアで検索する
+- ジャンルで検索する
+- 店名で検索する
 
 ##　使用技術（実行環境）
 
-- 言語：PHP フレームワーク：Laravel 8.83.27
+- 言語: PHP  Ver 8.2.4
+- フレームワーク: Laravel  Ver 8.83.27
+- データベース: MySQL  Ver 15.1
+- ローカル環境: XAMPP Ver8.2.4
 
 ## テーブル設計
 
@@ -35,9 +48,15 @@
 
 ![テーブル設計2](https://github.com/piyotaro3/RESE/assets/121168107/29609d64-b756-41cb-aac9-f64b7f332db7)
 
+- 設計書URL　(テーブル設計)
+https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=1904085266
+
 ## ER図
 
 ![ER図](https://github.com/piyotaro3/RESE/assets/121168107/ef4c5977-0a7d-45d3-9df7-2e253506cca0)
+
+- 設計書URL　(ER図)
+https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=634778829
 
 # 環境構築
 
@@ -62,7 +81,7 @@ create database [データベース名];で作成する。
 マイグレーションとシーディングの実行
 「php artisan serve --seed」を実行する。
 
-## その他注意事項
+# その他注意事項
 
 - 都道府県について
 
@@ -79,3 +98,6 @@ create database [データベース名];で作成する。
 以下の画像は予約完了後のページです。　　
 画像では「戻る」ボタンですが、コーチーとの打ち合わせで「マイページ」へ移動するように変更しています。
 <img width="1437" alt="done" src="https://github.com/piyotaro3/RESE/assets/121168107/53e99103-c51f-4c3d-ac95-8395ee810e97">
+
+- 案件シートURL
+  https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=522964981
