@@ -13,11 +13,11 @@
 デプロイしていないため、デプロイ済みのURLはありません。
 ローカル環境で実行可能です。
 
-##　他のリポジトリ
+## 他のリポジトリ
 
 関連するリポジトリはありません。
 
-##　機能一覧
+## 機能一覧
 
 - 会員登録機能
 - ログイン機能
@@ -35,7 +35,7 @@
 - ジャンルで検索する
 - 店名で検索する
 
-##　使用技術（実行環境）
+## 使用技術（実行環境）
 
 - 言語: PHP  Ver 8.2.4
 - フレームワーク: Laravel  Ver 8.83.27
@@ -48,15 +48,13 @@
 
 ![テーブル設計2](https://github.com/piyotaro3/RESE/assets/121168107/29609d64-b756-41cb-aac9-f64b7f332db7)
 
-- 設計書URL　(テーブル設計)
-https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=1904085266
+[設計書テーブル設計リンク)]　[https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=1904085266]
 
 ## ER図
 
 ![ER図](https://github.com/piyotaro3/RESE/assets/121168107/ef4c5977-0a7d-45d3-9df7-2e253506cca0)
 
-- 設計書URL　(ER図)
-https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=634778829
+[設計書ER図リンク] [https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=634778829]
 
 # 環境構築
 
@@ -64,7 +62,7 @@ https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3B
 
 プロジェクト直下へ移動し「composer update」とコマンド入力する。
 
-##　手順2
+## 手順2
 
 .envを編集
 DB_DATABASE=使用するデータベース名
@@ -79,7 +77,7 @@ create database [データベース名];で作成する。
 ## 手順4
 
 マイグレーションとシーディングの実行
-「php artisan serve --seed」を実行する。
+「php artisan migrate --seed」を実行する。
 
 # その他注意事項
 
