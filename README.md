@@ -97,4 +97,5 @@ create database [データベース名];で作成する。
 画像では「戻る」ボタンですが、コーチーとの打ち合わせで「マイページ」へ移動するように変更しています。
 <img width="1437" alt="done" src="https://github.com/piyotaro3/RESE/assets/121168107/53e99103-c51f-4c3d-ac95-8395ee810e97">
 
-  [案件シートURL](https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=522964981)
+- 案件シートリンク
+  [案件シート](https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=522964981)
