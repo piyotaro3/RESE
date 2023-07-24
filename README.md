@@ -60,22 +60,25 @@
 
 ## 手順1
 
-プロジェクト直下へ移動し「composer update」とコマンド入力する。
+エクスプローラーまたはコマンドプロンプトでプロジェクト直下へ移動し、コマンドプロンプトで「composer update」とコマンド入力する。
 
 ## 手順2
-
-.envを編集
-DB_DATABASE=使用するデータベース名
-DB_USERNAME=DBユーザー名（デフォルトだとroot）
-DB_PASSWORD=DBパスワード（未設定なら空にする）で編集する。
-
-## 手順3
 
 データベースの作成
 create database [データベース名];で作成する。
 
+## 手順3
+
+コマンドプロンプトで「cp .env.example .env」で.envを作成する。 
+
 ## 手順4
 
+.envを編集する。
+- DB_DATABASE=使用するデータベース名
+- DB_USERNAME=DBユーザー名（デフォルトだとroot）
+- DB_PASSWORD=DBパスワード（未設定なら空にする）で編集する。
+
+## 手順5
 マイグレーションとシーディングの実行
 「php artisan migrate --seed」を実行する。
 
