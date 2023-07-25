@@ -41,6 +41,11 @@
                             <td> {{ $reserve->pivot->number }} 人</td>
                         </tr>
                     </table>
+                    <form action="/update" method="get" class="form_update">
+                        @csrf
+                        <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
+                        <input type="submit" class="update_btn" value="予約変更">
+                    </form>
                 </div>
             @endforeach
         </div>

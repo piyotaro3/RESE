@@ -227,3 +227,20 @@ img {
 .img_favorite_on {
     filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(112%);
 }
+
+.update_btn {
+    background: #0066FF;
+    border: 2px solid #ffffff;
+    border-radius: 5px 5px 5px 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 9pt;
+    line-height: 1em;
+    padding: 8px 14px;
+    text-align: center;
+    transition: .3s;
+    position: relative;
+    top: -25px;
+    left: 305px;
+}
