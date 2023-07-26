@@ -44,7 +44,7 @@
                         </div>
                         <div class="reserve_time">
                             <select name="time">
-                                <option value="{{ \Carbon\Carbon::parse($reserve->time)->format('H:i') }}">選択してください</option>
+                                <option value="{{ Carbon\Carbon::parse($reserve->time)->format('H:i') }}">選択してください</option>
                                 @for ($i = 0; $i <= 23; $i++)
                                     @for ($j = 0; $j <= 3; $j += 3)
                                         <option label="{{ $i }}:{{ $j }}0"
@@ -59,7 +59,7 @@
                         </div>
                         <div class="reserve_number">
                             <select name="number">
-                                <option value="{{ $reserve->number }}人">選択してください</option>
+                                <option value="{{ $reserve->number }}">選択してください</option>
                                 @for ($i = 1; $i <= 99; $i++)
                                     <option label="{{ $i }}" value="{{ $i }}人">
                                         {{ $i }}人

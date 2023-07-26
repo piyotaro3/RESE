@@ -30,7 +30,7 @@
                         </tr>
                         <tr>
                             <th>Date</th>
-                            <td>{{ \Carbon\Carbon::parse($reserve->pivot->day)->format('Y/m/d') }}</td>
+                            <td>{{ $reserve->pivot->day}}</td>
                         </tr>
                         <tr>
                             <th>Time</th>
