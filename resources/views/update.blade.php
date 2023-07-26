@@ -34,7 +34,7 @@
                     <h2 class="title_reserve">予約変更</h2>
                 </div>
                 <div>
-                    <form action="/update" method="POST">
+                    <form action="/update" method="POST" id="reserveForm">
                         @csrf
                         <div class="reserve_day">
                             <input type="date" id="tomorrow" name="day">
@@ -61,7 +61,7 @@
                             <select name="number">
                                 <option value="">選択してください</option>
                                 @for ($i = 1; $i <= 99; $i++)
-                                    <option label="{{ $i }}" value="{{ $i }}">
+                                    <option label="{{ $i }}" value="{{ $i }}人">
                                         {{ $i }}人
                                     </option>
                                 @endfor
@@ -72,24 +72,28 @@
                         </div>
                         <div class="check">
                             <div class="detail__reserve-box">
-                                <table>
-                                    <tr>
-                                        <th>Shop</th>
-                                        <td>{{ $reserve->shop->name }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Date</th>
-                                        <td>{{ \Carbon\Carbon::parse($reserve->day)->format('Y/m/d') }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Time</th>
-                                        <td>{{ \Carbon\Carbon::parse($reserve->time)->format('H:i') }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Number</th>
-                                        <td> {{ $reserve->number }} 人</td>
-                                    </tr>
-                                </table>
+                                <div id="reserveOutput">
+                                    <table>
+                                        <tr>
+                                            <th>Shop</th>
+                                            <td>{{ $reserve->shop->name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Date</th>
+                                            <td id="reserveOutputday" value="{{ $reserve->day }}">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Time</th>
+                                            <td id="reserveOutputtime" value="{{ $reserve->time }}">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Number</th>
+                                            <td id="reserveOutputnumber" value="{{ $reserve->number }}"></td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                         <input type="hidden" name="user_id" value="{{ $user->id }}">
@@ -124,5 +128,28 @@
         var ymd = yyyy + "-" + mm + "-" + dd;
 
         document.getElementById("tomorrow").value = ymd;
+    }
+</script>
+
+<script type="text/javascript">
+    window.onload = function() {
+        getValue();
+        var $formObject = document.getElementById("reserveForm");
+        for (var $i = 0; $i < $formObject.length; $i++) {
+            $formObject.elements[$i].onkeyup = function() {
+                getValue();
+            };
+            $formObject.elements[$i].onchange = function() {
+                getValue();
+            };
+        }
+        document.getElementById("reserveOutputLength");
+    }
+
+    function getValue() {
+        var $formObject = document.getElementById("reserveForm");
+        document.getElementById("reserveOutputday").innerHTML = $formObject.day.value;
+        document.getElementById("reserveOutputtime").innerHTML = $formObject.time.value;
+        document.getElementById("reserveOutputnumber").innerHTML = $formObject.number.value;
     }
 </script>
