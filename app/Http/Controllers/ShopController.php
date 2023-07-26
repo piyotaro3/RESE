@@ -44,7 +44,6 @@ class ShopController extends Controller
             $query->where('area_id', $area_id);
         if ($word != null)
             $query->where('name', 'LIKE BINARY', "%$word%");
-
         $shops = $query->get();
 
         $param = [
