@@ -36,7 +36,7 @@
                     <h2 class="title_reserve">予約</h2>
                 </div>
                 <div>
-                    <form action="/reserve" method="POST">
+                    <form action="/reserve" method="POST" id="reserveForm">
                         @csrf
                         <div class="reserve_day">
                             <input type="date" id="tomorrow" name="day">
@@ -63,7 +63,7 @@
                             <select name="number">
                                 <option value="">選択してください</option>
                                 @for ($i = 1; $i <= 99; $i++)
-                                    <option label="{{ $i }}" value="{{ $i }}">
+                                    <option label="{{ $i }}" value="{{ $i }}人">
                                         {{ $i }}人
                                     </option>
                                 @endfor
@@ -74,50 +74,7 @@
                         </div>
                         <div class="check">
                             <div class="detail__reserve-box">
-                                @auth
-                                    @if ($check != null)
-                                        @foreach ($reserves as $reserve)
-                                            <table>
-                                                <tr>
-                                                    <th>Shop</th>
-                                                    <td>{{ $shop->name }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Date</th>
-                                                    <td>{{ \Carbon\Carbon::parse($reserve->day)->format('Y/m/d') }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Time</th>
-                                                    <td>{{ \Carbon\Carbon::parse($reserve->time)->format('H:i') }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Number</th>
-                                                    <td> {{ $reserve->number }} 人</td>
-                                                </tr>
-                                        @endforeach
-                                        </table>
-                                    @else
-                                        <table>
-                                            <tr>
-                                                <th>Shop</th>
-                                                <td>{{ $shop->name }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Date</th>
-                                                <td>予約した日付</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Time</th>
-                                                <td>予約した時間</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Number</th>
-                                                <td>予約した人数</td>
-                                            </tr>
-                                        </table>
-                                    @endif
-                                @endauth
-                                @guest
+                                <div id="reserveOutput">
                                     <table>
                                         <tr>
                                             <th>Shop</th>
@@ -125,18 +82,18 @@
                                         </tr>
                                         <tr>
                                             <th>Date</th>
-                                            <td>予約した日付</td>
+                                            <td id="reserveOutputday"></td>
                                         </tr>
                                         <tr>
                                             <th>Time</th>
-                                            <td>予約した時間</td>
+                                            <td id="reserveOutputtime"></td>
                                         </tr>
                                         <tr>
                                             <th>Number</th>
-                                            <td>予約した人数</td>
+                                            <td id="reserveOutputnumber"></td>
                                         </tr>
                                     </table>
-                                @endguest
+                                </div>
                             </div>
                         </div>
                         @auth
@@ -146,7 +103,7 @@
                         @endauth
                         @guest
                             <button class="reserve__btn" type="submit" name="shop_id"
-                                value="{{ $shop->id }}">予約する</button>
+                                value="{{ $shop->id }}">ログインする</button>
                         @endguest
                     </form>
                 </div>
@@ -155,7 +112,7 @@
 @endsection
 
 <script type="text/javascript">
-    window.onload = function() {
+    window.addEventListener('load', function() {
         var date = new Date()
         date.setDate(date.getDate() + 1);
         var year = date.getFullYear()
@@ -176,5 +133,28 @@
         var ymd = yyyy + "-" + mm + "-" + dd;
 
         document.getElementById("tomorrow").value = ymd;
+    })
+</script>
+
+<script type="text/javascript">
+    window.onload = function() {
+        getValue();
+        var $formObject = document.getElementById("reserveForm");
+        for (var $i = 0; $i < $formObject.length; $i++) {
+            $formObject.elements[$i].onkeyup = function() {
+                getValue();
+            };
+            $formObject.elements[$i].onchange = function() {
+                getValue();
+            };
+        }
+        document.getElementById("reserveOutputLength");
+    }
+
+    function getValue() {
+        var $formObject = document.getElementById("reserveForm");
+        document.getElementById("reserveOutputday").innerHTML = $formObject.day.value;
+        document.getElementById("reserveOutputtime").innerHTML = $formObject.time.value;
+        document.getElementById("reserveOutputnumber").innerHTML = $formObject.number.value;
     }
 </script>
