@@ -17,7 +17,7 @@
             @foreach ($reserves as $count => $reserve)
                 <div class="reserve_box">
                     <h4 class="reserve_title">予約{{ $count + 1 }}</h4>
-                    <form action="/cansel" method="post" class="form_cansel">
+                    <form action="/cancel" method="post" class="form_cancel">
                         @csrf
                         <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
                         <input type="image" class="cansel_icon" src="{{ asset('img\太いバツのアイコン2.png') }}"

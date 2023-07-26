@@ -37,14 +37,14 @@
                     <form action="/update" method="POST" id="reserveForm">
                         @csrf
                         <div class="reserve_day">
-                            <input type="date" id="tomorrow" name="day">
+                            <input type="date" id="tomorrow" name="day" value="{{ $reserve->day }}">
                             @error('day')
                                 <p class="error_p">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="reserve_time">
                             <select name="time">
-                                <option value="">選択してください</option>
+                                <option value="{{ $reserve->time }}">選択してください</option>
                                 @for ($i = 0; $i <= 23; $i++)
                                     @for ($j = 0; $j <= 3; $j += 3)
                                         <option label="{{ $i }}:{{ $j }}0"
@@ -59,7 +59,7 @@
                         </div>
                         <div class="reserve_number">
                             <select name="number">
-                                <option value="">選択してください</option>
+                                <option value="{{ $reserve->number }}人">選択してください</option>
                                 @for ($i = 1; $i <= 99; $i++)
                                     <option label="{{ $i }}" value="{{ $i }}人">
                                         {{ $i }}人
@@ -80,17 +80,17 @@
                                         </tr>
                                         <tr>
                                             <th>Date</th>
-                                            <td id="reserveOutputday" value="{{ $reserve->day }}">
+                                            <td id="reserveOutputday">
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>Time</th>
-                                            <td id="reserveOutputtime" value="{{ $reserve->time }}">
+                                            <td id="reserveOutputtime">
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>Number</th>
-                                            <td id="reserveOutputnumber" value="{{ $reserve->number }}"></td>
+                                            <td id="reserveOutputnumber"></td>
                                         </tr>
                                     </table>
                                 </div>
