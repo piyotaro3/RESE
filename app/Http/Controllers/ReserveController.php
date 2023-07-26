@@ -31,7 +31,6 @@ class ReserveController extends Controller
             'reserve' => $reserve,
             'user' => $user,
         ];
-
         return view('update', $param);
     }
 
@@ -40,7 +39,6 @@ class ReserveController extends Controller
         $form = $request->all();
         unset($form['_token']);
         Reserve::where('id', $request->id)->update($form);
-
         return view('reserve_ok');
     }
 }
