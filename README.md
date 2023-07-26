@@ -1,64 +1,104 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# アプリケーション名
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+飲食店予約サイト
 
-## About Laravel
+![トップページ](https://github.com/piyotaro3/RESE/assets/121168107/248a8060-3443-4433-a7a5-be7ee396cc6d)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 作成した目的
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+外部の飲食店予約サービスは手数料を取られるので自社で予約サービスを持ちたい。
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## アプリケーションURL
 
-## Learning Laravel
+デプロイしていないため、デプロイ済みのURLはありません。
+ローカル環境で実行可能です。
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 他のリポジトリ
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+関連するリポジトリはありません。
 
-## Laravel Sponsors
+## 機能一覧
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- 会員登録機能
+- ログイン機能
+- ログアウト機能
+- ユーザー情報取得
+- ユーザー飲食店お気に入り一覧取得
+- ユーザー飲食店予約情報取得
+- 飲食店一覧取得
+- 飲食店詳細取得
+- 飲食店お気に入り追加
+- 飲食店お気に入り削除
+- 飲食店予約情報追加
+- 飲食店予約情報削除
+- エリアで検索する
+- ジャンルで検索する
+- 店名で検索する
 
-### Premium Partners
+## 使用技術（実行環境）
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- 言語: PHP  Ver 8.2.4
+- フレームワーク: Laravel  Ver 8.83.27
+- データベース: MySQL  Ver 15.1
+- ローカル環境: XAMPP Ver8.2.4
 
-## Contributing
+## テーブル設計
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![テーブル設計1](https://github.com/piyotaro3/RESE/assets/121168107/a51f47e9-f608-41f4-803a-1865fbb2c2c4)
 
-## Code of Conduct
+![テーブル設計2](https://github.com/piyotaro3/RESE/assets/121168107/29609d64-b756-41cb-aac9-f64b7f332db7)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+[設計書テーブル設計リンク](https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=1904085266)
 
-## Security Vulnerabilities
+## ER図
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![ER図](https://github.com/piyotaro3/RESE/assets/121168107/ef4c5977-0a7d-45d3-9df7-2e253506cca0)
 
-## License
+[設計書ER図リンク](https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=634778829)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# 環境構築
+
+## 手順1
+
+エクスプローラーまたはコマンドプロンプトでプロジェクト直下へ移動し、コマンドプロンプトで「composer update」とコマンド入力する。
+
+## 手順2
+
+データベースの作成
+create database [データベース名];で作成する。
+
+## 手順3
+
+コマンドプロンプトで「cp .env.example .env」で.envを作成する。 
+
+## 手順4
+
+.envを編集する。
+- DB_DATABASE=使用するデータベース名
+- DB_USERNAME=DBユーザー名（デフォルトだとroot）
+- DB_PASSWORD=DBパスワード（未設定なら空にする）で編集する。
+
+## 手順5
+マイグレーションとシーディングの実行
+「php artisan migrate --seed」を実行する。
+
+# その他注意事項
+
+- 都道府県について
+
+今回は東京都、大阪府、福岡県の3つの都道府県のみでしたのでシーディングはこの3県にしています。
+
+- 予約機能について
+
+予約日は翌日以降に選択できます。
+時間帯は店舗に営業時間がないため、00：00～23：30の間で30分単位で選択できます。
+人数は1人～99人まで選択できます。
+
+- 予約完了後のページについて
+
+以下の画像は予約完了後のページです。　　
+画像では「戻る」ボタンですが、コーチーとの打ち合わせで「マイページ」へ移動するように変更しています。
+<img width="1437" alt="done" src="https://github.com/piyotaro3/RESE/assets/121168107/53e99103-c51f-4c3d-ac95-8395ee810e97">
+
+- 案件シートリンク
+  [案件シート](https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=522964981)
