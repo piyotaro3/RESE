@@ -22,7 +22,7 @@ class ReserveController extends Controller
         return redirect('mypage');
     }
 
-    public function show(Request $request)
+    public function update_view(Request $request)
     {
         $user = Auth::user();
         $reserve = Reserve::with('shop')->find($request->id);

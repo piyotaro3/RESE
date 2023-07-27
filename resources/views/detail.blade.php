@@ -46,12 +46,18 @@
                         </div>
                         <div class="reserve_time">
                             <select name="time">
-                                <option value="">選択してください</option>
+                                <option disabled selected value="">選択してください</option>
                                 @for ($i = 0; $i <= 23; $i++)
                                     @for ($j = 0; $j <= 3; $j += 3)
-                                        <option label="{{ $i }}:{{ $j }}0"
-                                            value="{{ $i }}:{{ $j }}0">
-                                            {{ $i }}:{{ $j }}0</option>
+                                        @if ($i < 10)
+                                            <option label="{{ $i }}:{{ $j }}0"
+                                                value="{{ $i }}:{{ $j }}0">
+                                                0{{ $i }}:{{ $j }}0</option>
+                                        @else
+                                            <option label="{{ $i }}:{{ $j }}0"
+                                                value="{{ $i }}:{{ $j }}0">
+                                                {{ $i }}:{{ $j }}0</option>
+                                        @endif
                                     @endfor
                                 @endfor
                             </select>
@@ -61,7 +67,7 @@
                         </div>
                         <div class="reserve_number">
                             <select name="number">
-                                <option value="">選択してください</option>
+                                <option disabled selected value="">選択してください</option>
                                 @for ($i = 1; $i <= 99; $i++)
                                     <option label="{{ $i }}" value="{{ $i }}人">
                                         {{ $i }}人

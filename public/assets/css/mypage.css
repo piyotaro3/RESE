@@ -244,3 +244,8 @@ img {
     top: -25px;
     left: 305px;
 }
+
+.update_btn:hover {
+    background: #ffffff;
+    color: #0066FF;
+}
