@@ -37,13 +37,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('reserve/OK', function () {
         return view('reserve');
     });
+    Route::get('/mypage', [MypageController::class, 'show'])->name('mypage.show');
     Route::post('/cancel', [ReserveController::class, 'cancel'])->name('reserve.cancel');
     Route::get('/update', [ReserveController::class, 'update_view']);
     Route::post('/update', [ReserveController::class, 'update'])->name('reserve.update');
-});
-
-
-
-Route::group(['middleare' => 'auth'], function () {
-    Route::get('/mypage', [MypageController::class, 'show'])->name('mypage.show');
 });
