@@ -50,8 +50,8 @@
                                 @for ($i = 0; $i <= 23; $i++)
                                     @for ($j = 0; $j <= 3; $j += 3)
                                         @if ($i < 10)
-                                            <option label="{{ $i }}:{{ $j }}0"
-                                                value="{{ $i }}:{{ $j }}0">
+                                            <option label="0{{ $i }}:{{ $j }}0"
+                                                value="0{{ $i }}:{{ $j }}0">
                                                 0{{ $i }}:{{ $j }}0</option>
                                         @else
                                             <option label="{{ $i }}:{{ $j }}0"

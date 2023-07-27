@@ -12,7 +12,7 @@ class MypageController extends Controller
     {
         $user = Auth::user();
         $id = auth()->id();
-        $reserves = User::find($id)->reserve_shop()->orderBy('day', 'desc')->get();
+        $reserves = User::find($id)->reserve_shop()->orderBy('day', 'asc')->get();
         $favorites = User::find($id)->favorite_shop()->get();
 
         $param = [

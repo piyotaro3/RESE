@@ -41,7 +41,7 @@
 - 言語: PHP  Ver 8.2.4
 - フレームワーク: Laravel  Ver 8.83.27
 - データベース: MySQL  Ver 15.1
-- ローカル環境: Apache 2.4.56 (Win64)
+- XAMPP(ローカル環境): Apache 2.4.56 
 
 ## テーブル設計
 
