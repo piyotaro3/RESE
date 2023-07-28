@@ -14,18 +14,12 @@
         <div class="LeftContent">
             <h2 class="left_name">{{ $user->name }}さん</h2>
             <div class="root">
-                <a href="/history" class="worp">来店履歴へ</a>
+                <a href="/mypage" class="worp">マイページへ</a>
             </div>
-            <h3 class="h3_left">予約状況</h3>
+            <h3 class="h3_left">来店履歴</h3>
             @foreach ($reserves as $count => $reserve)
                 <div class="reserve_box">
-                    <h4 class="reserve_title">予約{{ $count + 1 }}</h4>
-                    <form action="/cancel" method="post" class="form_cancel">
-                        @csrf
-                        <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
-                        <input type="image" class="cansel_icon" src="{{ asset('img\太いバツのアイコン2.png') }}"
-                            onclick='return confirm("予約を取り消しますか？")'>
-                    </form>
+                    <h4 class="reserve_title">履歴{{ $count + 1 }}</h4>
                     <table>
                         <tr>
                             <th>Shop</th>
@@ -44,10 +38,10 @@
                             <td> {{ $reserve->pivot->number }} 人</td>
                         </tr>
                     </table>
-                    <form action="/update" method="get" class="form_update">
+                    <form action="/review" method="get" class="form_update">
                         @csrf
                         <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
-                        <input type="submit" class="update_btn" value="予約変更">
+                        <input type="submit" class="update_btn" value="評価する">
                     </form>
                 </div>
             @endforeach

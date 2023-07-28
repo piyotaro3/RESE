@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,8 @@ Route::group(['middleware' => 'auth'], function () {
         return view('reserve');
     });
     Route::get('/mypage', [MypageController::class, 'show'])->name('mypage.show');
+    Route::get('/history', [ReviewController::class, 'history'])->name('history.show');
+    Route::get('/review', [ReviewController::class, 'review_show'])->name('review.show');
     Route::post('/cancel', [ReserveController::class, 'cancel'])->name('reserve.cancel');
     Route::get('/update', [ReserveController::class, 'update_view']);
     Route::post('/update', [ReserveController::class, 'update'])->name('reserve.update');
