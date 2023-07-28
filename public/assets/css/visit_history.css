@@ -1,0 +1,32 @@
+.modal {
+    visibility: hidden;
+    opacity: 1;
+    transition: all 500ms ease;
+    position: relative;
+    background: #000;
+    color: #fff;
+}
+
+.open-modal+.modal {
+    visibility: visible;
+    opacity: 1;
+}
+
+.close-btn {
+    span {
+        position: absolute;
+        top: 0px;
+        right: 100px;
+        border-bottom: 2px #FFF solid;
+        width: 40px;
+        height: 1px;
+        display: block;
+        right: 0px;
+        top: 16px;
+        transform: rotate(45deg);
+
+        &:first-child {
+            transform: rotate(-45deg);
+        }
+    }
+}

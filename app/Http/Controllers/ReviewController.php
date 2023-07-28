@@ -40,4 +40,12 @@ class ReviewController extends Controller
             return view('review', $param);
         }
     }
+
+    public function review(Request $request)
+    {
+
+
+        dd($request);
+        return view('thanks');
+    }
 }

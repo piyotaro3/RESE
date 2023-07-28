@@ -2,6 +2,7 @@
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('assets/css/detail.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/review.css') }}">
 @endsection
 
 @section('content')
@@ -30,133 +31,58 @@
 
         <div class="RightContent">
             <div class="reserve_area">
-                <div>
-                    <h2 class="title_reserve">予約変更</h2>
+                <h2 class="title_reserve">履歴</h2>
+                <div class="check">
+                    <div class="detail__reserve-box">
+                        <div>
+                            <table>
+                                <tr>
+                                    <th>Shop</th>
+                                    <td>{{ $reserve->shop->name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Date</th>
+                                    <td>{{ $reserve->day }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Time</th>
+                                    <td>{{ Carbon\Carbon::parse($reserve->time)->format('H:i') }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Number</th>
+                                    <td>{{ $reserve->number }}人</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <form action="/update" method="POST" id="reserveForm">
+                <div class="review">
+                    <div>
+                        <h2 class="title_reserve">評価</h2>
+                    </div>
+                    <form action="review" method="post">
                         @csrf
-                        <div class="reserve_day">
-                            <input type="date" id="tomorrow" name="day" value="{{ $reserve->day }}">
-                            @error('day')
-                                <p class="error_p">{{ $message }}</p>
-                            @enderror
+                        <div class="rate-form">
+                            <input id="star5" type="radio" name="star" value="5">
+                            <label for="star5">★</label>
+                            <input id="star4" type="radio" name="star" value="4">
+                            <label for="star4">★</label>
+                            <input id="star3" type="radio" name="star" value="3">
+                            <label for="star3">★</label>
+                            <input id="star2" type="radio" name="star" value="2">
+                            <label for="star2">★</label>
+                            <input id="star1" type="radio" name="star" value="1">
+                            <label for="star1">★</label>
                         </div>
-                        <div class="reserve_time">
-                            <select name="time">
-                                <option value="{{ Carbon\Carbon::parse($reserve->time)->format('H:i') }}">
-                                   選択してください</option>
-                                @for ($i = 0; $i <= 23; $i++)
-                                    @for ($j = 0; $j <= 3; $j += 3)
-                                        @if ($i < 10)
-                                            <option label="0{{ $i }}:{{ $j }}0"
-                                                value="0{{ $i }}:{{ $j }}0">
-                                                0{{ $i }}:{{ $j }}0</option>
-                                        @else
-                                            <option label="{{ $i }}:{{ $j }}0"
-                                                value="{{ $i }}:{{ $j }}0">
-                                                {{ $i }}:{{ $j }}0</option>
-                                        @endif
-                                    @endfor
-                                @endfor
-                            </select>
-                            @error('time')
-                                <p class="error_p">{{ $message }}</p>
-                            @enderror
+                        <div class="comment_area">
+                            <textarea rows="10" cols="50" name="comment"></textarea>
                         </div>
-                        <div class="reserve_number">
-                            <select name="number">
-                                <option value="{{ $reserve->number }}人">選択してください</option>
-                                @for ($i = 1; $i <= 99; $i++)
-                                    <option label="{{ $i }}" value="{{ $i }}人">
-                                        {{ $i }}人
-                                    </option>
-                                @endfor
-                            </select>
-                            @error('number')
-                                <p class="error_p">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="check">
-                            <div class="detail__reserve-box">
-                                <div id="reserveOutput">
-                                    <table>
-                                        <tr>
-                                            <th>Shop</th>
-                                            <td>{{ $reserve->shop->name }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Date</th>
-                                            <td id="reserveOutputday">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>Time</th>
-                                            <td id="reserveOutputtime">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>Number</th>
-                                            <td id="reserveOutputnumber"></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <input type="hidden" name="user_id" value="{{ $user->id }}">
                         <input type="hidden" name="id" value="{{ $reserve->id }}">
-                        <button class="reserve__btn" type="submit" name="shop_id" onclick='return confirm("予約を変更しますか？")'
-                            value="{{ $reserve->shop->id }}">予約を変更する</button>
+                        <input class="reserve__btn" type="submit"onclick='return confirm("投稿しますか？")' value="投稿する">
                     </form>
                 </div>
             </div>
     </main>
 @endsection
-
-<script type="text/javascript">
-    window.onload = function() {
-        var date = new Date()
-        date.setDate(date.getDate() + 1);
-        var year = date.getFullYear()
-        var month = date.getMonth() + 1
-        var day = date.getDate()
-
-        var toTwoDigits = function(num, digit) {
-            num += ''
-            if (num.length < digit) {
-                num = '0' + num
-            }
-            return num
-        }
-
-        var yyyy = toTwoDigits(year, 4)
-        var mm = toTwoDigits(month, 2)
-        var dd = toTwoDigits(day, 2)
-        var ymd = yyyy + "-" + mm + "-" + dd;
-
-        document.getElementById("tomorrow").value = ymd;
-    }
-</script>
-
-<script type="text/javascript">
-    window.onload = function() {
-        getValue();
-        var $formObject = document.getElementById("reserveForm");
-        for (var $i = 0; $i < $formObject.length; $i++) {
-            $formObject.elements[$i].onkeyup = function() {
-                getValue();
-            };
-            $formObject.elements[$i].onchange = function() {
-                getValue();
-            };
-        }
-        document.getElementById("reserveOutputLength");
-    }
-
-    function getValue() {
-        var $formObject = document.getElementById("reserveForm");
-        document.getElementById("reserveOutputday").innerHTML = $formObject.day.value;
-        document.getElementById("reserveOutputtime").innerHTML = $formObject.time.value;
-        document.getElementById("reserveOutputnumber").innerHTML = $formObject.number.value;
-    }
-</script>

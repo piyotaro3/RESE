@@ -91,6 +91,7 @@ img {
 
 .reserve_area {
     width: 520px;
+    margin-top: 5%;
 }
 
 .title_reserve {
@@ -98,7 +99,7 @@ img {
     font-size: 25px;
     margin-bottom: 5%;
     margin-left: 5%;
-    margin-top: 5%;
+
 }
 
 @media screen and (max-width: 768px) {
@@ -156,6 +157,7 @@ select {
 
 .detail__reserve-box {
     padding: 15px;
+    margin-bottom: 5%;
 }
 
 table {

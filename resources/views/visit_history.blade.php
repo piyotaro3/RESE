@@ -47,7 +47,7 @@
             @endforeach
         </div>
 
-        <div class="RightContent">
+        {{--<div class="RightContent">
             <h2 class="right_name">{{ $user->name }}さん</h2>
             <h3 class="h3_right">お気に入り店舗</h3>
             <div class="favorit_area">
@@ -93,6 +93,6 @@
                     </div>
                 @endforeach
             </div>
-        </div>
+        </div>--}}
     </main>
 @endsection
