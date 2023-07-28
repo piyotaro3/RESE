@@ -117,50 +117,52 @@
     </main>
 @endsection
 
-<script type="text/javascript">
-    window.addEventListener('load', function() {
-        var date = new Date()
-        date.setDate(date.getDate() + 1);
-        var year = date.getFullYear()
-        var month = date.getMonth() + 1
-        var day = date.getDate()
+@section('scripts')
+    <script type="text/javascript">
+        window.addEventListener('load', function() {
+            var date = new Date()
+            date.setDate(date.getDate() + 1);
+            var year = date.getFullYear()
+            var month = date.getMonth() + 1
+            var day = date.getDate()
 
-        var toTwoDigits = function(num, digit) {
-            num += ''
-            if (num.length < digit) {
-                num = '0' + num
+            var toTwoDigits = function(num, digit) {
+                num += ''
+                if (num.length < digit) {
+                    num = '0' + num
+                }
+                return num
             }
-            return num
+
+            var yyyy = toTwoDigits(year, 4)
+            var mm = toTwoDigits(month, 2)
+            var dd = toTwoDigits(day, 2)
+            var ymd = yyyy + "-" + mm + "-" + dd;
+
+            document.getElementById("tomorrow").value = ymd;
+        })
+    </script>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            getValue();
+            var $formObject = document.getElementById("reserveForm");
+            for (var $i = 0; $i < $formObject.length; $i++) {
+                $formObject.elements[$i].onkeyup = function() {
+                    getValue();
+                };
+                $formObject.elements[$i].onchange = function() {
+                    getValue();
+                };
+            }
+            document.getElementById("reserveOutputLength");
         }
 
-        var yyyy = toTwoDigits(year, 4)
-        var mm = toTwoDigits(month, 2)
-        var dd = toTwoDigits(day, 2)
-        var ymd = yyyy + "-" + mm + "-" + dd;
-
-        document.getElementById("tomorrow").value = ymd;
-    })
-</script>
-
-<script type="text/javascript">
-    window.onload = function() {
-        getValue();
-        var $formObject = document.getElementById("reserveForm");
-        for (var $i = 0; $i < $formObject.length; $i++) {
-            $formObject.elements[$i].onkeyup = function() {
-                getValue();
-            };
-            $formObject.elements[$i].onchange = function() {
-                getValue();
-            };
+        function getValue() {
+            var $formObject = document.getElementById("reserveForm");
+            document.getElementById("reserveOutputday").innerHTML = $formObject.day.value;
+            document.getElementById("reserveOutputtime").innerHTML = $formObject.time.value;
+            document.getElementById("reserveOutputnumber").innerHTML = $formObject.number.value;
         }
-        document.getElementById("reserveOutputLength");
-    }
-
-    function getValue() {
-        var $formObject = document.getElementById("reserveForm");
-        document.getElementById("reserveOutputday").innerHTML = $formObject.day.value;
-        document.getElementById("reserveOutputtime").innerHTML = $formObject.time.value;
-        document.getElementById("reserveOutputnumber").innerHTML = $formObject.number.value;
-    }
-</script>
+    </script>
+@endsection
