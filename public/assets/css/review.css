@@ -48,6 +48,8 @@ textarea {
     font-size: 15px;
     margin-left: 10%;
     resize: none;
+    font-family: serif;
+    height: 150px;
 }
 
 .title_reserve {
