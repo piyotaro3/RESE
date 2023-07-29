@@ -29,4 +29,9 @@ class Reserve extends Model
     {
         return $this->belongsTo(Shop::class);
     }
+
+    public function review()
+    {
+        return $this->hasOne('App\Models\Review');
+    }
 }
