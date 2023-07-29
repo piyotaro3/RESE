@@ -50,6 +50,10 @@
         @yield('search')
     </div>
 
+
+    @yield('content')
+
+    @yield('scripts')
     <script>
         const target = document.getElementById("menu");
         target.addEventListener('click', () => {
@@ -58,8 +62,6 @@
             nav.classList.toggle('in');
         });
     </script>
-
-    @yield('content')
 
 </body>
 
