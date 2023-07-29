@@ -24,6 +24,14 @@ class ReserveSeeder extends Seeder
 
         Reserve::create([
             'user_id' => '1',
+            'shop_id' => '3',
+            'number' => '5',
+            'day' => '2023-07-17',
+            'time' => '00:00'
+        ]);
+
+        Reserve::create([
+            'user_id' => '1',
             'shop_id' => '5',
             'number' => '3',
             'day' => '2023-08-08',

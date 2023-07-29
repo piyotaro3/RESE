@@ -79,8 +79,8 @@
                         <div class="comment_area">
                             <textarea rows="10" cols="50" name="comment"></textarea>
                         </div>
-                        <input type="hidden" name="id" value="{{ $reserve->id }}">
-                        <input class="reserve__btn" type="submit"onclick='return confirm("投稿しますか？")' value="投稿する">
+                        <input type="hidden" name="reserve_id" value="{{ $reserve->id }}">
+                        <input class="reserve__btn" type="submit"{{--onclick='return confirm("投稿しますか？")'--}} value="投稿する">
                     </form>
                 </div>
             </div>

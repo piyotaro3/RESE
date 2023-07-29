@@ -20,6 +20,6 @@ class Review extends Model
 
     public function reserve()
     {
-        return $this->belongsTo('App\Models\Reserve');
+        return $this->belongsTo(Reserve::class);
     }
 }

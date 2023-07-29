@@ -32,6 +32,6 @@ class Reserve extends Model
 
     public function review()
     {
-        return $this->hasOne('App\Models\Review');
+        return $this->hasOne(Review::class);
     }
 }

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ReviewRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Reserve;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -41,11 +43,12 @@ class ReviewController extends Controller
         }
     }
 
-    public function review(Request $request)
+    public function review(ReviewRequest $request)
     {
 
+        $form = $request->all();
+        Review::create($form);
+        return redirect('/reserve/OK');
 
-        dd($request);
-        return view('thanks');
     }
 }
