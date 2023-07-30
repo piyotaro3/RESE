@@ -19,14 +19,13 @@ class ReviewController extends Controller
         $user = Auth::user();
         $id = auth()->id();
         $reserves = User::find($id)->reserve_shop()->whereDate('day', '<', $today)->orderBy('day', 'asc')->get();
-        $favorites = User::find($id)->favorite_shop()->get();
-
+        $reserve_id = Reserve::where('user_id', $id)->whereDate('day', '<', $today)->select('id')->get();
+        $reviews = Review::whereIn('reserve_id', $reserve_id)->with('reserve.shop', 'reserve.user')->get();
         $param = [
             'user' => $user,
             'reserves' => $reserves,
-            'favorites' => $favorites,
+            'reviews' => $reviews,
         ];
-
         return view('visit_history', $param);
     }
 

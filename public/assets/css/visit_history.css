@@ -1,32 +1,31 @@
-.modal {
-    visibility: hidden;
-    opacity: 1;
-    transition: all 500ms ease;
-    position: relative;
-    background: #000;
-    color: #fff;
+.review_card {
+    width: 600px;
+    height: 160px;
+    border: 2px solid black;
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 20px;
+    background-color: #ffffff;;
+    margin-bottom: 5%;
 }
 
-.open-modal+.modal {
-    visibility: visible;
-    opacity: 1;
+.review_shop {
+    border-bottom: 2px solid black;
+    width: 100%;
 }
 
-.close-btn {
-    span {
-        position: absolute;
-        top: 0px;
-        right: 100px;
-        border-bottom: 2px #FFF solid;
-        width: 40px;
-        height: 1px;
-        display: block;
-        right: 0px;
-        top: 16px;
-        transform: rotate(45deg);
+.review_title {
+    margin-top: 5px;
+    margin-left: 5%;
+    margin-bottom: 5px;
+}
 
-        &:first-child {
-            transform: rotate(-45deg);
-        }
-    }
+p {
+    font-size: 15px;
+    resize: none;
+    font-family: serif;
+    height: 100px;
+    width: 98%;
+    border: none;
+    margin-top: 5px;
+    margin-left: 5px;
 }

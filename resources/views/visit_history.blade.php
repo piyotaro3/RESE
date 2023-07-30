@@ -3,10 +3,11 @@
 @section('styles')
     @parent
     <link rel="stylesheet" href="{{ asset('assets/css/mypage.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/visit_history.css') }}">
 @endsection
 
 @section('title')
-    マイページ
+    来店履歴
 @endsection
 
 @section('content')
@@ -47,52 +48,21 @@
             @endforeach
         </div>
 
-        {{--<div class="RightContent">
+        <div class="RightContent">
             <h2 class="right_name">{{ $user->name }}さん</h2>
-            <h3 class="h3_right">お気に入り店舗</h3>
+            <h3 class="h3_right">コメント履歴</h3>
             <div class="favorit_area">
-                @foreach ($favorites as $favorite)
-                    <div class="favorite_box">
-                        <div class="shop_img">
-                            <img src="{{ asset($favorite->image) }}">
+                @foreach ($reviews as $review)
+                    <div class="review_card">
+                        <div class="review_shop">
+                            <h4 class="review_title">{{ $review->reserve->shop->name }}</h4>
                         </div>
-                        <div class="shop_text">
-                            <div class="shop_name">
-                                <h4 class="shop_title">{{ $favorite->name }}</h4>
-                            </div>
-                            <div class="shop_tag">
-                                <p><span>{{ $favorite->getarea() }}</span><span>{{ $favorite->getGenre() }}</span></p>
-                            </div>
-                            <div class="shop_detail">
-                                <form action="/detail/{{ $favorite->name }}"method="GET">
-                                    @csrf
-                                    <input type="hidden" value="{{ $favorite->id }}" name="shop_id">
-                                    <input type="submit" class="detail_button" value="詳しくみる">
-                                </form>
-                            </div>
-                        </div>
-                        <div class="shop_favorite">
-                            @auth
-                                @if (!Auth::user()->is_favorite($favorite->id))
-                                    <form action="{{ route('favorite.create', $favorite->id) }}" method="post">
-                                        @csrf
-                                        <button type="submit" class="favorite_button">
-                                            <img src="{{ asset('img/heart.png') }}" class="img_favorite">
-                                        </button>
-                                    </form>
-                                @else
-                                    <form action="{{ route('favorite.delete', $favorite->id) }}" method="post">
-                                        @csrf
-                                        <button type="submit" class="favorite_button">
-                                            <img src="{{ asset('img/heart.png') }}" class="img_favorite_on">
-                                        </button>
-                                    </form>
-                                @endif
-                            @endauth
+                        <div class="text">
+                            <p>{{ $review->comment }}</p>
                         </div>
                     </div>
-                @endforeach
             </div>
-        </div>--}}
+            @endforeach
+        </div>
     </main>
 @endsection
