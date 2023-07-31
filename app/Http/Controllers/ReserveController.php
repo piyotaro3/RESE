@@ -14,7 +14,13 @@ class ReserveController extends Controller
     {
         $form = $request->all();
         Reserve::create($form);
-        return redirect('/reserve/OK');
+
+        $text = array(
+            'message' => 'ご予約ありがとうございます',
+            'route' => '/mypage',
+            'route_mes' => 'マイページへ',
+        );
+        return view('/done', compact('text'));
     }
     public function cancel(Request $request)
     {
@@ -39,6 +45,12 @@ class ReserveController extends Controller
         $form = $request->all();
         unset($form['_token']);
         Reserve::where('id', $request->id)->update($form);
-        return view('reserve_ok');
+
+        $text = array(
+            'message' => '予約変更完了しました',
+            'route' => '/mypage',
+            'route_mes' => 'マイページへ',
+        );
+        return view('/done', compact('text'));
     }
 }

@@ -69,7 +69,7 @@
                             <select name="number">
                                 <option disabled selected value="">選択してください</option>
                                 @for ($i = 1; $i <= 99; $i++)
-                                    <option label="{{ $i }}" value="{{ $i }}人">
+                                    <option label="{{ $i }}人" value="{{ $i }}人">
                                         {{ $i }}人
                                     </option>
                                 @endfor

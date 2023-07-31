@@ -47,7 +47,12 @@ class ReviewController extends Controller
 
         $form = $request->all();
         Review::create($form);
-        return redirect('/reserve/OK');
+        $text = array(
+            'message' => 'レビューありがとうございます',
+            'route' => '/mypage',
+            'route_mes' => 'マイページへ',
+        );
+        return view('/done', compact('text'));
 
     }
 }

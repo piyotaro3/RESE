@@ -30,13 +30,13 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/thanks', function () {
-    return view('thanks');
+    return view('done');
 });
 
 Route::group(['middleware' => 'auth'], function () {
     Route::post('reserve', [ReserveController::class, 'reserve'])->name('reserve.create');
-    Route::get('reserve/OK', function () {
-        return view('reserve');
+    Route::get('done', function () {
+        return view('done');
     });
     Route::get('/mypage', [MypageController::class, 'show'])->name('mypage.show');
     Route::get('/history', [ReviewController::class, 'history'])->name('history.show');
