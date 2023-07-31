@@ -15,9 +15,9 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('reserve_id')->constrained('reserves');
+            $table->foreignId('reserve_id')->unique()->constrained('reserves');
             $table->integer('star')->unsigned()->nullable(false);
-            $table->text('comment');
+            $table->text('comment')->nullable(true);
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
             $table->softDeletes();

@@ -55,4 +55,10 @@ class ReviewController extends Controller
         return view('/done', compact('text'));
 
     }
+
+    public function delete(Request $request)
+    {
+        Review::find($request->id)->delete();
+        return redirect('history');
+    }
 }

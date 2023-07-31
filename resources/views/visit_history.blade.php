@@ -55,14 +55,30 @@
                 @foreach ($reviews as $review)
                     <div class="review_card">
                         <div class="review_shop">
-                            <h4 class="review_title">{{ $review->reserve->shop->name }}</h4>
+                            <h4 class="review_title">
+                                店舗名&nbsp;{{ $review->reserve->shop->name }}&emsp;&emsp;来店日&nbsp;{{ $review->reserve->day }}&emsp;&emsp;評価&nbsp;
+                                <div class="star">{{ str_repeat('★', $review->star) }}</div>
+                            </h4>
                         </div>
                         <div class="text">
                             <p>{{ $review->comment }}</p>
                         </div>
+                        <div class="form_edit">
+                            <form action="/review_edit" method="post">
+                                @csrf
+                                <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
+                                <input type="submit" class="edit_btn" value="編集する">
+                            </form>
+                            <form action="/review_delete" method="post">
+                                @csrf
+                                <input type="hidden" value="{{ $review->id }}" name='id'>
+                                <input type="submit" class="delete_btn" onclick='return confirm("レビューを取り消しますか？")'
+                                    value="削除する">
+                            </form>
+                        </div>
                     </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
     </main>
 @endsection
