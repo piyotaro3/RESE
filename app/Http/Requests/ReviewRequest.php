@@ -25,6 +25,6 @@ class ReviewRequest extends FormRequest
     {
         return [
            'star'=>'required',
-        ];
+            ];
     }
 }

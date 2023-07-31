@@ -64,9 +64,9 @@
                             <p>{{ $review->comment }}</p>
                         </div>
                         <div class="form_edit">
-                            <form action="/review_edit" method="post">
+                            <form action="/review_edit" method="get">
                                 @csrf
-                                <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
+                                <input type="hidden" value="{{ $review->id }}" name='id'>
                                 <input type="submit" class="edit_btn" value="編集する">
                             </form>
                             <form action="/review_delete" method="post">

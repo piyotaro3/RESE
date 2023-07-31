@@ -32,7 +32,6 @@ class ReserveController extends Controller
     {
         $user = Auth::user();
         $reserve = Reserve::with('shop')->find($request->id);
-
         $param = [
             'reserve' => $reserve,
             'user' => $user,

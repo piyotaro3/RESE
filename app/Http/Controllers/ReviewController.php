@@ -61,4 +61,30 @@ class ReviewController extends Controller
         Review::find($request->id)->delete();
         return redirect('history');
     }
+
+    public function edit_show(Request $request)
+    { {
+            $user = Auth::user();
+            $reviews = Review::find($request->id)->get();
+            $param = [
+                'reviews' => $reviews,
+                'user' => $user,
+            ];
+            return view('review_edit', $param);
+        }
+    }
+
+    public function edit(Request $request)
+    {
+        $form = $request->all();
+        unset($form['_token']);
+        Review::where('id', $request->id)->update($form);
+
+        $text = array(
+            'message' => 'レビュー内容を変更しました',
+            'route' => '/mypage',
+            'route_mes' => 'マイページへ',
+        );
+        return view('/done', compact('text'));
+    }
 }
