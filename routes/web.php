@@ -25,7 +25,7 @@ Route::get('/search', [ShopController::class, 'search'])->name('shop.search');
 Route::get('/detail/{name}', [ShopController::class, 'detail'])->name('shop.detail');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::post('/shop/{shop}favorite', [FavoriteController::class, 'create'])->name('favorite.create');
+    Route::post('/shop/{shop}/favorite', [FavoriteController::class, 'create'])->name('favorite.create');
     Route::post('/shop/{shop}/unfavorite', [FavoriteController::class, 'delete'])->name('favorite.delete');
 });
 

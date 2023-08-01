@@ -65,11 +65,12 @@ class ReviewController extends Controller
     public function edit_show(Request $request)
     { {
             $user = Auth::user();
-            $reviews = Review::find($request->id)->get();
+            $reviews = Review::with('reserve.shop')->find($request->id);
             $param = [
                 'reviews' => $reviews,
                 'user' => $user,
             ];
+
             return view('review_edit', $param);
         }
     }

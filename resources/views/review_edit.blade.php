@@ -7,7 +7,6 @@
 
 @section('content')
     <main>
-        @foreach ($reviews as $review)
             <div class="LeftContent">
                 <div class="shop_detail">
 
@@ -17,17 +16,17 @@
                                 <img src="{{ asset('img/前に戻るアイコン4.png') }}" class="back_img">
                             </div>
                         </a>
-                        <h2 class="shop_title">{{ $review->reserve->shop->name }}</h2>
+                        <h2 class="shop_title">{{ $reviews->reserve->shop->name}}</h2>
                     </div>
                     <div class="shop_img">
-                        <img src="{{ asset($review->reserve->shop->image) }}">
+                        <img src="{{ asset($reviews->reserve->shop->image) }}">
                     </div>
                     <div class="tags">
-                        <p><span>{{ $review->reserve->shop->getarea() }}</span><span>{{ $review->reserve->shop->getGenre() }}</span>
+                        <p><span>{{ $reviews->reserve->shop->getarea() }}</span><span>{{ $reviews->reserve->shop->getGenre() }}</span>
                         </p>
                     </div>
                     <div class="detail">
-                        <p>{{ $review->reserve->shop->detail }}</p>
+                        <p>{{ $reviews->reserve->shop->detail }}</p>
                     </div>
 
                 </div>
@@ -43,21 +42,21 @@
                                 <table>
                                     <tr>
                                         <th>Shop</th>
-                                        <td>{{ $review->reserve->shop->name }}</td>
+                                        <td>{{ $reviews->reserve->shop->name }}</td>
                                     </tr>
                                     <tr>
                                         <th>Date</th>
-                                        <td>{{ $review->reserve->day }}
+                                        <td>{{ $reviews->reserve->day }}
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Time</th>
-                                        <td> {{ Carbon\Carbon::parse($review->reserve->time)->format('H:i') }}
+                                        <td> {{ Carbon\Carbon::parse($reviews->reserve->time)->format('H:i') }}
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Number</th>
-                                        <td>{{ $review->reserve->number }}人</td>
+                                        <td>{{ $reviews->reserve->number }}人</td>
                                     </tr>
                                 </table>
                             </div>
@@ -85,13 +84,12 @@
                             <label for="star1">★</label>
                         </div>
                         <div class="comment_area">
-                            <textarea rows="10" cols="50" name="comment">{{ $review->comment }}</textarea>
+                            <textarea rows="10" cols="50" name="comment">{{ $reviews->comment }}</textarea>
                         </div>
-                        <input type="hidden" name="review_id" value="{{ $review->id }}">
+                        <input type="hidden" name="review_id" value="{{ $reviews->id }}">
                         <input class="reserve__btn" type="submit" value="投稿する">
                     </form>
                 </div>
             </div>
-        @endforeach
     </main>
 @endsection
