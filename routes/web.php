@@ -23,17 +23,14 @@ require __DIR__ . '/auth.php';
 Route::get('/', [ShopController::class, 'index'])->name('shop.index');
 Route::get('/search', [ShopController::class, 'search'])->name('shop.search');
 Route::get('/detail/{name}', [ShopController::class, 'detail'])->name('shop.detail');
-
-Route::group(['middleware' => 'auth'], function () {
-    Route::post('/shop/{shop}favorite', [FavoriteController::class, 'create'])->name('favorite.create');
-    Route::post('/shop/{shop}/unfavorite', [FavoriteController::class, 'delete'])->name('favorite.delete');
-});
-
+Route::get('/shop_review/{name}', [ShopController::class, 'review'])->name('shop.review');
 Route::get('/thanks', function () {
     return view('done');
 });
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::post('/shop/{shop}favorite', [FavoriteController::class, 'create'])->name('favorite.create');
+    Route::post('/shop/{shop}/unfavorite', [FavoriteController::class, 'delete'])->name('favorite.delete');
     Route::post('reserve', [ReserveController::class, 'reserve'])->name('reserve.create');
     Route::get('done', function () {
         return view('done');

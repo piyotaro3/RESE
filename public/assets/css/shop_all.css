@@ -172,7 +172,8 @@ span {
 }
 
 .shop_detail {
-    display: inline-block;
+    display: flex;
+
 }
 
 .detail_button {
@@ -213,4 +214,22 @@ span {
     background: transparent;
     border: none;
     cursor: pointer;
+}
+
+.reveiw_button {
+    background: #0066FF;
+    border: 2px solid #0066FF;
+    border-radius: 5px 5px 5px 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 9pt;
+    line-height: 1em;
+    padding: 8px 14px;
+    text-align: center;
+    transition: .3s;
+}
+
+.detail {
+    margin-right: 5%;
 }

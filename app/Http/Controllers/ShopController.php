@@ -9,6 +9,9 @@ use App\Models\Shop;
 use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Reserve;
+use App\Models\Review;
+use Carbon\Carbon;
+
 
 class ShopController extends Controller
 {
@@ -79,5 +82,18 @@ class ShopController extends Controller
             'check' => $check,
         ];
         return view('detail', $param);
+    }
+
+    public function review(Request $request)
+    {
+        $today = Carbon::today();
+        $id = Reserve::where('shop_id', $request->shop_id)->whereDate('day', '<', $today)->get('id');
+        $reviews = Review::whereIn('reserve_id', $id)->with('reserve.shop', 'reserve.user')->get();
+        $shops = Shop::where('id',$request->shop_id)->get();
+        $param = [
+            'reviews' => $reviews,
+            'shops' => $shops,
+        ];
+        return view('shop_review', $param);
     }
 }
