@@ -75,12 +75,12 @@ class ReviewController extends Controller
         }
     }
 
-    public function edit(Request $request)
+    public function edit(ReviewRequest $request)
     {
-        $form = $request->all();
+        $form = $request->get('star','comment');
         unset($form['_token']);
-        Review::where('id', $request->id)->update($form);
-
+        Review::where('id', $request->id)->update('star','comment');
+        dd($form);
         $text = array(
             'message' => 'レビュー内容を変更しました',
             'route' => '/mypage',

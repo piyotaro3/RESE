@@ -36,7 +36,6 @@ class ReserveController extends Controller
             'reserve' => $reserve,
             'user' => $user,
         ];
-
         return view('update', $param);
     }
 
@@ -51,7 +50,6 @@ class ReserveController extends Controller
             'route' => '/mypage',
             'route_mes' => 'マイページへ',
         );
-
         return view('/done', compact('text'));
     }
 }

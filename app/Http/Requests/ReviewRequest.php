@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ReviewRequest extends FormRequest
 {
@@ -24,7 +25,9 @@ class ReviewRequest extends FormRequest
     public function rules()
     {
         return [
-           'star'=>'required',
-            ];
+            'star' => 'required',
+            'comment'=>'max:500',
+            'reserve_id' => Rule::unique('reviews')->ignore($this->id),
+        ];
     }
 }

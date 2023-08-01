@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->foreignId('reserve_id')->unique()->constrained('reserves');
             $table->integer('star')->unsigned()->nullable(false);
-            $table->text('comment')->nullable(true);
+            $table->string('comment', 500)->nullable(true);
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
             $table->softDeletes();

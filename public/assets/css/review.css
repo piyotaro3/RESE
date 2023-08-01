@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
-    margin-bottom: 3%;
+    margin-bottom: 2%;
     margin-left: 8%;
 }
 
@@ -55,7 +55,22 @@ textarea {
 .title_reserve {
     color: #ffffff;
     font-size: 25px;
-    margin-bottom: 3%;
+    margin-bottom: 2%;
     margin-left: 10%;
     width: 75%;
+}
+
+.error_p {
+    color: red;
+    margin-top: -10px;
+    width: 320px;
+    margin-left: 10%;
+    margin-bottom: 5px;
+}
+
+.error_p-com {
+    color: red;
+    width: 320px;
+    margin-left: 10%;
+    margin-bottom: 5px;
 }

@@ -76,9 +76,15 @@
                             <input id="star1" type="radio" name="star" value="1">
                             <label for="star1">★</label>
                         </div>
+                        @error('star')
+                            <p class="error_p">{{ $message }}</p>
+                        @enderror
                         <div class="comment_area">
-                            <textarea rows="10" cols="50" name="comment"></textarea>
+                            <textarea rows="10" cols="50" name="comment"placeholder="500字以内で入力してください"></textarea>
                         </div>
+                        @error('comment')
+                            <p class="error_p-com">{{ $message }}</p>
+                        @enderror
                         <input type="hidden" name="reserve_id" value="{{ $reserve->id }}">
                         <input class="reserve__btn" type="submit" value="投稿する">
                     </form>
