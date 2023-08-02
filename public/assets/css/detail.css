@@ -34,6 +34,7 @@ main {
     align-items: center;
     display: flex;
     margin-top: 5%;
+    position: relative;
 }
 
 .back_btn {
@@ -53,7 +54,6 @@ img {
 .shop_title {
     font-size: 30px;
     margin-left: 10px;
-    margin-right: 60%;
 }
 
 .shop_img {
@@ -217,6 +217,10 @@ span {
     padding: 8px 14px;
     text-align: center;
     transition: .3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 95px;
 }
 
 .reveiw_button:hover {

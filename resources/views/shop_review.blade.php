@@ -19,7 +19,7 @@
                             </div>
                         </a>
                         <h2 class="shop_title">{{ $shop->name }}</h2>
-                        <form action="/detail/{name}" method="get">
+                        <form action="/detail/{{ $shop->name }}" method="get">
                             @csrf
                             <input type="hidden" value="{{ $shop->id }}" name="shop_id">
                             <input type="submit" class="reveiw_button" value="予約をする">

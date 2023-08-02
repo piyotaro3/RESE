@@ -16,22 +16,24 @@
                             </div>
                         </a>
                         <h2 class="shop_title">{{ $shop->name }}</h2>
-                        <form action="/review/{name}{{ $shop->name }}" method="get">
+                        <form action="/review/{{ $shop->name }}" method="get" class="review">
+                            @csrf
                             <input type="hidden" value="{{ $shop->id }}" name="shop_id">
                             <input type="submit" class="reveiw_button" value="評価を見る">
                         </form>
                     </div>
-                    <div class="shop_img">
-                        <img src="{{ asset($shop->image) }}">
-                    </div>
-                    <div class="tags">
-                        <p><span>{{ $shop->getarea() }}</span><span>{{ $shop->getGenre() }}</span></p>
-                    </div>
-                    <div class="detail">
-                        <p>{{ $shop->detail }}</p>
-                    </div>
                 </div>
-            @endforeach
+                <div class="shop_img">
+                    <img src="{{ asset($shop->image) }}">
+                </div>
+                <div class="tags">
+                    <p><span>{{ $shop->getarea() }}</span><span>{{ $shop->getGenre() }}</span></p>
+                </div>
+                <div class="detail">
+                    <p>{{ $shop->detail }}</p>
+                </div>
+        </div>
+        @endforeach
         </div>
 
         <div class="RightContent">
