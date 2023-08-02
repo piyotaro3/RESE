@@ -53,6 +53,7 @@ img {
 .shop_title {
     font-size: 30px;
     margin-left: 10px;
+    margin-right: 60%;
 }
 
 .shop_img {
@@ -202,4 +203,23 @@ th {
 
 span {
     font-size: 15px;
+}
+
+.reveiw_button {
+    background: #0066FF;
+    border: 2px solid #0066FF;
+    border-radius: 5px 5px 5px 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 9pt;
+    line-height: 1em;
+    padding: 8px 14px;
+    text-align: center;
+    transition: .3s;
+}
+
+.reveiw_button:hover {
+    background: #ffffff;
+    color: #0066FF;
 }

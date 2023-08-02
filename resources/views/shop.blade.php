@@ -60,14 +60,10 @@
                         <p><span>{{ $shop->getarea() }}</span><span>{{ $shop->getGenre() }}<span></p>
                     </div>
                     <div class="shop_detail">
-                        <form action="/detail/{{ $shop->name }}"method="GET" class="detail">
+                        <form action="/detail/{{ $shop->name }}"method="get" class="detail">
                             @csrf
                             <input type="hidden" value="{{ $shop->id }}" name="shop_id">
                             <input type="submit" class="detail_button" value="詳しくみる">
-                        </form>
-                        <form action="shop_review/{{ $shop->name }}" method="get">
-                            <input type="hidden" value="{{ $shop->id }}" name="shop_id">
-                            <input type="submit" class="reveiw_button" value="評価を見る">
                         </form>
                     </div>
 

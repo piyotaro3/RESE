@@ -23,7 +23,7 @@ require __DIR__ . '/auth.php';
 Route::get('/', [ShopController::class, 'index'])->name('shop.index');
 Route::get('/search', [ShopController::class, 'search'])->name('shop.search');
 Route::get('/detail/{name}', [ShopController::class, 'detail'])->name('shop.detail');
-Route::get('/shop_review/{name}', [ShopController::class, 'review'])->name('shop.review');
+Route::get('/review/{name}', [ShopController::class, 'review'])->name('shop.review');
 Route::get('/thanks', function () {
     return view('done');
 });

@@ -94,6 +94,7 @@ class ShopController extends Controller
             'reviews' => $reviews,
             'shops' => $shops,
         ];
+       
         return view('shop_review', $param);
     }
 }

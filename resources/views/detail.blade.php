@@ -16,6 +16,10 @@
                             </div>
                         </a>
                         <h2 class="shop_title">{{ $shop->name }}</h2>
+                        <form action="/review/{name}{{ $shop->name }}" method="get">
+                            <input type="hidden" value="{{ $shop->id }}" name="shop_id">
+                            <input type="submit" class="reveiw_button" value="評価を見る">
+                        </form>
                     </div>
                     <div class="shop_img">
                         <img src="{{ asset($shop->image) }}">
