@@ -7,46 +7,45 @@
 @section('content')
     <main>
         <div class="LeftContent">
-            @foreach ($shops as $shop)
-                <div class="shop_detail">
-                    <div class="title_area">
-                        <a href="/">
-                            <div class="back_btn">
-                                <img src="{{ asset('img/前に戻るアイコン4.png') }}" class="back_img">
-                            </div>
-                        </a>
-                        <h2 class="shop_title">{{ $shop->name }}</h2>
-                    </div>
-                    <div class="shop_img">
-                        <img src="{{ asset($shop->image) }}">
-                    </div>
-                    <div class="tags">
-                        <p><span>{{ $shop->getarea() }}</span><span>{{ $shop->getGenre() }}</span></p>
-                    </div>
-                    <div class="detail">
-                        <p>{{ $shop->detail }}</p>
-                    </div>
+            <div class="shop_detail">
+                <div class="title_area">
+                    <a href="/">
+                        <div class="back_btn">
+                            <img src="{{ asset('img/前に戻るアイコン4.png') }}" class="back_img">
+                        </div>
+                    </a>
+                    <h2 class="shop_title">{{ $reserve->shop->name }}</h2>
                 </div>
-            @endforeach
+                <div class="shop_img">
+                    <img src="{{ asset($reserve->shop->image) }}">
+                </div>
+                <div class="tags">
+                    <p><span>{{ $reserve->shop->getarea() }}</span><span>{{ $reserve->shop->getGenre() }}</span></p>
+                </div>
+                <div class="detail">
+                    <p>{{ $reserve->shop->detail }}</p>
+                </div>
+            </div>
         </div>
 
         <div class="RightContent">
             <div class="reserve_area">
                 <div>
-                    <h2 class="title_reserve">予約</h2>
+                    <h2 class="title_reserve">予約変更</h2>
                 </div>
                 <div>
-                    <form action="/reserve" method="POST" id="reserveForm">
+                    <form action="/update" method="POST" id="reserveForm">
                         @csrf
                         <div class="reserve_day">
-                            <input type="date" id="tomorrow" name="day">
+                            <input type="date" id="tomorrow" name="day" value="{{ $reserve->day }}">
                             @error('day')
                                 <p class="error_p">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="reserve_time">
                             <select name="time">
-                                <option disabled selected value="">選択してください</option>
+                                <option disabled selected value="{{ Carbon\Carbon::parse($reserve->time)->format('H:i') }}">
+                                    選択してください</option>
                                 @for ($i = 0; $i <= 23; $i++)
                                     @for ($j = 0; $j <= 3; $j += 3)
                                         @if ($i < 10)
@@ -67,7 +66,7 @@
                         </div>
                         <div class="reserve_number">
                             <select name="number">
-                                <option disabled selected value="">選択してください</option>
+                                <option disabled selected value="{{ $reserve->number }}人">選択してください</option>
                                 @for ($i = 1; $i <= 99; $i++)
                                     <option label="{{ $i }}" value="{{ $i }}人">
                                         {{ $i }}人
@@ -84,15 +83,17 @@
                                     <table>
                                         <tr>
                                             <th>Shop</th>
-                                            <td>{{ $shop->name }}</td>
+                                            <td>{{ $reserve->shop->name }}</td>
                                         </tr>
                                         <tr>
                                             <th>Date</th>
-                                            <td id="reserveOutputday"></td>
+                                            <td id="reserveOutputday">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th>Time</th>
-                                            <td id="reserveOutputtime"></td>
+                                            <td id="reserveOutputtime">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th>Number</th>
@@ -102,15 +103,10 @@
                                 </div>
                             </div>
                         </div>
-                        @auth
-                            <input type="hidden" name="user_id" value="{{ $user->id }}">
-                            <button class="reserve__btn" type="submit" name="shop_id"
-                                value="{{ $shop->id }}">予約する</button>
-                        @endauth
-                        @guest
-                            <button class="reserve__btn" type="submit" name="shop_id"
-                                value="{{ $shop->id }}">ログインする</button>
-                        @endguest
+                        <input type="hidden" name="user_id" value="{{ $user->id }}">
+                        <input type="hidden" name="id" value="{{ $reserve->id }}">
+                        <button class="reserve__btn" type="submit" name="shop_id" onclick='return confirm("予約を変更しますか？")'
+                            value="{{ $reserve->shop->id }}">予約を変更する</button>
                     </form>
                 </div>
             </div>
@@ -119,7 +115,7 @@
 
 @section('scripts')
     <script type="text/javascript">
-        window.addEventListener('load', function() {
+        window.onload = function() {
             var date = new Date()
             date.setDate(date.getDate() + 1);
             var year = date.getFullYear()
@@ -140,7 +136,7 @@
             var ymd = yyyy + "-" + mm + "-" + dd;
 
             document.getElementById("tomorrow").value = ymd;
-        })
+        }
     </script>
 
     <script type="text/javascript">

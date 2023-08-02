@@ -39,7 +39,6 @@ h2 {
     font-size: 22px;
     margin-bottom: 25px;
     margin-top: 85px;
-    width: 405px;
 }
 
 @media screen and (max-width: 768px) {
@@ -88,7 +87,7 @@ h2 {
     width: 25px;
 }
 
-.form_cansel {
+.form_cancel {
     height: 15px;
 }
 
@@ -227,4 +226,26 @@ img {
 
 .img_favorite_on {
     filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(112%);
+}
+
+.update_btn {
+    background: #0066FF;
+    border: 2px solid #ffffff;
+    border-radius: 5px 5px 5px 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 9pt;
+    line-height: 1em;
+    padding: 8px 14px;
+    text-align: center;
+    transition: .3s;
+    position: relative;
+    top: -25px;
+    left: 305px;
+}
+
+.update_btn:hover {
+    background: #ffffff;
+    color: #0066FF;
 }
