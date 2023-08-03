@@ -7,9 +7,7 @@
 
 @section('content')
     <main>
-
         <div class="LeftContent">
-
             <div class="shop_detail">
                 @foreach ($shops as $shop)
                     <div class="title_area">
@@ -36,7 +34,6 @@
                     </div>
                 @endforeach
             </div>
-
         </div>
 
         <div>
@@ -61,5 +58,6 @@
                     </div>
                 @endforeach
             </div>
+        </div>
     </main>
 @endsection

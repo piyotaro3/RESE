@@ -23,17 +23,49 @@ class ReserveSeeder extends Seeder
         ]);
 
         Reserve::create([
+            'user_id' => '2',
+            'shop_id' => '5',
+            'number' => '8',
+            'day' => '2023-07-09',
+            'time' => '00:00'
+        ]);
+
+        Reserve::create([
             'user_id' => '1',
-            'shop_id' => '3',
-            'number' => '5',
+            'shop_id' => '5',
+            'number' => '7',
             'day' => '2023-07-17',
             'time' => '00:00'
+        ]);
+
+        Reserve::create([
+            'user_id' => '2',
+            'shop_id' => '7',
+            'number' => '6',
+            'day' => '2023-07-017',
+            'time' => '15:00'
+        ]);
+
+        Reserve::create([
+            'user_id' => '1',
+            'shop_id' => '8',
+            'number' => '11',
+            'day' => '2023-07-31',
+            'time' => '17:00'
         ]);
 
         Reserve::create([
             'user_id' => '1',
             'shop_id' => '2',
             'number' => '5',
+            'day' => '2023-08-05',
+            'time' => '18:00'
+        ]);
+
+        Reserve::create([
+            'user_id' => '2',
+            'shop_id' => '15',
+            'number' => '3',
             'day' => '2023-08-05',
             'time' => '18:00'
         ]);
@@ -47,11 +79,11 @@ class ReserveSeeder extends Seeder
         ]);
 
         Reserve::create([
-            'user_id' => '1',
-            'shop_id' => '8',
-            'number' => '11',
-            'day' => '2023-07-31',
-            'time' => '17:00'
+            'user_id' => '2',
+            'shop_id' => '5',
+            'number' => '8',
+            'day' => '2023-08-09',
+            'time' => '22:00'
         ]);
     }
 }

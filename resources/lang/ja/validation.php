@@ -52,7 +52,10 @@ return [
             'date' => '日付型で入力してください',
         ],
         'star' => ['required' => '星は1つ以上選択してください'],
-        'reserve_id'=>['unique'=>'既に評価しています'],
+        'reserve_id' => [
+            'unique' => '既に評価しています',
+            'after:today' => '評価は明日以降にしてください',
+        ]
 
     ],
 
@@ -74,9 +77,9 @@ return [
         'day' => '今日',
         'time' => '時間',
         'number' => '人数',
-        'comment'=>'コメント',
-        'star'=>'星',
-        'reserve_id'=>'予約履歴',
+        'comment' => 'コメント',
+        'star' => '星',
+        'reserve_id' => '予約履歴',
     ],
 
 

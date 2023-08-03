@@ -63,7 +63,6 @@ class ShopController extends Controller
     public function detail(Request $request)
     {
         $user = Auth::user();
-        $user_id = auth()->id();
         $shops = Shop::all();
         $shop_id = $request->query('shop_id');
 
@@ -72,14 +71,9 @@ class ShopController extends Controller
             $query->where('id', $shop_id);
         $shops = $query->get();
 
-        $check = Reserve::where('user_id', $user_id)->where('shop_id', $shop_id)->exists();
-        $reserves = Reserve::where('user_id', '=', $user_id)->where('shop_id', '=', $shop_id)->orderBy('id', 'desc')->take(1)->get();
-
         $param = [
             'shops' => $shops,
             'user' => $user,
-            'reserves' => $reserves,
-            'check' => $check,
         ];
         return view('detail', $param);
     }
@@ -90,11 +84,11 @@ class ShopController extends Controller
         $id = Reserve::where('shop_id', $request->shop_id)->whereDate('day', '<', $today)->get('id');
         $reviews = Review::whereIn('reserve_id', $id)->with('reserve.shop', 'reserve.user')->get();
         $shops = Shop::where('id',$request->shop_id)->get();
+        
         $param = [
             'reviews' => $reviews,
             'shops' => $shops,
         ];
-       
         return view('shop_review', $param);
     }
 }

@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ReviewRequest;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Reserve;
 use App\Models\Review;
-use Illuminate\Http\Request;
 use Carbon\Carbon;
 
 class ReviewController extends Controller
@@ -25,11 +25,12 @@ class ReviewController extends Controller
 
         $reviews_array = $reviews->toArray();
         $reviews_reserve_id = array_column($reviews_array, 'reserve_id');
+
         $param = [
             'user' => $user,
             'reserves' => $reserves,
             'reviews' => $reviews,
-            'reviews_reserve_id'=>$reviews_reserve_id,
+            'reviews_reserve_id' => $reviews_reserve_id,
         ];
         return view('visit_history', $param);
     }
@@ -58,7 +59,6 @@ class ReviewController extends Controller
             'route_mes' => 'マイページへ',
         );
         return view('/done', compact('text'));
-
     }
 
     public function delete(Request $request)
@@ -71,11 +71,11 @@ class ReviewController extends Controller
     { {
             $user = Auth::user();
             $reviews = Review::with('reserve.shop')->find($request->id);
+
             $param = [
                 'reviews' => $reviews,
                 'user' => $user,
             ];
-
             return view('review_edit', $param);
         }
     }
