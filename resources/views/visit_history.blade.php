@@ -42,12 +42,13 @@
                         </tr>
                     </table>
                     @if (in_array($reserve->pivot->id, $reviews_reserve_id))
-                            <input type="submit" class="review_fin" value="評価済み" disabled>
+                        <input type="submit" class="review_fin" value="評価済み" disabled>
                     @else
                         <form action="/review" method="get" class="form_update">
                             @csrf
                             <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
                             <input type="submit" class="review_btn" value="評価する">
+                        </form>
                     @endif
                 </div>
             @endforeach

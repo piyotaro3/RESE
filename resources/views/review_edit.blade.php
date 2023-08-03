@@ -69,7 +69,7 @@
                 <div>
                     <h2 class="title_reserve">評価</h2>
                 </div>
-                <form action="review" method="post">
+                <form action="review_edit/{{ $reviews->id }}" method="post">
                     @csrf
                     <div class="rate-form">
                         <input id="star5" type="radio" name="star" value="5">
@@ -90,7 +90,7 @@
                         <textarea rows="10" cols="50" name="comment">{{ $reviews->comment }}</textarea>
                     </div>
                     <input type="hidden" name="reserve_id" value="{{ $reviews->reserve_id }}">
-                    <input type="hidden" name="review_id" value="{{ $reviews->id }}">
+                    <input type="hidden" name="id" value="{{ $reviews->id }}">
                     <input class="reserve__btn" type="submit" value="投稿する">
                 </form>
             </div>

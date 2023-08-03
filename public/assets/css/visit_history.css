@@ -59,6 +59,7 @@ p {
     text-align: center;
     transition: .3s;
     margin-right: 20px;
+    height: 29px;
 }
 
 .edit_btn:hover {
@@ -79,6 +80,7 @@ p {
     text-align: center;
     transition: .3s;
     margin-right: 20px;
+    height: 29px;
 }
 
 .delete_btn:hover {
@@ -117,7 +119,7 @@ p {
     background: #ffffff;
     border: 2px solid #ffffff;
     border-radius: 5px 5px 5px 5px;
-    color:#0066FF;
+    color: #0066FF;
     display: inline-block;
     font-size: 9pt;
 

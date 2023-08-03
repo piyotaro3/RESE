@@ -25,9 +25,9 @@ class ReviewRequest extends FormRequest
     public function rules()
     {
         return [
-            'star' => 'required',
-            'comment'=>'max:500',
-            'reserve_id' => Rule::unique('reviews')->ignore($this->id),
+            'star' => ['required'],
+            'comment' => ['max:500'],
+            'resreve_id' => [Rule::unique('reveiws')->ignore($this->id)],
         ];
     }
 }
