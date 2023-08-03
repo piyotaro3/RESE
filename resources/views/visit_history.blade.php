@@ -12,6 +12,7 @@
 
 @section('content')
     <main>
+
         <div class="LeftContent">
             <h2 class="left_name">{{ $user->name }}さん</h2>
             <div class="root">
@@ -21,6 +22,7 @@
             @foreach ($reserves as $count => $reserve)
                 <div class="reserve_box">
                     <h4 class="reserve_title">履歴{{ $count + 1 }}</h4>
+
                     <table>
                         <tr>
                             <th>Shop</th>
@@ -39,11 +41,14 @@
                             <td> {{ $reserve->pivot->number }} 人</td>
                         </tr>
                     </table>
-                    <form action="/review" method="get" class="form_update">
-                        @csrf
-                        <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
-                        <input type="submit" class="update_btn" value="評価する">
-                    </form>
+                    @if (in_array($reserve->pivot->id, $reviews_reserve_id))
+                            <input type="submit" class="review_fin" value="評価済み" disabled>
+                    @else
+                        <form action="/review" method="get" class="form_update">
+                            @csrf
+                            <input type="hidden" value="{{ $reserve->pivot->id }}" name='id'>
+                            <input type="submit" class="review_btn" value="評価する">
+                    @endif
                 </div>
             @endforeach
         </div>

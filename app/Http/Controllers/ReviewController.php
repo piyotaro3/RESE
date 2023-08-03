@@ -18,13 +18,18 @@ class ReviewController extends Controller
         $today = Carbon::today();
         $user = Auth::user();
         $id = auth()->id();
+
         $reserves = User::find($id)->reserve_shop()->whereDate('day', '<', $today)->orderBy('day', 'asc')->get();
         $reserve_id = Reserve::where('user_id', $id)->whereDate('day', '<', $today)->select('id')->get();
         $reviews = Review::whereIn('reserve_id', $reserve_id)->with('reserve.shop', 'reserve.user')->get();
+
+        $reviews_array = $reviews->toArray();
+        $reviews_reserve_id = array_column($reviews_array, 'reserve_id');
         $param = [
             'user' => $user,
             'reserves' => $reserves,
             'reviews' => $reviews,
+            'reviews_reserve_id'=>$reviews_reserve_id,
         ];
         return view('visit_history', $param);
     }
@@ -77,9 +82,9 @@ class ReviewController extends Controller
 
     public function edit(ReviewRequest $request)
     {
-        $form = $request->get('star','comment');
+        $form = $request->get('star', 'comment');
         unset($form['_token']);
-        Review::where('id', $request->id)->update('star','comment');
+        Review::where('id', $request->id)->update('star', 'comment');
         dd($form);
         $text = array(
             'message' => 'レビュー内容を変更しました',

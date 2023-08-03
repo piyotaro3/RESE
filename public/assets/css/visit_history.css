@@ -90,3 +90,42 @@ p {
     color: #ffcc00;
     display: inline-block;
 }
+
+.review_btn {
+    background: #0066FF;
+    border: 2px solid #ffffff;
+    border-radius: 5px 5px 5px 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 9pt;
+    line-height: 1em;
+    padding: 8px 14px;
+    text-align: center;
+    transition: .3s;
+    position: relative;
+    top: -25px;
+    left: 305px;
+}
+
+.review_btn:hover {
+    background: #ffffff;
+    color: #0066FF;
+}
+
+.review_fin {
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 5px 5px 5px 5px;
+    color:#0066FF;
+    display: inline-block;
+    font-size: 9pt;
+
+    line-height: 1em;
+    padding: 8px 14px;
+    text-align: center;
+    transition: .3s;
+    position: relative;
+    top: -25px;
+    left: 305px;
+}
