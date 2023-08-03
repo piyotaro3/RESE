@@ -40,7 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/review', [ReviewController::class, 'review_show'])->name('review.show');
     Route::post('/review', [ReviewController::class, 'review'])->name('review.review');
     Route::get('/review_edit', [ReviewController::class, 'edit_show'])->name('review.edit_show');
-    Route::post('/review_edit/{id}', [ReviewController::class, 'edit'])->name('review.edit');
+    Route::post('/review_edit', [ReviewController::class, 'edit'])->name('review.edit');
     Route::post('/review_delete', [ReviewController::class, 'delete'])->name('review.delete');
     Route::post('/cancel', [ReserveController::class, 'cancel'])->name('reserve.cancel');
     Route::get('/update', [ReserveController::class, 'update_view']);

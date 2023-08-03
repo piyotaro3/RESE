@@ -9,7 +9,6 @@
     <main>
         <div class="LeftContent">
             <div class="shop_detail">
-
                 <div class="title_area">
                     <a href="/history">
                         <div class="back_btn">
@@ -28,7 +27,6 @@
                 <div class="detail">
                     <p>{{ $reviews->reserve->shop->detail }}</p>
                 </div>
-
             </div>
         </div>
 
@@ -36,7 +34,6 @@
             <div class="reserve_area">
                 <h2 class="title_reserve">履歴</h2>
                 <div class="check">
-
                     <div class="detail__reserve-box">
                         <div>
                             <table>
@@ -61,26 +58,29 @@
                             </table>
                         </div>
                     </div>
-
                 </div>
             </div>
-
             <div class="review">
                 <div>
                     <h2 class="title_reserve">評価</h2>
                 </div>
-                <form action="review_edit/{{ $reviews->id }}" method="post">
+                <form action="review_edit" method="post">
                     @csrf
                     <div class="rate-form">
-                        <input id="star5" type="radio" name="star" value="5">
+                        <input id="star5" type="radio" name="star"
+                            value="5"{{ $reviews->star == '5' ? 'checked' : '' }}>
                         <label for="star5">★</label>
-                        <input id="star4" type="radio" name="star" value="4">
+                        <input id="star4" type="radio" name="star"
+                            value="4"{{ $reviews->star == '4' ? 'checked' : '' }}>
                         <label for="star4">★</label>
-                        <input id="star3" type="radio" name="star" value="3">
+                        <input id="star3" type="radio" name="star"
+                            value="3"{{ $reviews->star == '3' ? 'checked' : '' }}>
                         <label for="star3">★</label>
-                        <input id="star2" type="radio" name="star" value="2">
+                        <input id="star2" type="radio" name="star"
+                            value="2"{{ $reviews->star == '2' ? 'checked' : '' }}>
                         <label for="star2">★</label>
-                        <input id="star1" type="radio" name="star" value="1">
+                        <input id="star1" type="radio" name="star"
+                            value="1"{{ $reviews->star == '1' ? 'checked' : '' }}>
                         <label for="star1">★</label>
                     </div>
                     @error('reserve_id')

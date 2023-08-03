@@ -56,7 +56,7 @@
                             <p class="text_com">{{ $review->comment }}</p>
                         </div>
                         <div class="user_name">
-                            <p><span>{{ $review->reserve->user->name }}</span></p>
+                            <p><span>{{ $review->reserve->user->name }}さん</span></p>
                         </div>
                     </div>
                 @endforeach
