@@ -23,6 +23,14 @@ class ReserveSeeder extends Seeder
         ]);
 
         Reserve::create([
+            'user_id' => '1',
+            'shop_id' => '3',
+            'number' => '5',
+            'day' => '2023-07-04',
+            'time' => '21:00'
+        ]);
+
+        Reserve::create([
             'user_id' => '2',
             'shop_id' => '5',
             'number' => '8',
@@ -36,6 +44,14 @@ class ReserveSeeder extends Seeder
             'number' => '7',
             'day' => '2023-07-17',
             'time' => '00:00'
+        ]);
+
+        Reserve::create([
+            'user_id' => '2',
+            'shop_id' => '5',
+            'number' => '7',
+            'day' => '2023-07-17',
+            'time' => '22:00'
         ]);
 
         Reserve::create([

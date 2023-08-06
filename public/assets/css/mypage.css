@@ -38,7 +38,8 @@ h2 {
 .h3_left {
     font-size: 22px;
     margin-bottom: 25px;
-    margin-top: 40px;
+    margin-top: 35px;
+    width: 425px;
 }
 
 @media screen and (max-width: 768px) {
@@ -250,10 +251,10 @@ img {
     color: #0066FF;
 }
 
-.root{
+.root {
     margin-top: 25px;
 }
 
-.worp{
+.worp {
     font-size: 25px;
 }

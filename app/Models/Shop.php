@@ -61,4 +61,16 @@ class Shop extends Model
         return $this->belongsToMany(User::class, 'reserves', 'shop_id', 'user_id')->withPivot('number', 'day', 'time');
     }
 
+    public function reserve_review()
+    {
+        return $this->hasManyThrough(
+            review::class,
+            reserve::class,
+            'shop_id',
+            'reserve_id',
+            'id',
+            'id',
+        );
+
+    }
 }

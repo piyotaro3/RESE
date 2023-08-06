@@ -11,6 +11,7 @@ use App\Models\Genre;
 use App\Models\Reserve;
 use App\Models\Review;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 
 class ShopController extends Controller
@@ -18,9 +19,14 @@ class ShopController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $shops = Shop::all();
         $areas = Area::all();
         $genres = Genre::all();
+        $shops = Shop::withAvg('reserve_review', 'star')
+            ->withCount([
+                'reserve_review' => function ($comment) {
+                    $comment->where('comment', '!=', '');
+                }
+            ])->get();
 
         $param = [
             'shops' => $shops,
@@ -63,13 +69,18 @@ class ShopController extends Controller
     public function detail(Request $request)
     {
         $user = Auth::user();
-        $shops = Shop::all();
         $shop_id = $request->query('shop_id');
 
         $query = Shop::query();
         if ($shop_id != null)
             $query->where('id', $shop_id);
-        $shops = $query->get();
+
+        $shops = $query->withAvg('reserve_review', 'star')
+            ->withCount([
+                'reserve_review' => function ($comment) {
+                    $comment->where('comment', '!=', '');
+                }
+            ])->get();
 
         $param = [
             'shops' => $shops,
@@ -83,8 +94,19 @@ class ShopController extends Controller
         $today = Carbon::today();
         $id = Reserve::where('shop_id', $request->shop_id)->whereDate('day', '<', $today)->get('id');
         $reviews = Review::whereIn('reserve_id', $id)->with('reserve.shop', 'reserve.user')->get();
-        $shops = Shop::where('id',$request->shop_id)->get();
-        
+        $shop_id = $request->query('shop_id');
+
+        $query = Shop::query();
+        if ($shop_id != null)
+            $query->where('id', $shop_id);
+
+        $shops = $query->withAvg('reserve_review', 'star')
+            ->withCount([
+                'reserve_review' => function ($comment) {
+                    $comment->where('comment', '!=', '');
+                }
+            ])->get();
+
         $param = [
             'reviews' => $reviews,
             'shops' => $shops,

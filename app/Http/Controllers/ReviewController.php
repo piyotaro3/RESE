@@ -21,7 +21,7 @@ class ReviewController extends Controller
 
         $reserves = User::find($id)->reserve_shop()->whereDate('day', '<', $today)->orderBy('day', 'asc')->get();
         $reserve_id = Reserve::where('user_id', $id)->whereDate('day', '<', $today)->select('id')->get();
-        $reviews = Review::whereIn('reserve_id', $reserve_id)->with('reserve.shop', 'reserve.user')->get();
+        $reviews = Review::whereIn('reviews.reserve_id', $reserve_id)->with('reserve.shop', 'reserve.user')->get();
 
         $reviews_array = $reviews->toArray();
         $reviews_reserve_id = array_column($reviews_array, 'reserve_id');

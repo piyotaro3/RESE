@@ -20,7 +20,8 @@
                         @foreach ($areas as $area)
                             <option value="{{ $area->id }}"
                                 @if (isset($area_id)) @if ($area->id == $area_id) selected @endif
-                                @endif>{{ $area->name }}</option>
+                                @endif>
+                                {{ $area->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -55,6 +56,15 @@
                 <div class="shop_text">
                     <div class="shop_name">
                         <h2 class="shop_title">{{ $shop->name }}</h2>
+                        @if ($shop->reserve_review_avg_star != null)
+                            <div class="review_area">
+                                <p>
+                                    <span class="star5_rating" data-rate="{{ $shop->reserve_review_avg_star }}"></span>
+                                    <span class="shop_review">{{ $shop->reserve_review_avg_star }}点</span>
+                                    <span class="shop_com">({{ $shop->reserve_review_count }})</span>
+                                </p>
+                            </div>
+                        @endif
                     </div>
                     <div class="shop_tag">
                         <p><span>{{ $shop->getarea() }}</span><span>{{ $shop->getGenre() }}<span></p>

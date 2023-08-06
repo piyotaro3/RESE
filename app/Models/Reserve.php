@@ -34,4 +34,11 @@ class Reserve extends Model
     {
         return $this->hasOne(Review::class);
     }
+
+    public function avg_shop($shop_id)
+    {
+        $shop_reserve = Reserve::where('shop_id', $shop_id)->get();
+        $shop_review = Review::where('reserve_id,$shop_reserve')->get('star', 'comment');
+
+    }
 }

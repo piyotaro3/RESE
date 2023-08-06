@@ -17,6 +17,13 @@
                             </div>
                         </a>
                         <h2 class="shop_title">{{ $shop->name }}</h2>
+                        <div class="review_area">
+                            <p>
+                                <span class="star5_rating" data-rate="{{ $shop->reserve_review_avg_star }}"></span>
+                                <span class="shop_review">{{ $shop->reserve_review_avg_star }}点</span>
+                                <span class="shop_com">({{ $shop->reserve_review_count }})</span>
+                            </p>
+                        </div>
                         <form action="/detail/{{ $shop->name }}" method="get">
                             @csrf
                             <input type="hidden" value="{{ $shop->id }}" name="shop_id">
