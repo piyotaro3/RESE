@@ -22,6 +22,12 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        return redirect('/thanks');
+        
+        $text = array(
+            'message' => '会員登録あリがとうございます',
+            'route' => '/login',
+            'route_mes' => 'ログインする',
+        );
+        return view('done', compact('text'));
     }
 }

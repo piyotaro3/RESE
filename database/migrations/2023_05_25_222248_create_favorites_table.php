@@ -15,11 +15,10 @@ class CreateFavoritesTable extends Migration
     {
         Schema::create('favorites', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('shop_id')->constrained('shops');
+            $table->foreignId('user_id')->constrained('users')->nullable(false);
+            $table->foreignId('shop_id')->constrained('shops')->nullable(false);
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
-            $table->unique(['user_id', 'shop_id']);
         });
     }
 

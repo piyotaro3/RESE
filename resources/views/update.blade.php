@@ -34,7 +34,7 @@
                     <h2 class="title_reserve">予約変更</h2>
                 </div>
                 <div>
-                    <form action="/update" method="POST" id="reserveForm">
+                    <form action="/update/OK" method="POST" id="reserveForm">
                         @csrf
                         <div class="reserve_day">
                             <input type="date" id="tomorrow" name="day" value="{{ $reserve->day }}">
@@ -68,7 +68,7 @@
                             <select name="number">
                                 <option disabled selected value="{{ $reserve->number }}人">選択してください</option>
                                 @for ($i = 1; $i <= 99; $i++)
-                                    <option label="{{ $i }}" value="{{ $i }}人">
+                                    <option label="{{ $i }}人" value="{{ $i }}人">
                                         {{ $i }}人
                                     </option>
                                 @endfor

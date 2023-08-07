@@ -50,6 +50,7 @@
         @yield('search')
     </div>
 
+
     @yield('content')
 
     @yield('scripts')
@@ -61,6 +62,7 @@
             nav.classList.toggle('in');
         });
     </script>
+
 </body>
 
 </html>

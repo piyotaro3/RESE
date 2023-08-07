@@ -1,0 +1,76 @@
+.rate-form {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin-bottom: 2%;
+    margin-left: 8%;
+}
+
+.rate-form input[type=radio] {
+    display: none;
+}
+
+.rate-form label {
+    position: relative;
+    padding: 0 5px;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.rate-form label:hover {
+    color: #ffcc00;
+}
+
+.rate-form label:hover~label {
+    color: #ffcc00;
+}
+
+.rate-form input[type=radio]:checked~label {
+    color: #ffcc00;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 25px 20px;
+    color: #ffffff;
+}
+
+.check {
+    background-color: #4e88ed;
+    height: 25%;
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 75%;
+}
+
+textarea {
+    font-size: 15px;
+    margin-left: 10%;
+    resize: none;
+    font-family: serif;
+    height: 150px;
+}
+
+.title_reserve {
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    width: 75%;
+}
+
+.error_p {
+    color: red;
+    margin-top: -10px;
+    width: 320px;
+    margin-left: 10%;
+    margin-bottom: 5px;
+}
+
+.error_p-com {
+    color: red;
+    width: 320px;
+    margin-left: 10%;
+    margin-bottom: 5px;
+}

@@ -19,7 +19,7 @@ return [
     'email' => ':attributeには、有効なメールアドレスを指定してください',
     'max' => [
         'numeric' => ':attributeには、:max以下の数字を指定してください',
-        'string' => ':attributeは:max文字以下で指定してください',
+        'string' => ':attributeは:max文字以下で入力してください',
         'array' => ':attributeは:max個以下指定してください',
     ],
     'min' => [
@@ -51,6 +51,12 @@ return [
             'after:today' => '予約は明日以降にしてください',
             'date' => '日付型で入力してください',
         ],
+        'star' => ['required' => '星は1つ以上選択してください'],
+        'reserve_id' => [
+            'unique' => '既に評価しています',
+            'after:today' => '評価は明日以降にしてください',
+        ]
+
     ],
 
     /*
@@ -71,5 +77,10 @@ return [
         'day' => '今日',
         'time' => '時間',
         'number' => '人数',
+        'comment' => 'コメント',
+        'star' => '星',
+        'reserve_id' => '予約履歴',
     ],
+
+
 ];

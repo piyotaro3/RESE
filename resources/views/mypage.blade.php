@@ -13,6 +13,9 @@
     <main>
         <div class="LeftContent">
             <h2 class="left_name">{{ $user->name }}さん</h2>
+            <div class="root">
+                <a href="/history" class="worp">来店履歴へ</a>
+            </div>
             <h3 class="h3_left">予約状況</h3>
             @foreach ($reserves as $count => $reserve)
                 <div class="reserve_box">
@@ -30,7 +33,7 @@
                         </tr>
                         <tr>
                             <th>Date</th>
-                            <td>{{ $reserve->pivot->day}}</td>
+                            <td>{{ $reserve->pivot->day }}</td>
                         </tr>
                         <tr>
                             <th>Time</th>

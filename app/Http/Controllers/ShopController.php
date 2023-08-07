@@ -9,15 +9,23 @@ use App\Models\Shop;
 use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Reserve;
+use App\Models\Review;
+use Carbon\Carbon;
 
 class ShopController extends Controller
 {
     public function index()
     {
         $user = Auth::user();
-        $shops = Shop::all();
         $areas = Area::all();
         $genres = Genre::all();
+        
+        $shops = Shop::withAvg('reserve_review', 'star')
+            ->withCount([
+                'reserve_review' => function ($comment) {
+                    $comment->where('comment', '!=', '');
+                }
+            ])->get();
 
         $param = [
             'shops' => $shops,
@@ -60,24 +68,48 @@ class ShopController extends Controller
     public function detail(Request $request)
     {
         $user = Auth::user();
-        $user_id = auth()->id();
-        $shops = Shop::all();
         $shop_id = $request->query('shop_id');
 
         $query = Shop::query();
         if ($shop_id != null)
             $query->where('id', $shop_id);
-        $shops = $query->get();
 
-        $check = Reserve::where('user_id', $user_id)->where('shop_id', $shop_id)->exists();
-        $reserves = Reserve::where('user_id', '=', $user_id)->where('shop_id', '=', $shop_id)->orderBy('id', 'desc')->take(1)->get();
+        $shops = $query->withAvg('reserve_review', 'star')
+            ->withCount([
+                'reserve_review' => function ($comment) {
+                    $comment->where('comment', '!=', '');
+                }
+            ])->get();
 
         $param = [
             'shops' => $shops,
             'user' => $user,
-            'reserves' => $reserves,
-            'check' => $check,
         ];
         return view('detail', $param);
+    }
+
+    public function review(Request $request)
+    {
+        $today = Carbon::today();
+        $id = Reserve::where('shop_id', $request->shop_id)->whereDate('day', '<', $today)->get('id');
+        $reviews = Review::whereIn('reserve_id', $id)->with('reserve.shop', 'reserve.user')->get();
+        $shop_id = $request->query('shop_id');
+
+        $query = Shop::query();
+        if ($shop_id != null)
+            $query->where('id', $shop_id);
+
+        $shops = $query->withAvg('reserve_review', 'star')
+            ->withCount([
+                'reserve_review' => function ($comment) {
+                    $comment->where('comment', '!=', '');
+                }
+            ])->get();
+
+        $param = [
+            'reviews' => $reviews,
+            'shops' => $shops,
+        ];
+        return view('shop_review', $param);
     }
 }

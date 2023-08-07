@@ -16,18 +16,37 @@
                             </div>
                         </a>
                         <h2 class="shop_title">{{ $shop->name }}</h2>
+                        @if ($shop->reserve_review_avg_star != null)
+                            <div class="review_area">
+                                <p>
+                                    <span class="star5_rating" data-rate="{{ $shop->reserve_review_avg_star }}"></span>
+                                    <span class="shop_review">{{ $shop->reserve_review_avg_star }}点</span>
+                                    <span class="shop_com">({{ $shop->reserve_review_count }})</span>
+                                </p>
+                            </div>
+                            <form action="/review/{{ $shop->name }}" method="get" class="review">
+                                @csrf
+                                <input type="hidden" value="{{ $shop->id }}" name="shop_id">
+                                <input type="submit" class="reveiw_button" value="評価を見る">
+                            </form>
+                        @endif
+
                     </div>
-                    <div class="shop_img">
-                        <img src="{{ asset($shop->image) }}">
-                    </div>
-                    <div class="tags">
-                        <p><span>{{ $shop->getarea() }}</span><span>{{ $shop->getGenre() }}</span></p>
-                    </div>
-                    <div class="detail">
-                        <p>{{ $shop->detail }}</p>
-                    </div>
+
+                </div>
+
+                <div class="shop_img">
+                    <img src="{{ asset($shop->image) }}">
+                </div>
+                <div class="tags">
+                    <p><span>{{ $shop->getarea() }}</span><span>{{ $shop->getGenre() }}</span></p>
+                </div>
+                <div class="detail">
+                    <p>{{ $shop->detail }}</p>
                 </div>
             @endforeach
+        </div>
+
         </div>
 
         <div class="RightContent">
@@ -36,7 +55,7 @@
                     <h2 class="title_reserve">予約</h2>
                 </div>
                 <div>
-                    <form action="/reserve" method="POST" id="reserveForm">
+                    <form action="/reserve/OK" method="post" id="reserveForm">
                         @csrf
                         <div class="reserve_day">
                             <input type="date" id="tomorrow" name="day">
@@ -69,7 +88,7 @@
                             <select name="number">
                                 <option disabled selected value="">選択してください</option>
                                 @for ($i = 1; $i <= 99; $i++)
-                                    <option label="{{ $i }}" value="{{ $i }}人">
+                                    <option label="{{ $i }}人" value="{{ $i }}人">
                                         {{ $i }}人
                                     </option>
                                 @endfor
