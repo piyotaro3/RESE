@@ -30,11 +30,8 @@
                                 <input type="submit" class="reveiw_button" value="評価を見る">
                             </form>
                         @endif
-
                     </div>
-
                 </div>
-
                 <div class="shop_img">
                     <img src="{{ asset($shop->image) }}">
                 </div>
@@ -45,8 +42,6 @@
                     <p>{{ $shop->detail }}</p>
                 </div>
             @endforeach
-        </div>
-
         </div>
 
         <div class="RightContent">
@@ -133,6 +128,7 @@
                     </form>
                 </div>
             </div>
+        </div>
     </main>
 @endsection
 

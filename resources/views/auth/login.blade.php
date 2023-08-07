@@ -11,7 +11,7 @@
  @endsection
 
  @section('content')
-     <form action="/login" method="POST">
+     <form action="/login" method="post">
          @csrf
          <div class="content_area">
              <div class="content">

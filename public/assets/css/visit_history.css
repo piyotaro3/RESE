@@ -1,11 +1,10 @@
 .review_card {
-    width: 600px;
+    width: 530px;
     height: 175px;
     border: 2px solid black;
     border-radius: 5px 5px 5px 5px;
     margin-left: 20px;
     background-color: #ffffff;
-    ;
     margin-bottom: 5%;
 }
 
@@ -22,17 +21,6 @@
 
 .text {
     border-bottom: 2px solid black;
-}
-
-p {
-    font-size: 20px;
-    resize: none;
-    font-family: serif;
-    height: 100px;
-    width: 98%;
-    border: none;
-    margin-top: 5px;
-    margin-left: 5px;
 }
 
 .form_edit {
@@ -89,7 +77,7 @@ p {
 }
 
 .star {
-    color: #ffcc00;
+    color: #ffcf32;
     display: inline-block;
 }
 
@@ -130,4 +118,38 @@ p {
     position: relative;
     top: -25px;
     left: 305px;
+}
+
+.review_name {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    position: relative;
+}
+
+.history {
+    position: absolute;
+    top: 5px;
+    left: 200px;
+}
+
+.review {
+    position: absolute;
+    top: 5px;
+    left: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.text_com {
+    font-size: 20px;
+    resize: none;
+    font-family: serif;
+    height: 100px;
+    width: 98%;
+    border: none;
+    margin-top: 10px;
+    margin-left: 15px;
 }

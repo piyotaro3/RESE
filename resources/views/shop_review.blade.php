@@ -51,16 +51,24 @@
                 @foreach ($reviews as $review)
                     <div class="review_card">
                         <div class="review_shop">
-                            <h4 class="review_title">
-                                店舗名&nbsp;{{ $review->reserve->shop->name }}&emsp;&emsp;来店日&nbsp;{{ $review->reserve->day }}&emsp;&emsp;評価&nbsp;
-                                <div class="star">{{ str_repeat('★', $review->star) }}</div>
-                            </h4>
-                        </div>
-                        <div class="text">
-                            <p class="text_com">{{ $review->comment }}</p>
-                        </div>
-                        <div class="user_name">
-                            <p><span>{{ $review->reserve->user->name }}さん</span></p>
+                            <div class="review_name">
+                                <h4 class="review_title">店舗名&nbsp;{{ $review->reserve->shop->name }}</h4>
+                                <div class="history">
+                                    来店日&nbsp;{{ $review->reserve->day }}
+                                </div>
+                                <div class="review">
+                                    <p><span>評価&nbsp;</span></p>
+                                    <div class="star">{{ str_repeat('★', $review->star) }}</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text">
+                                    <p class="text_com">{{ $review->comment }}</p>
+                                </div>
+                                <div class="user_name">
+                                    <p><span>{{ $review->reserve->user->name }}さん</span></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 @endforeach

@@ -59,7 +59,7 @@
                         @if ($shop->reserve_review_avg_star != null)
                             <div class="review_area">
                                 <p>
-                                    <span class="star5_rating" data-rate="{{ $shop->reserve_review_avg_star }}"></span>
+                                    <span class="star5" data-rate="{{ $shop->reserve_review_avg_star }}"></span>
                                     <span class="shop_review">{{ $shop->reserve_review_avg_star }}点</span>
                                     <span class="shop_com">({{ $shop->reserve_review_count }})</span>
                                 </p>

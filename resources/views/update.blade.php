@@ -34,7 +34,7 @@
                     <h2 class="title_reserve">予約変更</h2>
                 </div>
                 <div>
-                    <form action="/update/OK" method="POST" id="reserveForm">
+                    <form action="/update/OK" method="post" id="reserveForm">
                         @csrf
                         <div class="reserve_day">
                             <input type="date" id="tomorrow" name="day" value="{{ $reserve->day }}">
@@ -110,6 +110,7 @@
                     </form>
                 </div>
             </div>
+        </div>
     </main>
 @endsection
 

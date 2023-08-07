@@ -19,15 +19,15 @@
 }
 
 .rate-form label:hover {
-    color: #ffcc00;
+    color: #ffcf32;
 }
 
 .rate-form label:hover~label {
-    color: #ffcc00;
+    color: #ffcf32;
 }
 
 .rate-form input[type=radio]:checked~label {
-    color: #ffcc00;
+    color: #ffcf32;
 }
 
 table {
