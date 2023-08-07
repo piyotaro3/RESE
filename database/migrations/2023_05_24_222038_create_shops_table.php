@@ -16,10 +16,10 @@ class CreateShopsTable extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255)->nullable(false);
-            $table->foreignId('genre_id')->constrained('genres');
-            $table->foreignId('area_id')->constrained('areas');
+            $table->foreignId('genre_id')->constrained('genres')->nullable(false);
+            $table->foreignId('area_id')->constrained('areas')->nullable(false);
             $table->mediumText('detail')->nullable(false);
-            $table->string('image', 255)->nullable();
+            $table->string('image', 255)->nullable(false);
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
         });

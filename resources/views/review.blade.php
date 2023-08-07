@@ -62,7 +62,7 @@
                     <div>
                         <h2 class="title_reserve">評価</h2>
                     </div>
-                    <form action="review" method="post">
+                    <form action="review/OK" method="post">
                         @csrf
                         <div class="rate-form">
                             <input id="star5" type="radio" name="star" value="5">

@@ -50,6 +50,6 @@ class ReserveController extends Controller
             'route' => '/mypage',
             'route_mes' => 'マイページへ',
         );
-        return view('/done', compact('text'));
+        return view('done', compact('text'));
     }
 }

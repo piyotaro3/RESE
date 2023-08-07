@@ -55,7 +55,7 @@
                     <h2 class="title_reserve">予約</h2>
                 </div>
                 <div>
-                    <form action="/reserve" method="POST" id="reserveForm">
+                    <form action="/reserve/OK" method="post" id="reserveForm">
                         @csrf
                         <div class="reserve_day">
                             <input type="date" id="tomorrow" name="day">

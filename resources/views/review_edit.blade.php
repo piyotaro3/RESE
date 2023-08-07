@@ -21,7 +21,8 @@
                     <img src="{{ asset($reviews->reserve->shop->image) }}">
                 </div>
                 <div class="tags">
-                    <p><span>{{ $reviews->reserve->shop->getarea() }}</span><span>{{ $reviews->reserve->shop->getGenre() }}</span>
+                    <p><span>{{ $reviews->reserve->shop->getarea() }}</span>
+                        <span>{{ $reviews->reserve->shop->getGenre() }}</span>
                     </p>
                 </div>
                 <div class="detail">
@@ -64,7 +65,7 @@
                 <div>
                     <h2 class="title_reserve">評価</h2>
                 </div>
-                <form action="review_edit" method="post">
+                <form action="review_edit/OK" method="post">
                     @csrf
                     <div class="rate-form">
                         <input id="star5" type="radio" name="star"

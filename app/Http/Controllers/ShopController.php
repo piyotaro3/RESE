@@ -11,8 +11,6 @@ use App\Models\Genre;
 use App\Models\Reserve;
 use App\Models\Review;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
-
 
 class ShopController extends Controller
 {
@@ -21,6 +19,7 @@ class ShopController extends Controller
         $user = Auth::user();
         $areas = Area::all();
         $genres = Genre::all();
+        
         $shops = Shop::withAvg('reserve_review', 'star')
             ->withCount([
                 'reserve_review' => function ($comment) {

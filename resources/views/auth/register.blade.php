@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <form action="/register" method="POST">
+    <form action="/thanks" method="post">
         @csrf
         <div class="content_area">
             <div class="content">
