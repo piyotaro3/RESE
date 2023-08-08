@@ -70,7 +70,7 @@
                                 <p><span>{{ $favorite->getarea() }}</span><span>{{ $favorite->getGenre() }}</span></p>
                             </div>
                             <div class="shop_detail">
-                                <form action="/detail/{{ $favorite->name }}"method="GET">
+                                <form action="/detail/{{ $favorite->name }}"method="get">
                                     @csrf
                                     <input type="hidden" value="{{ $favorite->id }}" name="shop_id">
                                     <input type="submit" class="detail_button" value="詳しくみる">

@@ -35,6 +35,14 @@ h2 {
     }
 }
 
+.root {
+    margin-top: 25px;
+}
+
+.worp {
+    font-size: 25px;
+}
+
 .h3_left {
     font-size: 22px;
     margin-bottom: 25px;
@@ -249,12 +257,4 @@ img {
 .update_btn:hover {
     background: #ffffff;
     color: #0066FF;
-}
-
-.root {
-    margin-top: 25px;
-}
-
-.worp {
-    font-size: 25px;
 }

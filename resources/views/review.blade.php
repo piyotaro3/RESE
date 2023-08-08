@@ -34,28 +34,26 @@
                 <h2 class="title_reserve">履歴</h2>
                 <div class="check">
                     <div class="detail__reserve-box">
-                        <div>
-                            <table>
-                                <tr>
-                                    <th>Shop</th>
-                                    <td>{{ $reserve->shop->name }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Date</th>
-                                    <td>{{ $reserve->day }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Time</th>
-                                    <td>{{ Carbon\Carbon::parse($reserve->time)->format('H:i') }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Number</th>
-                                    <td>{{ $reserve->number }}人</td>
-                                </tr>
-                            </table>
-                        </div>
+                        <table>
+                            <tr>
+                                <th>Shop</th>
+                                <td>{{ $reserve->shop->name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Date</th>
+                                <td>{{ $reserve->day }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Time</th>
+                                <td>{{ Carbon\Carbon::parse($reserve->time)->format('H:i') }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Number</th>
+                                <td>{{ $reserve->number }}人</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
                 <div class="review">
@@ -90,5 +88,6 @@
                     </form>
                 </div>
             </div>
+        </div>
     </main>
 @endsection
