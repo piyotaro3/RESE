@@ -53,6 +53,7 @@ class ReviewController extends Controller
 
         $form = $request->all();
         Review::create($form);
+        
         $text = array(
             'message' => 'レビューありがとうございます',
             'route' => '/mypage',
@@ -85,6 +86,7 @@ class ReviewController extends Controller
         $form = $request->all();
         unset($form['_token']);
         Review::where('id', $request->id)->update($form);
+
         $text = array(
             'message' => 'レビュー内容を変更しました',
             'route' => '/mypage',
