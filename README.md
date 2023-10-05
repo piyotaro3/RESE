@@ -61,13 +61,12 @@
 
 ![テーブル設計3](https://github.com/piyotaro3/RESE/assets/121168107/f7cf76d0-b485-4a57-8f0d-fe05abebd0e0)
 
-[設計書テーブル設計リンク](https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=1904085266)
+
 
 ## ER図
 
 ![ER図](https://github.com/piyotaro3/RESE/assets/121168107/072f5972-48dd-42e5-a8a8-1c0f78647e65)
 
-[設計書ER図リンク](https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=634778829)
 
 # 環境構築
 
