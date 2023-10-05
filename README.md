@@ -125,6 +125,3 @@ create database [データベース名];で作成する。
 - レビューは予約1件につき1投稿できる仕様です（変更や削除は可能です）。
 - レビューはマイページ→来店履歴→評価するから投稿可能です。
 - レビュー投稿は来店日の翌日以降に可能です。
-
-## 案件シートリンク
-  [案件シート](https://docs.google.com/spreadsheets/d/12Nau_FOSCNsigQEucaz1TtsAd9S1u5gjqL1Teh3By74/edit#gid=522964981)
