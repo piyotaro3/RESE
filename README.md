@@ -64,9 +64,7 @@
 
 
 ## ER図
-
-![ER図](https://github.com/piyotaro3/RESE/assets/121168107/072f5972-48dd-42e5-a8a8-1c0f78647e65)
-![Rese](https://github.com/piyotaro3/RESE/assets/121168107/42a9f510-556c-4a57-9a78-a1229f7571ee)
+![ER図](https://github.com/piyotaro3/RESE/assets/121168107/42a9f510-556c-4a57-9a78-a1229f7571ee)
 
 
 # 環境構築
